@@ -2,6 +2,7 @@
 layout: default
 ---
 
+![Octocat](https://yt3.ggpht.com/k7A3O2CifD373P1Fw-92W_F1xMTbtTjnHzgNj_VsXiz3DL3GQjcggN5Jb4ccV6cBMRSioj6WOA=s88-c-k-c0x00ffffff-no-rj)
 
 # Contacto
 
@@ -105,7 +106,7 @@ end
 ![Branching](https://guides.github.com/activities/hello-world/branching.png)
 
 
-### Definition lists can be used with HTML syntax.
+### Definition lists can be used with HTML syntax.https://yt3.ggpht.com/k7A3O2CifD373P1Fw-92W_F1xMTbtTjnHzgNj_VsXiz3DL3GQjcggN5Jb4ccV6cBMRSioj6WOA=s88-c-k-c0x00ffffff-no-rj
 
 <dl>
 <dt>Name</dt>
