@@ -13,7 +13,7 @@ layout: default
 
 | Estado       | Cursos   | nivel      |
 |:-------------|:---------|:-----------|
-| Subido       | c++      | `básico`   |
+| [Subido](https://youtube.com/playlist?list=PL9Lgme4PR4XA6vEINnWImbZq2kXyRPgev)       | c++      | `básico`   |
 | No creado    | c++      | `medio`    |
 | No creado    | c++      | `avanzado` |
 |              |          |            |
