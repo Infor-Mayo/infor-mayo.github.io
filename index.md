@@ -16,11 +16,11 @@ layout: default
 | Subido       | c++     | `básico`   |
 | No creado    | c++     | `medio`    |
 | No creado    | c++     | `avanzado` |
-|:-------------|:--------|:-----------|
+|:------------:|:-------:|:----------:|
 | En proceso   | python  | `básico`   |
 | No creado    | python  | `medio`    |
 | No creado    | python  | `avanzado` |
-|:-------------|:--------|:-----------|
+|:------------:|:-------:|:----------:|
 | No creado    | bash    | `básico`   |
 | No creado    | bash    | `medio`    |
 | No creado    | bash    | `avanzado` |
