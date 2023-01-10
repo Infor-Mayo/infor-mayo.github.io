@@ -3,7 +3,7 @@ layout: default
 ---
 
 
-# Contato
+# Contacto
 
 [GitHub](https://github.com/MaYbreYpro).
 [Youtube](https://www.youtube.com/@infor-Mayo/).
