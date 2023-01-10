@@ -6,7 +6,6 @@ Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 
 [GitHub](https://github.com/MaYbreYpro).
 [Youtube](https://www.youtube.com/@infor-Mayo/).
-[Web](https://informayoc.ga).
 
 There should be whitespace between paragraphs.
 
