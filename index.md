@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-https://yt3.ggpht.com/k7A3O2CifD373P1Fw-92W_F1xMTbtTjnHzgNj_VsXiz3DL3GQjcggN5Jb4ccV6cBMRSioj6WOA=s88-c-k-c0x00ffffff-no-rj
+
 ![Octocat](https://yt3.ggpht.com/k7A3O2CifD373P1Fw-92W_F1xMTbtTjnHzgNj_VsXiz3DL3GQjcggN5Jb4ccV6cBMRSioj6WOA=s88-c-k-c0x00ffffff-no-rj)
 
 # Contacto
@@ -9,17 +9,19 @@ https://yt3.ggpht.com/k7A3O2CifD373P1Fw-92W_F1xMTbtTjnHzgNj_VsXiz3DL3GQjcggN5Jb4
 [GitHub](https://github.com/MaYbreYpro).
 [Youtube](https://www.youtube.com/@infor-Mayo/).
 
-###### Cursos y Futuros cursos
+## Cursos y Futuros cursos
 
 | Estado       | Cursos  | nivel      |
 |:-------------|:--------|:-----------|
-| Subido       | c++     | `basico`   |
+| Subido       | c++     | `básico`   |
 | No creado    | c++     | `medio`    |
 | No creado    | c++     | `avanzado` |
-| En proceso   | python  | `basico`   |
+|:-------------|:--------|:-----------|
+| En proceso   | python  | `básico`   |
 | No creado    | python  | `medio`    |
 | No creado    | python  | `avanzado` |
-| No creado    | bash    | `basico`   |
+|:-------------|:--------|:-----------|
+| No creado    | bash    | `básico`   |
 | No creado    | bash    | `medio`    |
 | No creado    | bash    | `avanzado` |
 
