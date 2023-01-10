@@ -2,10 +2,13 @@
 layout: default
 ---
 
-Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
+
+# Contato
 
 [GitHub](https://github.com/MaYbreYpro).
 [Youtube](https://www.youtube.com/@infor-Mayo/).
+
+Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 
 There should be whitespace between paragraphs.
 
