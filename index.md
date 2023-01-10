@@ -1,13 +1,27 @@
 ---
 layout: default
 ---
-
+https://yt3.ggpht.com/k7A3O2CifD373P1Fw-92W_F1xMTbtTjnHzgNj_VsXiz3DL3GQjcggN5Jb4ccV6cBMRSioj6WOA=s88-c-k-c0x00ffffff-no-rj
 ![Octocat](https://yt3.ggpht.com/k7A3O2CifD373P1Fw-92W_F1xMTbtTjnHzgNj_VsXiz3DL3GQjcggN5Jb4ccV6cBMRSioj6WOA=s88-c-k-c0x00ffffff-no-rj)
 
 # Contacto
 
 [GitHub](https://github.com/MaYbreYpro).
 [Youtube](https://www.youtube.com/@infor-Mayo/).
+
+###### Cursos y Futuros cursos
+
+| Estado       | Cursos  | nivel      |
+|:-------------|:--------|:-----------|
+| Subido       | c++     | `basico`   |
+| No creado    | c++     | `medio`    |
+| No creado    | c++     | `avanzado` |
+| En proceso   | python  | `basico`   |
+| No creado    | python  | `medio`    |
+| No creado    | python  | `avanzado` |
+| No creado    | bash    | `basico`   |
+| No creado    | bash    | `medio`    |
+| No creado    | bash    | `avanzado` |
 
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 
@@ -26,7 +40,7 @@ This is a normal paragraph following a header. GitHub is a code hosting platform
 > When something is important enough, you do it even if the odds are not in your favor.
 
 ### Header 3
-
+https://yt3.ggpht.com/k7A3O2CifD373P1Fw-92W_F1xMTbtTjnHzgNj_VsXiz3DL3GQjcggN5Jb4ccV6cBMRSioj6WOA=s88-c-k-c0x00ffffff-no-rj
 ```js
 // Javascript code with syntax highlighting.
 var fun = function lang(l) {
