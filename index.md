@@ -11,19 +11,21 @@ layout: default
 
 ## Cursos y Futuros cursos
 
-| Estado       | Cursos  | nivel      |
-|:-------------|:--------|:-----------|
-| Subido       | c++     | `básico`   |
-| No creado    | c++     | `medio`    |
-| No creado    | c++     | `avanzado` |
-|              |         |            |
-| En proceso   | python  | `básico`   |
-| No creado    | python  | `medio`    |
-| No creado    | python  | `avanzado` |
-|:------------:|:-------:|:----------:|
-| No creado    | bash    | `básico`   |
-| No creado    | bash    | `medio`    |
-| No creado    | bash    | `avanzado` |
+| Estado       | Cursos   | nivel      |
+|:-------------|:---------|:-----------|
+| Subido       | c++      | `básico`   |
+| No creado    | c++      | `medio`    |
+| No creado    | c++      | `avanzado` |
+|              |          |            |
+| En proceso   | python   | `básico`   |
+| No creado    | python   | `medio`    |
+| No creado    | python   | `avanzado` |
+|              |          |            |
+| No creado    | bash     | `básico`   |
+| No creado    | bash     | `medio`    |
+| No creado    | bash     | `avanzado` |
+|              |          |            |
+| No creado    | gbscript | `básico`   |
 
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 
