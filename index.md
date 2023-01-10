@@ -17,7 +17,7 @@ layout: default
 | No creado    | c++      | `medio`    |
 | No creado    | c++      | `avanzado` |
 |              |          |            |
-| En proceso   | python   | `básico`   |
+| [En proceso](https://youtube.com/playlist?list=PL9Lgme4PR4XAJn7GkXBBTpnxWRGyQGMPU)   | python   | `básico`   |
 | No creado    | python   | `medio`    |
 | No creado    | python   | `avanzado` |
 |              |          |            |
