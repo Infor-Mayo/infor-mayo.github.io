@@ -8,6 +8,8 @@ layout: default
 
 [GitHub](https://github.com/MaYbreYpro).
 [Youtube](https://www.youtube.com/@infor-Mayo/).
+[Facebook](https://www.facebook.com/groups/430222984636303).
+
 
 ## Cursos y Futuros cursos
 
