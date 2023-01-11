@@ -2,7 +2,7 @@
 layout: default
 ---
 
-![Octocat](https://yt3.ggpht.com/k7A3O2CifD373P1Fw-92W_F1xMTbtTjnHzgNj_VsXiz3DL3GQjcggN5Jb4ccV6cBMRSioj6WOA=s88-c-k-c0x00ffffff-no-rj)
+                                              ![Octocat](https://yt3.ggpht.com/k7A3O2CifD373P1Fw-92W_F1xMTbtTjnHzgNj_VsXiz3DL3GQjcggN5Jb4ccV6cBMRSioj6WOA=s88-c-k-c0x00ffffff-no-rj)
 
 Bienvenido a mi canal de informática! Aquí encontrarás tutoriales paso a paso, consejos y trucos para programar en diferentes lenguajes, proyectos prácticos, soluciones a problemas comunes y mucho más. Mi objetivo es ayudarte a mejorar tus habilidades en informática y ayudarte a alcanzar tus metas en el campo de la tecnología. Me enfocaré en lenguajes como Python, Java y C++, y en proyectos de inteligencia artificial, machine learning, programación de videojuegos y desarrollo web. No importa si eres un principiante o un experto, en mi canal encontrarás contenido para todos los niveles. ¡No te olvides suscribirte para no perderte ninguno de mis videos y habilita las notificaciones para estar al tanto de todas las actualizaciones!
 
@@ -32,6 +32,7 @@ Bienvenido a mi canal de informática! Aquí encontrarás tutoriales paso a paso
 | No creado    | bash     | `avanzado` |
 |              |          |            |
 | No creado    | gbscript | `básico`   |
+
 * * *
 
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
