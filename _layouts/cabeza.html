@@ -10,21 +10,28 @@
   </head>
   <body>
     <header>
-      <div class="container">
-        <div id="logo-and-menu">
-          <a id="a-title" href="{{ '/' | relative_url }}">
-            <h1>{{ site.title | default: site.github.repository_name }}</h1>
-          </a>
-          <nav>
-            <ul>
-              <li><a href="#">Menu Item 1</a></li>
-              <li><a href="#">Menu Item 2</a></li>
-              <li><a href="#">Menu Item 3</a></li>
-            </ul>
-          </nav>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{ '/' | relative_url }}">
+          <img src="./assets/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+          {{ site.title | default: site.github.repository_name }}
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Menu Item 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Menu Item 2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Menu Item 3</a>
+            </li>
+          </ul>
         </div>
-        <a id="profile-pic" href="#"><img src="./assets/images/image.png" alt="Profile Picture"></a>
-      </div>
+      </nav>
     </header>
 
     <div class="container">
@@ -35,45 +42,6 @@
 
     <script src="{{ '/assets/js/jquery.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script src="{{ '/assets/js/bootstrap.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
-    <style>
-      #logo-and-menu {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
 
-      nav ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-
-      nav ul li {
-        margin: 0 10px;
-      }
-
-      nav ul li a {
-        display: block;
-        padding: 10px;
-        color: white;
-        text-decoration: none;
-      }
-
-      #profile-pic {
-        display: block;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin-left: auto;
-      }
-
-      #profile-pic img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    </style>
   </body>
 </html>
