@@ -30,4 +30,4 @@ En resumen, si necesitas realizar pagos electrónicos desde tu teléfono móvil,
 
 #### ¡Gracias por visitar mi página web!
 
-[Atras](./)  
+[Atras](./1-curso-completo-transfermovil.md)  
