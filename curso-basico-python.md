@@ -6,7 +6,7 @@ layout: default
 
 Bienvenidos a mi curso básico de Python. A continuación, encontrarás el enlace a mi lista de reproducción en YouTube, donde podrás aprender los conceptos fundamentales de este lenguaje de programación:
 
-[Curso básico de C++ en mi canal de YouTube](https://youtube.com/playlist?list=PL9Lgme4PR4XAJn7GkXBBTpnxWRGyQGMPU).
+[Curso básico de python en mi canal de YouTube](https://youtube.com/playlist?list=PL9Lgme4PR4XAJn7GkXBBTpnxWRGyQGMPU).
 
 ### Contacto
 
