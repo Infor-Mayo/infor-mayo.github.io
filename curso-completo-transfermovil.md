@@ -19,7 +19,7 @@ Si quieres aprender a usar Transfermóvil para hacer tus operaciones financieras
 
 ## Videos de la lista
 
-| Nombre       | link tb   | Artículo      |
+| Nombre       | link Youtube   | Artículo      |
 |:-------------|:---------|:--------------|
 | Cómo descargar la última versión de TransferMóvil en Cuba | [`2`](https://youtu.be/Ps8l2zVXyP0)   | [🖥️](./listas/)   |
 | Cómo autenticarse en la aplicación TransferMóvil     |[`2`](https://youtu.be/4BoEC5cykZw)|[🖥️](./listas/)  |
