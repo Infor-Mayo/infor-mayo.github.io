@@ -14,7 +14,7 @@ En mi canal encontrarás tutoriales paso a paso, consejos y trucos para programa
 
 ## Suscríbete a mi canal
 
-No te pierdas ningún video. ¡Suscríbete a mi canal de YouTube hoy mismo y asegúrate de estar al día con mis últimos videos! Puedes encontrar mi canal aquí: [enlace a tu canal de YouTube].
+No te pierdas ningún video. ¡Suscríbete a mi canal de YouTube hoy mismo y asegúrate de estar al día con mis últimos videos! Puedes encontrar mi canal aquí: [Infor-Mayo](https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q?sub_confirmation=1).
 
 ## Sígueme en redes sociales
 
