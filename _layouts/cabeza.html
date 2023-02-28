@@ -6,51 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
-    {% seo %}
-    <style>
-      #menu {
-        display: none;
-      }
-      #logo img {
-        height: 50px;
-      }
-      #logo {
-        cursor: pointer;
-      }
-      #menu-toggle:checked ~ #menu {
-        display: block;
-      }
-      @media only screen and (min-width: 768px) {
-        #menu {
-          display: block;
-        }
-        #logo img {
-          height: 100px;
-        }
-      }
-    </style>
+
+{% seo %}
   </head>
 
   <body>
 
     <header>
       <div class="container">
-        <label for="menu-toggle" id="menu-toggle-label">&#9776;</label>
-        <input type="checkbox" id="menu-toggle">
-        <nav id="menu">
+        <a id="logo" href="#">
+          <img src="{{ './assets/images/logo.png' | relative_url }}" alt="Logo" width="50px">
+        </a>
+        <h1>{{ site.title | default: site.github.repository_name }}</h1>
+        <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+
+        <nav id="menu" class="hidden">
           <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Acerca de</a></li>
-            <li><a href="#">Productos</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Menu Item 1</a></li>
+            <li><a href="#">Menu Item 2</a></li>
+            <li><a href="#">Menu Item 3</a></li>
           </ul>
         </nav>
-        <div id="logo">
-          <img src="./assets/images/image.png" alt="Logo de la empresa">
-        </div>
-        <h1 style="text-align: center;">{{ site.title | default: site.github.repository_name }}</h1>
-        <h2 style="text-align: center;">{{ site.description | default: site.github.project_tagline }}</h2>
-        <h3 style="text-align: center;">Tu eslogan aquí</h3>
       </div>
     </header>
 
@@ -61,11 +37,15 @@
     </div>
 
     <script>
+      // Ocultar el menú al cargar la página
+      document.getElementById("menu").classList.add("hidden");
+
+      // Agregar evento clic al logotipo
       document.getElementById("logo").addEventListener("click", function() {
-        document.getElementById("menu-toggle").checked = !document.getElementById("menu-toggle").checked;
+        // Agregar o eliminar la clase "hidden" al menú
+        document.getElementById("menu").classList.toggle("hidden");
       });
     </script>
 
   </body>
 </html>
-
