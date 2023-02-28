@@ -6,14 +6,26 @@ layout: default
 
 Bienvenido a mi canal de Infor Mayo! Aquí encontrarás tutoriales paso a paso, consejos y trucos para programar en diferentes lenguajes, proyectos prácticos, soluciones a problemas comunes y mucho más. Mi objetivo es ayudarte a mejorar tus habilidades en informática y ayudarte a alcanzar tus metas en el campo de la tecnología. Me enfocaré en lenguajes como Python, Java y C++, y en proyectos de inteligencia artificial, machine learning, programación de videojuegos y desarrollo web. No importa si eres un principiante o un experto, en mi canal encontrarás contenido para todos los niveles. ¡No te olvides suscribirte para no perderte ninguno de mis videos y habilita las notificaciones para estar al tanto de todas las actualizaciones!
 
-# Contacto
+# Bienvenidos a mi canal de YouTube
 
-[GitHub](https://github.com/MaYbreYpro).
-[Youtube](https://www.youtube.com/@infor-Mayo/).
-[Facebook](https://www.facebook.com/groups/430222984636303).
-[Instagram](https://www.instagram.com/infor_mayo).
+¡Hola a todos! Mi nombre es Mario Artola y soy el creador del canal de YouTube [Infor Mayo](https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q). Me encanta compartir contenido interesante y entretenido con mis seguidores, y espero que disfrutes mi contenido tanto como yo disfruto creándolo.
 
+## Acerca de mi canal
 
+En mi canal encontrarás tutoriales paso a paso, consejos y trucos para programar en diferentes lenguajes, proyectos prácticos, soluciones a problemas comunes y mucho más. Mi objetivo es ayudarte a mejorar tus habilidades en informática y ayudarte a alcanzar tus metas en el campo de la tecnología. Me enfocaré en lenguajes como Python, Java y C++, y en proyectos de inteligencia artificial, machine learning, programación de videojuegos y desarrollo web. No importa si eres un principiante o un experto, en mi canal encontrarás contenido para todos los niveles. ¡No te olvides suscribirte para no perderte ninguno de mis videos y habilita las notificaciones para estar al tanto de todas las actualizaciones!
+
+## Suscríbete a mi canal
+
+No te pierdas ningún video. ¡Suscríbete a mi canal de YouTube hoy mismo y asegúrate de estar al día con mis últimos videos! Puedes encontrar mi canal aquí: [enlace a tu canal de YouTube].
+
+## Sígueme en redes sociales
+
+Para estar al tanto de todas las novedades, ¡asegúrate de seguirme en redes sociales! Puedes encontrarme en:
+
+- [Twitter](enlace a tu cuenta de Twitter)
+- [Youtube](https://www.youtube.com/@infor-Mayo/).
+- [Instagram](https://www.instagram.com/infor_mayo)
+- [Facebook](https://www.facebook.com/groups/430222984636303)
 
 ## Cursos y Futuros cursos
 
@@ -35,17 +47,13 @@ Bienvenido a mi canal de Infor Mayo! Aquí encontrarás tutoriales paso a paso, 
 
 * * *
 
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
+| Estado       | Cursos   | nivel      |
+|:-------------|:---------|:-----------|
+| [Subiendo](https://youtube.com/playlist?list=PL9Lgme4PR4XA6vEINnWImbZq2kXyRPgev)       | Transfermovil     | `Completo`   |
+| No creado    | Enzona      | `medio`    |
+| No creado    | c++      | `avanzado` |
 
+
+* * *
+
+¡Gracias por visitar mi sitio web! Espero que disfrutes mi contenido tanto como yo disfruto creándolo. ¡Nos vemos pronto!
