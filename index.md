@@ -29,22 +29,22 @@ Para estar al tanto de todas las novedades, ¡asegúrate de seguirme en redes so
 
 | Estado       | Cursos   | nivel      | Artículo      |
 |:-------------|:---------|:-----------|:--------------|
-| [Subido](https://youtube.com/playlist?list=PL9Lgme4PR4XA6vEINnWImbZq2kXyRPgev)       | c++      | `básico`   | [👍](./curso-basico-c++.md)   |
-| No creado    | c++      | `medio`    | [✊](./)   |
-| No creado    | c++      | `avanzado` | [✊](./)   |
+| [Subido](https://youtube.com/playlist?list=PL9Lgme4PR4XA6vEINnWImbZq2kXyRPgev)       | c++      | `básico`   | [web 👍](./curso-basico-c++.md)   |
+| No creado    | c++      | `medio`    | [web ✊](./)   |
+| No creado    | c++      | `avanzado` | [web ✊](./)   |
 |              |          |            |                |
-| [En proceso](https://youtube.com/playlist?list=PL9Lgme4PR4XAJn7GkXBBTpnxWRGyQGMPU)   | python   | `básico`   | [👍](./curso-basico-python.md)   |
-| No creado    | python   | `medio`    | [✊](./)   |
-| No creado    | python   | `avanzado` | [✊](./)   |
+| [En proceso](https://youtube.com/playlist?list=PL9Lgme4PR4XAJn7GkXBBTpnxWRGyQGMPU)   | python   | `básico`   | [web 👍](./curso-basico-python.md)   |
+| No creado    | python   | `medio`    | [web ✊](./)   |
+| No creado    | python   | `avanzado` | [web ✊](./)   |
 |              |          |            |   |
-| No creado    | bash     | `básico`   | [✊](./)   |
-| No creado    | bash     | `medio`    | [✊](./)   |
-| No creado    | bash     | `avanzado` | [✊](./)   |
+| No creado    | bash     | `básico`   | [web ✊](./)   |
+| No creado    | bash     | `medio`    | [web ✊](./)   |
+| No creado    | bash     | `avanzado` | [web ✊](./)   |
 |              |          |            |   |
-| No creado    | gbscript | `básico`   | [✊](./)   |
+| No creado    | gbscript | `básico`   | [web ✊](./)   |
 | | | | |
-| [Subiendo](https://youtube.com/playlist?list=PL9Lgme4PR4XDbaGv87gfR5AupKot9yf5Z)       | Transfermovil | `Completo`   | [👍](./curso-basico-python.md)   |
-| No creado    | Enzona      | `medio`    |
+| [Subiendo](https://youtube.com/playlist?list=PL9Lgme4PR4XDbaGv87gfR5AupKot9yf5Z)       | Transfermovil | `Completo`   | [web 👍](./curso-basico-python.md)   |
+| No creado    | Enzona      | `medio`    | [web ✊](./)   |
 
 
 
