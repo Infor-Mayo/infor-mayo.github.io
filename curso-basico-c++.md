@@ -6,7 +6,7 @@ layout: default
 
 Bienvenidos a mi curso básico de C++ en mi canal de YouTube. En esta lista de reproducción, aprenderás los fundamentos de la programación en C++, desde variables y tipos de datos hasta bucles y funciones. Aquí está el enlace a la lista de reproducción:
 
-###Contacto
+### Contacto
 
 [GitHub](https://github.com/MaYbreYpro).
 [Youtube](https://youtube.com/@Infor-Mayo).
