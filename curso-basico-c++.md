@@ -2,9 +2,8 @@
 layout: default
 ---
 
-## Welcome to another page
+## Curso de C++ Básico en YouTube
 
-Curso de C++ Básico en YouTube
 
 ##Contacto
 
