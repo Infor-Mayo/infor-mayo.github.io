@@ -33,7 +33,7 @@ Para estar al tanto de todas las novedades, ¡asegúrate de seguirme en redes so
 | No creado    | c++      | `medio`    | [web 🙅‍♂️](./)   |
 | No creado    | c++      | `avanzado` | [web 🙅‍♂️](./)   |
 |              |          |            |                |
-| [En proceso](https://youtube.com/playlist?list=PL9Lgme4PR4XAJn7GkXBBTpnxWRGyQGMPU)   | python   | `básico`   | [web 👍](./1-curso-basico-python.md)   |
+| [Subiendo](https://youtube.com/playlist?list=PL9Lgme4PR4XAJn7GkXBBTpnxWRGyQGMPU)   | python   | `básico`   | [web 👍](./1-curso-basico-python.md)   |
 | No creado    | python   | `medio`    | [web 🙅‍♂️](./)   |
 | No creado    | python   | `avanzado` | [web 🙅‍♂️](./)   |
 |              |          |            |   |
