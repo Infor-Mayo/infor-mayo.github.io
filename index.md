@@ -4,8 +4,6 @@ layout: default
 
 ![Octocat](https://yt3.ggpht.com/k7A3O2CifD373P1Fw-92W_F1xMTbtTjnHzgNj_VsXiz3DL3GQjcggN5Jb4ccV6cBMRSioj6WOA=s88-c-k-c0x00ffffff-no-rj)
 
-Bienvenido a mi canal de Infor Mayo! Aquí encontrarás tutoriales paso a paso, consejos y trucos para programar en diferentes lenguajes, proyectos prácticos, soluciones a problemas comunes y mucho más. Mi objetivo es ayudarte a mejorar tus habilidades en informática y ayudarte a alcanzar tus metas en el campo de la tecnología. Me enfocaré en lenguajes como Python, Java y C++, y en proyectos de inteligencia artificial, machine learning, programación de videojuegos y desarrollo web. No importa si eres un principiante o un experto, en mi canal encontrarás contenido para todos los niveles. ¡No te olvides suscribirte para no perderte ninguno de mis videos y habilita las notificaciones para estar al tanto de todas las actualizaciones!
-
 # Bienvenidos a mi canal de YouTube
 
 ¡Hola a todos! Mi nombre es Mario Artola y soy el creador del canal de YouTube [Infor Mayo](https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q). Me encanta compartir contenido interesante y entretenido con mis seguidores, y espero que disfrutes mi contenido tanto como yo disfruto creándolo.
