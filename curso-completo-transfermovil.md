@@ -8,7 +8,7 @@ Aquí podrás encontrar una lista de reproducción con un curso completo sobre e
 
 En mi canal, encontrarás una serie de videos detallados que te guiarán paso a paso en el uso de esta aplicación. Aprenderás cómo registrarte, cómo agregar cuentas bancarias, cómo hacer transferencias y pagos de servicios, y mucho más.
 
-[Curso completo de transfermovil](https://youtube.com/playlist?list=PL9Lgme4PR4XDbaGv87gfR5AupKot9yf5Z).
+[Curso completo de transfermovil en mi canal de YouTube](https://youtube.com/playlist?list=PL9Lgme4PR4XDbaGv87gfR5AupKot9yf5Z).
 
 ### Contacto
 
