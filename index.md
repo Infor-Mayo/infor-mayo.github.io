@@ -27,9 +27,9 @@ Para estar al tanto de todas las novedades, ¡asegúrate de seguirme en redes so
 
 ## Cursos y Futuros cursos
 
-| Estado       | Cursos   | nivel      |
+| Estado       | Cursos   | nivel      | Articulo      |
 |:-------------|:---------|:-----------|
-| [Subido](https://youtube.com/playlist?list=PL9Lgme4PR4XA6vEINnWImbZq2kXyRPgev)       | c++      | `básico`   |
+| [Subido](https://youtube.com/playlist?list=PL9Lgme4PR4XA6vEINnWImbZq2kXyRPgev)       | c++      | `básico`   | [Subido](./)   |
 | No creado    | c++      | `medio`    |
 | No creado    | c++      | `avanzado` |
 |              |          |            |
