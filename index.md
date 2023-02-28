@@ -49,7 +49,7 @@ Para estar al tanto de todas las novedades, ¡asegúrate de seguirme en redes so
 |:-------------|:---------|:-----------|
 | [Subiendo](https://youtube.com/playlist?list=PL9Lgme4PR4XA6vEINnWImbZq2kXyRPgev)       | Transfermovil     | `Completo`   |
 | No creado    | Enzona      | `medio`    |
-| No creado    | c++      | `avanzado` |
+
 
 
 * * *
