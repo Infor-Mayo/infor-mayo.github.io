@@ -43,7 +43,7 @@ Para estar al tanto de todas las novedades, ¡asegúrate de seguirme en redes so
 |              |          |            |   |
 | No creado    | gbscript | `básico`   | [web 🙅‍♂️](./)   |
 | | | | |
-| [Subiendo](https://youtube.com/playlist?list=PL9Lgme4PR4XDbaGv87gfR5AupKot9yf5Z)      | Transfermovil | `Completo`| [web 👍](./curso-basico-python.md)   |
+| [Subiendo](https://youtube.com/playlist?list=PL9Lgme4PR4XDbaGv87gfR5AupKot9yf5Z)      | Transfermovil | `Completo`| [web 👍](./curso-completo-transfermovil.md)   |
 | No creado    | Enzona      | `medio`    | [web 🙅‍♂️](./)   |
 
 
