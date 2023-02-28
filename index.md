@@ -42,7 +42,7 @@ Para estar al tanto de todas las novedades, ¡asegúrate de seguirme en redes so
 | No creado    | bash     | `avanzado` | [🔗🙅‍♂️](./)   |
 |     🔽🔽🔽🔽🔽🔽         |     🔽🔽🔽🔽🔽🔽     |       🔽🔽🔽🔽🔽🔽     | 🔽🔽🔽🔽🔽🔽  |
 | No creado    | gbscript | `básico`   | [🔗🙅‍♂️](./)   |
-| -|- | -| -|
+|     🔽🔽🔽🔽🔽🔽         |     🔽🔽🔽🔽🔽🔽     |       🔽🔽🔽🔽🔽🔽     | 🔽🔽🔽🔽🔽🔽  |
 | [Subiendo](https://youtube.com/playlist?list=PL9Lgme4PR4XDbaGv87gfR5AupKot9yf5Z)      | Transfermovil | `Completo`| [🔗👍](./1-curso-completo-transfermovil.md)   |
 | No creado    | Enzona      | `medio`    | [🔗🙅‍♂️](./)   |
 
