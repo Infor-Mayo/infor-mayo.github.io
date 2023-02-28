@@ -24,4 +24,4 @@ El creador concluye el video invitando a los espectadores a suscribirse a su can
 
 #### ¡Gracias por visitar mi página web!
 
-[Atras](./)  
+[Atras](./1-curso-completo-transfermovil.md)  
