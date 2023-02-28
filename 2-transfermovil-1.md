@@ -1,5 +1,5 @@
 ---
-layout: cabesera
+layout: cabeza
 ---
 
 ## Cómo descargar la última versión de TransferMóvil en Cuba
