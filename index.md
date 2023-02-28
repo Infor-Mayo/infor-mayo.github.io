@@ -32,15 +32,15 @@ Para estar al tanto de todas las novedades, ¡asegúrate de seguirme en redes so
 | [Subido](https://youtube.com/playlist?list=PL9Lgme4PR4XA6vEINnWImbZq2kXyRPgev)       | c++      | `básico`   | [Subido](./curso-asico-c++.md)   |
 | No creado    | c++      | `medio`    | [Subido](./)   |
 | No creado    | c++      | `avanzado` | [Subido](./)   |
-|              |          |            | [Subido](./)   |
+|              |          |            |                |
 | [En proceso](https://youtube.com/playlist?list=PL9Lgme4PR4XAJn7GkXBBTpnxWRGyQGMPU)   | python   | `básico`   | [Subido](./)   |
 | No creado    | python   | `medio`    | [Subido](./)   |
 | No creado    | python   | `avanzado` | [Subido](./)   |
-|              |          |            | [Subido](./)   |
+|              |          |            |   |
 | No creado    | bash     | `básico`   | [Subido](./)   |
 | No creado    | bash     | `medio`    | [Subido](./)   |
 | No creado    | bash     | `avanzado` | [Subido](./)   |
-|              |          |            | [Subido](./)   |
+|              |          |            |   |
 | No creado    | gbscript | `básico`   | [Subido](./)   |
 
 * * *
