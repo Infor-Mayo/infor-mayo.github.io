@@ -26,4 +26,4 @@ En resumen, para desconectarse de la aplicación móvil de Transfer Móvil, siga
 
 #### ¡Gracias por visitar mi página web!
 
-[Atras](./)  
+[Atras](./1-curso-completo-transfermovil.md)  
