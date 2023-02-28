@@ -17,30 +17,30 @@ En mi canal, encontrarás una serie de videos detallados que te guiarán paso a 
 
 Si quieres aprender a usar Transfermóvil para hacer tus operaciones financieras de forma rápida y segura, ¡no dudes en revisar esta lista de reproducción!
 
-## Cursos y Futuros cursos
+## Videos de la lista
 
 | Nombre       | link tb   | Artículo      |
 |:-------------|:---------|:--------------|
-| Cómo descargar la última versión de TransferMóvil en Cuba | [`1️`](https://youtu.be/Ps8l2zVXyP0)   | [🖥️](./listas/)   |
-| Cómo autenticarse en la aplicación TransferMóvil     |[`2️`](https://youtu.be/4BoEC5cykZw)|[🖥️](./listas/)  |
+| Cómo descargar la última versión de TransferMóvil en Cuba | [`2`](https://youtu.be/Ps8l2zVXyP0)   | [🖥️](./listas/)   |
+| Cómo autenticarse en la aplicación TransferMóvil     |[`2`](https://youtu.be/4BoEC5cykZw)|[🖥️](./listas/)  |
 | Cómo desconectarse de TransferMóvil de forma segura |[`3`](https://youtu.be/Gt0ldgh80Do)|[🖥️](./listas/)  |
 | Consulta de saldo en TransferMóvil: una guía paso a paso |[`4`](https://youtu.be/HpozyMhDbDE)| [🖥️](./listas/)   |
-| Cómo consultar tus facturas en TransferMóvil |[`5`](,/)| [🙅‍♂️](./)   |
-| Revisa tus últimas operaciones en TransferMóvil |[`6`](,/)| [🙅‍♂️](./)   |
-| La pantalla de inicio de TransferMóvil: todo lo que necesitas saber |[`7`](,/)| [🙅‍♂️](./)   |
-| Cómo consultar tus límites en TransferMóvil |[`8`](,/)| [🙅‍♂️](./)   |
-| La tasa de cambio en TransferMóvil: ¿cómo funciona? |[`9`](,/)| [♂🙅‍♂️](./)   |
+| Cómo consultar tus facturas en TransferMóvil |[`5`](./)| [🙅‍♂️](./)   |
+| Revisa tus últimas operaciones en TransferMóvil |[`6`](./)| [🙅‍♂️](./)   |
+| La pantalla de inicio de TransferMóvil: todo lo que necesitas saber |[`7`](./)| [🙅‍♂️](./)   |
+| Cómo consultar tus límites en TransferMóvil |[`8`](./)| [🙅‍♂️](./)   |
+| La tasa de cambio en TransferMóvil: ¿cómo funciona? |[`9`](,/)| [🙅‍♂️](./)   |
 | Cómo transferir efectivo a otras personas a través de TransferMóvil |[`10`](,/)| [🙅‍♂️](./)   |
-| Paga tus facturas de teléfono con TransferMóvil|[`11`](,/)| [🙅‍♂️](./)   |
-| Cómo pagar tu factura eléctrica con TransferMóvil|[`12`](,/)| [🙅‍♂️](./)   |
-| Cómo pagar la factura de agua desde TransferMóvil: una guía paso a paso|[`13`](,/)| [🙅‍♂️](./)   |
-| Cómo recargar tu móvil desde TransferMóvil: una guía fácil y rápida|[`14`](,/)| [🙅‍♂️](./)   |
-| Nauta Hogar desde TransferMóvil: una guía para disfrutar de Internet en casa|[`15`](,/)| [🙅‍♂️](./)   |
-| Cómo hacer giros desde TransferMóvil: envía y recibe dinero al instante|[`16`](,/)| [🙅‍♂️](./)   |
-| JovenCub desde TransferMóvil: descubre todo lo que puedes hacer con esta app|[`17`](,/)| [🙅‍♂️](./)   |
-| Cómo crear tu tarjeta MLC desde TransferMóvil: una guía completa|[`18`](,/)| [🙅‍♂️](./)   |
-| |[`19`](,/)| [🙅‍♂️](./)   |
-| Gestión de cuentas en TransferMóvil: Cómo agregar y eliminar cuentas bancarias|[`20`](,/)| [🙅‍♂️](./)   |
+| Paga tus facturas de teléfono con TransferMóvil|[`11`](./)| [🙅‍♂️](./)   |
+| Cómo pagar tu factura eléctrica con TransferMóvil|[`12`](./)| [🙅‍♂️](./)   |
+| Cómo pagar la factura de agua desde TransferMóvil: una guía paso a paso|[`13`](./)| [🙅‍♂️](./)   |
+| Cómo recargar tu móvil desde TransferMóvil: una guía fácil y rápida|[`14`](./)| [🙅‍♂️](./)   |
+| Nauta Hogar desde TransferMóvil: una guía para disfrutar de Internet en casa|[`15`](./)| [🙅‍♂️](./)   |
+| Cómo hacer giros desde TransferMóvil: envía y recibe dinero al instante|[`16`](./)| [🙅‍♂️](./)   |
+| JovenCub desde TransferMóvil: descubre todo lo que puedes hacer con esta app|[`17`](./)| [🙅‍♂️](./)   |
+| Cómo crear tu tarjeta MLC desde TransferMóvil: una guía completa|[`18`](./)| [🙅‍♂️](./)   |
+| |[`19`](./)| [🙅‍♂️](./)   |
+| Gestión de cuentas en TransferMóvil: Cómo agregar y eliminar cuentas bancarias|[`20`](./)| [🙅‍♂️](./)   |
 
 Recuerda suscribirte a mi canal para estar al tanto de las actualizaciones y nuevos videos. 
 
