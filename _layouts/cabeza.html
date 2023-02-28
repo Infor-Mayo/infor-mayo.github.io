@@ -45,9 +45,9 @@
             <li><a href="#">Contacto</a></li>
           </ul>
         </nav>
-        <a id="logo" href="{{ '/' | relative_url }}">
+        <div id="logo">
           <img src="./assets/images/image.png" alt="Logo de la empresa">
-        </a>
+        </div>
         <h1 style="text-align: center;">{{ site.title | default: site.github.repository_name }}</h1>
         <h2 style="text-align: center;">{{ site.description | default: site.github.project_tagline }}</h2>
         <h3 style="text-align: center;">Tu eslogan aquí</h3>
@@ -68,3 +68,4 @@
 
   </body>
 </html>
+
