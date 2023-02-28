@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "es-ES" }}">
+<html lang="{{ site.lang | default: "en-US" }}">
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,216 +7,43 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
     {% seo %}
-    <style>
-      #logo-and-menu {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      #logo-and-menu #menu-toggle {
-        display: none;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 50px;
-        height: 50px;
-        cursor: pointer;
-      }
-
-      #logo-and-menu #menu-toggle span {
-        display: block;
-        width: 20px;
-        height: 2px;
-        margin: 5px;
-        background-color: black;
-        transition: all 0.3s ease-in-out;
-      }
-
-      #logo-and-menu #menu-toggle.active span:nth-child(2) {
-        transform: rotate(45deg) translate(5px, 5px);
-      }
-
-      #logo-and-menu #menu-toggle.active span:nth-child(3) {
-        opacity: 0;
-      }
-
-      #logo-and-menu #menu-toggle.active span:nth-child(1) {
-        transform: rotate(-45deg) translate(5px, -5px);
-      }
-
-      nav ul {
-        display: flex;
-        flex-direction: column;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: white;
-        width: 100%;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease-in-out;
-        z-index: 1;
-      }
-
-      nav ul li {
-        margin: 10px;
-      }
-
-      nav ul li a {
-        display: block;
-        padding: 10px;
-        color: black;
-        text-decoration: none;
-        text-align: center;
-      }
-
-      #logo-and-menu #menu-toggle.active + nav ul {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      #profile-pic {
-        display: block;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin-left: auto;
-      }
-
-      #profile-pic img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      #a-title {
-        text-align: center;
-      }
-    </style>
   </head>
+
   <body>
-  <header>
-    <div class="container">
-      <div id="logo-and-menu">
-        <a id="a-title" href="{{ '/' | relative_url }}">
-          <h1>{{ site.title | default: site.github.repository_name }}</h1>
-        </a>
-        <button id="menu-button"><i class="fas fa-bars"></i></button>
-        <nav id="main-menu">
+
+    <header>
+      <div class="container">
+        <nav>
           <ul>
-            <li><a href="#">Menu Item 1</a></li>
-            <li><a href="#">Menu Item 2</a></li>
-            <li><a href="#">Menu Item 3</a></li>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Acerca de</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Contacto</a></li>
           </ul>
         </nav>
+        <a id="a-title" href="{{ '/' | relative_url }}">
+          <img src="./assets/images/image.png" alt="Logo de la empresa">
+        </a>
+        <h1 style="text-align: center;">{{ site.title | default: site.github.repository_name }}</h1>
+        <h2 style="text-align: center;">{{ site.description | default: site.github.project_tagline }}</h2>
+        <h3 style="text-align: center;">Tu eslogan aquí</h3>
+        <section id="downloads">
+          {% if site.show_downloads %}
+            <a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>
+            <a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a>
+          {% endif %}
+          <a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+          <a href="{{ https://google.com }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
       </div>
-      <a id="profile-pic" href="#"><img src="./assets/images/image.png" alt="Profile Picture"></a>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        {{ content }}
+      </section>
     </div>
-  </header>
-  <div class="container">
-    <section id="main_content">
-      {{ content }}
-    </section>
-  </div>
-  <script src="{{ '/assets/js/jquery.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
-  <script src="{{ '/assets/js/bootstrap.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
-  <script>
-    $(document).ready(function() {
-      $('#menu-button').click(function() {
-        $('#main-menu').slideToggle(400);
-      });
-    });
-  </script>
-  <style>
-    #logo-and-menu {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
 
-    #a-title {
-      text-decoration: none;
-    }
-
-    #a-title h1 {
-      margin: 0;
-      text-align: center;
-    }
-
-    #menu-button {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 2rem;
-      color: white;
-      cursor: pointer;
-    }
-
-    #main-menu {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #main-menu ul {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    #main-menu ul li {
-      margin: 0 10px;
-    }
-
-    #main-menu ul li a {
-      display: block;
-      padding: 10px;
-      color: white;
-      text-decoration: none;
-    }
-
-    #profile-pic {
-      display: block;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin-left: auto;
-    }
-
-    #profile-pic img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    @media (max-width: 768px) {
-      #menu-button {
-        display: block;
-      }
-
-      #main-menu {
-        display: none;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background-color: black;
-        padding: 10px;
-        box-sizing: border-box;
-      }
-
-      #main-menu ul {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
-</body>
+  </body>
 </html>
+
