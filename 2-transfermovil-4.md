@@ -21,7 +21,7 @@ Con esto, ya sabes cómo puedes consultar el saldo de tu tarjeta desde la aplica
 ### Contacto
 
 [Curso completo de transfermóvil en mi canal de YouTube](https://youtube.com/playlist?list=PL9Lgme4PR4XDbaGv87gfR5AupKot9yf5Z).
-[GitHub](https://github.com/MaYbreYpro).
+[GitHub](https://github.com/Infor-Mayo).
 [Youtube](https://youtube.com/@Infor-Mayo).
 
 #### ¡Gracias por visitar mi página web!
