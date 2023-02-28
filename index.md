@@ -6,7 +6,7 @@ layout: default
 
 # Bienvenidos a mi canal de YouTube
 
-¡Hola a todos! Mi nombre es Mario Artola y soy el creador del canal de YouTube [Infor Mayo](https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q). Me encanta compartir contenido interesante y entretenido con mis seguidores, y espero que disfrutes mi contenido tanto como yo disfruto creándolo.
+¡Hola a todos! Mi nombre es [Mario Artola](https://www.facebook.com/mario.artola.524) y soy el creador del canal de YouTube [Infor Mayo](https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q). Me encanta compartir contenido interesante y entretenido con mis seguidores, y espero que disfrutes mi contenido tanto como yo disfruto creándolo.
 
 ## Acerca de mi canal
 
@@ -43,7 +43,7 @@ Para estar al tanto de todas las novedades, ¡asegúrate de seguirme en redes so
 |              |          |            |   |
 | No creado    | gbscript | `básico`   | [web ✊](./)   |
 | | | | |
-| [Subiendo](https://youtube.com/playlist?list=PL9Lgme4PR4XDbaGv87gfR5AupKot9yf5Z)       | Transfermovil | `Completo`   | [web 👍](./curso-basico-python.md)   |
+| [Subiendo](https://youtube.com/playlist?list=PL9Lgme4PR4XDbaGv87gfR5AupKot9yf5Z)      | Transfermovil | `Completo`| [web 👍](./curso-basico-python.md)   |
 | No creado    | Enzona      | `medio`    | [web ✊](./)   |
 
 
