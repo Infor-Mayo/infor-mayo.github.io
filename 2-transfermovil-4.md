@@ -26,4 +26,4 @@ Con esto, ya sabes cómo puedes consultar el saldo de tu tarjeta desde la aplica
 
 #### ¡Gracias por visitar mi página web!
 
-[Atras](./)  
+[Atras](./1-curso-completo-transfermovil.md)  
