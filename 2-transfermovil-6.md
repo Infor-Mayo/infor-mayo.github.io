@@ -28,4 +28,4 @@ De esta manera, podemos mantenernos al tanto de nuestras transacciones bancarias
 
 #### ¡Gracias por visitar mi página web!
 
-[Atras](./) 
+[Atras](./1-curso-completo-transfermovil.md) 
