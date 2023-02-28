@@ -27,21 +27,21 @@ Para estar al tanto de todas las novedades, ¡asegúrate de seguirme en redes so
 
 ## Cursos y Futuros cursos
 
-| Estado       | Cursos   | nivel      | Articulo      |
+| Estado       | Cursos   | nivel      | Artículo      |
 |:-------------|:---------|:-----------|
 | [Subido](https://youtube.com/playlist?list=PL9Lgme4PR4XA6vEINnWImbZq2kXyRPgev)       | c++      | `básico`   | [Subido](./)   |
-| No creado    | c++      | `medio`    |
-| No creado    | c++      | `avanzado` |
-|              |          |            |
-| [En proceso](https://youtube.com/playlist?list=PL9Lgme4PR4XAJn7GkXBBTpnxWRGyQGMPU)   | python   | `básico`   |
-| No creado    | python   | `medio`    |
-| No creado    | python   | `avanzado` |
-|              |          |            |
-| No creado    | bash     | `básico`   |
-| No creado    | bash     | `medio`    |
-| No creado    | bash     | `avanzado` |
-|              |          |            |
-| No creado    | gbscript | `básico`   |
+| No creado    | c++      | `medio`    | [Subido](./)   |
+| No creado    | c++      | `avanzado` | [Subido](./)   |
+|              |          |            | [Subido](./)   |
+| [En proceso](https://youtube.com/playlist?list=PL9Lgme4PR4XAJn7GkXBBTpnxWRGyQGMPU)   | python   | `básico`   | [Subido](./)   |
+| No creado    | python   | `medio`    | [Subido](./)   |
+| No creado    | python   | `avanzado` | [Subido](./)   |
+|              |          |            | [Subido](./)   |
+| No creado    | bash     | `básico`   | [Subido](./)   |
+| No creado    | bash     | `medio`    | [Subido](./)   |
+| No creado    | bash     | `avanzado` | [Subido](./)   |
+|              |          |            | [Subido](./)   |
+| No creado    | gbscript | `básico`   | [Subido](./)   |
 
 * * *
 
