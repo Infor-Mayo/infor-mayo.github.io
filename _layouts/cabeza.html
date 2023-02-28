@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "es-ES" }}">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    {% include head-custom.html %}
+    {% seo %}
+  </head>
+  <body>
+    <div id="background-carousel">
+      <img src="./assets/images/pexels-christina-morillo-1181317.jpg">
+      <img src="./assets/images/pexels-harsch-shivam-2007647.jpg">
+      <img src="./assets/images/pexels-shvets-production-7562114.jpg">
+    </div>
+    <header>
+      <div class="container">
+        <div id="logo-and-menu">
+          <a id="a-title" href="{{ '/' | relative_url }}">
+            <h1>{{ site.title | default: site.github.repository_name }}</h1>
+          </a>
+          <nav>
+            <ul>
+              <li><a href="#">Menu Item 1</a></li>
+              <li><a href="#">Menu Item 2</a></li>
+              <li><a href="#">Menu Item 3</a></li>
+            </ul>
+          </nav>
+        </div>
+        <a id="profile-pic" href="#"><img src="./assets/images/image.png" alt="Profile Picture"></a>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        {{ content }}
+      </section>
+    </div>
+
+    <script src="{{ '/assets/js/jquery.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <script src="{{ '/assets/js/bootstrap.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <script>
+      $(document).ready(function() {
+        $("#background-carousel").carousel({
+          interval: 5000,
+          pause: "hover"
+        });
+      });
+    </script>
+
+    <style>
+      #background-carousel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+
+      #background-carousel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      #logo-and-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav ul li {
+        margin: 0 10px;
+      }
+
+      nav ul li a {
+        display: block;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+      }
+
+      #profile-pic {
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-left: auto;
+      }
+
+      #profile-pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </body>
+</html>
