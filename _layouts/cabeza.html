@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
@@ -7,115 +8,117 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
 
-{% seo %}
-<style>
-  /* Estilos para el logo y el menú */
-  .logo {
-    display: block;
-    width: 150px;
-    height: 70px;
-    background: url('./assets/images/image.png') no-repeat center center;
-    background-size: contain;
-    cursor: pointer;
-  }
-  
-  .menu {
-    display: none;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .menu a {
-    display: block;
-    color: black;
-    padding: 15px 16px;
-    text-decoration: none;
-    font-size: 20px;
-  }
-  
-  .menu a:hover {
-    background-color: #f1f1f1;
-  }
-  
-  /* Estilos para el contenido de la página */
-  .container {
-    max-width: 800px;
-    margin: auto;
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-  }
-  
-  h2 {
-    font-size: 24px;
-    margin-top: 0;
-  }
-  
-  /* Estilos para la nueva sección de la página */
-  #header {
-    background-color: #f9f9f9;
-    padding: 20px 0;
-  }
-  
-  #header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  #header h1 {
-    font-size: 28px;
-    margin: 0;
-  }
-  
-  #header h2 {
-    font-size: 18px;
-    margin: 0;
-  }
-  
-  #header nav {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-  }
-  
-  #header nav a {
-    display: block;
-    color: black;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 16px;
-  }
-  
-  #header nav a:hover {
-    background-color: #ddd;
-  }
-</style>
+    {% seo %}
+
+    <style>
+      /* Estilos para el logo y el menú */
+      .logo {
+        display: block;
+        width: 150px;
+        height: 70px;
+        background: url('./assets/images/image.png') no-repeat center center;
+        background-size: contain;
+        cursor: pointer;
+      }
+
+      .menu {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #f9f9f9;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+
+      .menu a {
+        display: block;
+        color: black;
+        padding: 20px 16px; /* aumenta el espacio vertical y horizontal */
+        text-decoration: none;
+        font-size: 20px;
+      }
+
+      .menu a:hover {
+        background-color: #f1f1f1;
+      }
+
+      /* Estilos para el contenido de la página */
+      .container {
+        max-width: 800px;
+        margin: auto;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        font-size: 24px;
+        margin-top: 0;
+      }
+
+      /* Estilos para la nueva sección de la página */
+      #header {
+        background-color: #f9f9f9;
+        padding: 20px 0;
+      }
+
+      #header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      #header h1 {
+        font-size: 28px;
+        margin: 0;
+      }
+
+      #header h2 {
+        font-size: 18px;
+        margin: 0;
+      }
+
+      #header nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      #header nav a {
+        display: block;
+        color: black;
+        padding: 10px;
+        text-decoration: none;
+        font-size: 16px;
+      }
+
+      #header nav a:hover {
+        background-color: #ddd;
+      }
+    </style>
   </head>
 
   <body>
-
     <div id="header">
       <div class="container">
         <div>
           <h1>Mi Página Web</h1>
           <h2>El mejor sitio para aprender y compartir conocimiento</h2>
         </div>
+        <div class="logo"></div>
         <nav class="menu">
           <a href="#">Inicio</a>
           <a href="#">Acerca de</a>
           <a href="#">Contacto</a>
         </nav>
-        <div class="logo"></div>
       </div>
-    </div
+    </div>
+
+    <!-- Resto del contenido de la página -->
+  </body>
+</html>
