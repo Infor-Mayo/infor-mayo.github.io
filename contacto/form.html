@@ -6,15 +6,28 @@
 	<title>Contacto</title>
 </head>
 <body>
-	<h1>Contacto por correo electrónico</h1>
+	<h1>Contáctame</h1>
 	<form>
+		<label for="nombre">Nombre:</label>
+		<input type="text" id="nombre" name="nombre" required>
+		<br>
 		<label for="asunto">Asunto:</label>
 		<input type="text" id="asunto" name="asunto" required>
 		<br>
 		<label for="mensaje">Mensaje:</label>
 		<textarea id="mensaje" name="mensaje" required></textarea>
 		<br>
-		<a href="mailto:marioartola811@gmail.com?subject=Enlace HTML&body=Mensaje de prueba">¡Da clic aquí para enviarnos un correo!</a>
+		<button type="button" onclick="enviarCorreo()">Enviar</button>
 	</form>
+	
+	<script>
+		function enviarCorreo() {
+			var asunto = encodeURIComponent(document.getElementById("asunto").value);
+			var mensaje = encodeURIComponent(document.getElementById("mensaje").value);
+			var correo = "marioartola811@gmail.com";
+			var enlace = "mailto:" + correo + "?subject=" + asunto + "&body=" + mensaje;
+			window.open(enlace);
+		}
+	</script>
 </body>
 </html>
