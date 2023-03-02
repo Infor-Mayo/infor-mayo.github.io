@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: cabeza
 ---
 
 ## Cómo pagar la factura de agua desde TransferMóvil: una guía paso a paso
