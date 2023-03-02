@@ -1,5 +1,5 @@
 ---
-layout: cabeza1
+layout: cabeza
 ---
 
 ## titulo
