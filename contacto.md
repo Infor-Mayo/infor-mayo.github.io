@@ -1,3 +1,7 @@
+---
+layout: cabeza2
+---
+
 ## Contáctanos
 
 ¡Bienvenido a nuestra página de contacto! Si tienes alguna pregunta, comentario o sugerencia, por favor no dudes en ponerte en contacto con nosotros. Estamos aquí para ayudarte.
