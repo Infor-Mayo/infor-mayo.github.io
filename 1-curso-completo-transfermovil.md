@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: cabeza1
 ---
 
 ## Curso completo de Transfermóvil en YouTube
