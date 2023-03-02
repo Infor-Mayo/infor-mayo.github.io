@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: cabeza
 ---
 
 ## La tasa de cambio en TransferMóvil: ¿cómo funciona?
