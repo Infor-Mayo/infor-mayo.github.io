@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: cabeza2
 ---
 
 ## Consulta de saldo en TransferMóvil: una guía paso a paso
