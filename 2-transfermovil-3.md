@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: cabeza1
 ---
 
 ## Cómo desconectarse de la aplicación móvil de Transfer Móvil
