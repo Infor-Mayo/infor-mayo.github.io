@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: cabeza
 ---
 
 ## Cómo pagar tu factura eléctrica con TransferMóvil
