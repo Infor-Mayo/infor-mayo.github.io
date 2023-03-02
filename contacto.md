@@ -9,19 +9,19 @@ Redes Sociales
 
 ## Puedes encontrarnos en las siguientes redes sociales:
 
-# [Facebook:](https://www.facebook.com/groups/430222984636303)
+### [Facebook:](https://www.facebook.com/groups/430222984636303)
 
 Síguenos en nuestra página de Facebook para estar al tanto de nuestras últimas noticias, promociones y actualizaciones.
 
-# Twitter:
+### [Twitter:](#)
 
 Síguenos en @nuestrousername para obtener noticias en tiempo real, actualizaciones y para conectarte con otros seguidores.
 
-# [Instagram:](https://www.instagram.com/infor_mayo/) 
+### [Instagram:](https://www.instagram.com/infor_mayo/) 
 
 Síguenos en @nuestroperfil para ver nuestras fotos y compartir las tuyas.
 
-# [YouTube:](https://youtube.com/@Infor-Mayo) 
+### [YouTube:](https://youtube.com/@Infor-Mayo) 
 
 Suscríbete a nuestro canal de YouTube para ver nuestros videos, tutoriales y mucho más.
 
