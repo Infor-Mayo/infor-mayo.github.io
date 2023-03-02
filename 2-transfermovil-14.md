@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: cabeza
 ---
 
 ## Cómo recargar tu móvil desde TransferMóvil: una guía fácil y rápida
