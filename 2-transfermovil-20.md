@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: cabeza
 ---
 
 ## Gestión de cuentas en TransferMóvil: Cómo agregar y eliminar cuentas bancarias
