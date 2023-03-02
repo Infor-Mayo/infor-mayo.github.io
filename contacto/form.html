@@ -4,15 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Contacto</title>
-	<script>
-		function actualizarTexto(mensaje) {
-			document.getElementById("texto-contacto").textContent = mensaje;
-		}
-	</script>
 </head>
 <body>
-	<h1><span id="texto-contacto">Correo electrónico</span></h1>
-	<form method="post" action="./contacto/enviar.php" onsubmit="actualizarTexto(document.getElementById('mensaje').value)">
+	<h1>Contáctame</h1>
+	<form>
 		<label for="nombre">Nombre:</label>
 		<input type="text" id="nombre" name="nombre" required>
 		<br>
@@ -22,7 +17,18 @@
 		<label for="mensaje">Mensaje:</label>
 		<textarea id="mensaje" name="mensaje" required></textarea>
 		<br>
-		<input type="submit" value="Enviar">
+		<input type="button" value="Enviar" onclick="enviarCorreo()">
 	</form>
+	
+	<script>
+		function enviarCorreo() {
+			var nombre = document.getElementById("nombre").value;
+			var email = document.getElementById("email").value;
+			var mensaje = document.getElementById("mensaje").value;
+			var enlaceHTML = '<a href="mailto:' + email + '?subject=' + encodeURIComponent(mensaje) + '">¡Da clic aquí para enviarnos un correo!</a>';
+			document.write(enlaceHTML);
+		}
+	</script>
+	
 </body>
 </html>
