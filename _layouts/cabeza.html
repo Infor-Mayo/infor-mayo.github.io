@@ -13,16 +13,6 @@
 
     <header>
       <div class="container">
-        <div class="header-row">
-          <a id="a-title" href="{{ '/' | relative_url }}">
-            <img src="./assets/images/image.png" alt="Logo de la empresa">
-          </a>
-          <div class="header-info">
-            <h1>{{ site.title | default: site.github.repository_name }}</h1>
-            <h2>{{ site.description | default: site.github.project_tagline }}</h2>
-            <h3>Tu eslogan aquí</h3>
-          </div>
-        </div>
         <nav>
           <ul>
             <li><a href="#">Inicio</a></li>
@@ -31,6 +21,24 @@
             <li><a href="#">Contacto</a></li>
           </ul>
         </nav>
+        <div style="display: flex; align-items: center;">
+          <a id="a-title" href="{{ '/' | relative_url }}">
+            <img src="./assets/images/image.png" alt="Logo de la empresa" style="width: 60px;">
+          </a>
+          <div style="text-align: center; flex: 1;">
+            <h1>{{ site.title | default: site.github.repository_name }}</h1>
+            <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+            <h3>Tu eslogan aquí</h3>
+          </div>
+        </div>
+        <section id="downloads">
+          {% if site.show_downloads %}
+            <a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>
+            <a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a>
+          {% endif %}
+          <a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+          <a href="{{ https://google.com }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
       </div>
     </header>
 
@@ -41,53 +49,7 @@
     </div>
 
   </body>
-  <style>
-  .header-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .header-info {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: calc(100vh - 100px); /* 100px es la altura del encabezado */
-  }
-
-  .header-info h1,
-  .header-info h2,
-  .header-info h3 {
-    margin: 0;
-  }
-
-  #a-title img {
-    max-height: 50px;
-  }
-
-  nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    justify-content: space-between;
-  }
-
-  nav ul li {
-    margin: 0 10px;
-  }
-
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: calc(100vh - 100px);
-  }
-</style>
-
 </html>
+
 
 
