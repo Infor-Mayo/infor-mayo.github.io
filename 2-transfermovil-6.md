@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: cabeza
 ---
 
 ## Revisa tus últimas operaciones en TransferMóvil
