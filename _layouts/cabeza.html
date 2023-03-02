@@ -71,6 +71,26 @@ transition: color 0.3s;
 .social-media a:hover {
 color: #007bff;
 }
+ /* Estilos para el menú */
+      nav ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      nav ul li {
+        margin-right: 2rem;
+      }
+      /* Estilos para dispositivos móviles */
+      @media (max-width: 768px) {
+        nav ul {
+          flex-direction: column;
+        }
+        nav ul li {
+          margin-right: 0;
+          margin-bottom: 1rem;
+        }
+      }
 </style>
 </html>
 
