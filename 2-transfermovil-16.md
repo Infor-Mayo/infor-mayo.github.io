@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: cabeza
 ---
 
 ## Cómo hacer giros desde TransferMóvil: envía y recibe dinero al instante
