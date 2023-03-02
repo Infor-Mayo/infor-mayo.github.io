@@ -9,27 +9,33 @@ Redes Sociales
 
 ## Puedes encontrarnos en las siguientes redes sociales:
 
-    Facebook: Síguenos en nuestra página de Facebook para estar al tanto de nuestras últimas noticias, promociones y actualizaciones.
+# [Facebook:](https://www.facebook.com/groups/430222984636303)
 
-    Twitter: Síguenos en @nuestrousername para obtener noticias en tiempo real, actualizaciones y para conectarte con otros seguidores.
+Síguenos en nuestra página de Facebook para estar al tanto de nuestras últimas noticias, promociones y actualizaciones.
 
-    Instagram: Síguenos en @nuestroperfil para ver nuestras fotos y compartir las tuyas.
+# Twitter:
 
-    YouTube: Suscríbete a nuestro canal de YouTube para ver nuestros videos, tutoriales y mucho más.
+Síguenos en @nuestrousername para obtener noticias en tiempo real, actualizaciones y para conectarte con otros seguidores.
+
+# [Instagram:](https://www.instagram.com/infor_mayo/) 
+
+Síguenos en @nuestroperfil para ver nuestras fotos y compartir las tuyas.
+
+# [YouTube:](https://youtube.com/@Infor-Mayo) 
+
+Suscríbete a nuestro canal de YouTube para ver nuestros videos, tutoriales y mucho más.
 
 ## Formulario de contacto
 
 Si prefieres contactarnos directamente, por favor utiliza nuestro formulario de contacto. Nos pondremos en contacto contigo lo antes posible.
 
-[Formulario de contacto]
+[Formulario de contacto](#)
 
 ## Nuestra dirección
 
 Si prefieres visitarnos en persona, puedes encontrarnos en la siguiente dirección:
 
-123 Calle Principal
-Ciudad, Estado
-Código postal
+La Habana Cuba
 
 ## Horario de atención
 
