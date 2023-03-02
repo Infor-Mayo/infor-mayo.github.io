@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: cabeza
 ---
 
 ## JovenCub desde TransferMóvil: descubre todo lo que puedes hacer con esta app
