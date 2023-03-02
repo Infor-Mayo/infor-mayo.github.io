@@ -10,14 +10,16 @@
   </head>
 
   <body>
+
     <header>
       <div class="container">
-        <div class="header-content">
+        <div class="header-row">
           <a id="a-title" href="{{ '/' | relative_url }}">
-            <img src="./assets/images/image.png" alt="Logo de la empresa">
+            <img src="ruta-de-tu-logotipo" alt="Logo de la empresa">
           </a>
-          <div class="title-slogan">
+          <div class="header-info">
             <h1>{{ site.title | default: site.github.repository_name }}</h1>
+            <h2>{{ site.description | default: site.github.project_tagline }}</h2>
             <h3>Tu eslogan aquí</h3>
           </div>
         </div>
@@ -32,62 +34,39 @@
       </div>
     </header>
 
+    <div class="container">
+      <section id="main_content">
+        {{ content }}
+      </section>
+    </div>
+
   </body>
- <style>
-  header {
+  <style>
+  .header-row {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-  }
-
-  .container {
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
   }
 
-  #a-title {
-    display: flex;
-    align-items: center;
-    text-align: left;
-  }
-
-  #a-title img {
-    height: 50px;
-    margin-left: 10px;
-  }
-
-  .title-slogan {
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  .side-menu {
+  .header-info {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
   }
 
-  .side-menu ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
+  nav ul {
     display: flex;
-    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
     justify-content: space-between;
   }
 
-  .side-menu li {
-    margin: 10px;
-  }
-
-  .side-menu a {
-    text-decoration: none;
-    color: #000;
+  nav ul li {
+    margin: 0 10px;
   }
 </style>
-
 </html>
+
 
