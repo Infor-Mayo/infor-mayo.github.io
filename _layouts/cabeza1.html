@@ -10,19 +10,19 @@
     <style>
       body {
         background-image: url("./assets/images/background.jpg");
-        background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
+        transition: background-image 0.5s;
       }
-
-      #carouselExampleControls {
-        max-width: 400px;
-        margin: 0 auto;
+      .container {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 1rem;
+        border-radius: 0.5rem;
       }
     </style>
   </head>
 
   <body>
-
     <header>
       <div class="container">
         <div style="display: flex; align-items: center;">
@@ -43,36 +43,33 @@
             <li><a href="#">Contacto</a></li>
           </ul>
         </nav>
+        <div style="display: flex; justify-content: center;">
+          <button onclick="changeBackground()">Cambiar fondo</button>
+        </div>
       </div>
     </header>
 
     <div class="container">
       <section id="main_content">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="./assets/images/carousel-1.jpg" class="d-block w-100" alt="Carousel 1">
-            </div>
-            <div class="carousel-item">
-              <img src="./assets/images/carousel-2.jpg" class="d-block w-100" alt="Carousel 2">
-            </div>
-            <div class="carousel-item">
-              <img src="./assets/images/carousel-3.jpg" class="d-block w-100" alt="Carousel 3">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-          </button>
-        </div>
+      {{ content }}
       </section>
     </div>
 
+    <script>
+      const images = ['./assets/images/background.jpg'];
+      let currentImageIndex = 0;
+
+      function changeBackground() {
+        currentImageIndex++;
+        if (currentImageIndex === images.length) {
+          currentImageIndex = 0;
+        }
+        document.body.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+      }
+    </script>
+
+    <script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/main.js?v=' | append: site.github.build_revision | relative_url }}"></script>
   </body>
 </html>
-
 
