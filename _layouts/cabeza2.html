@@ -126,7 +126,7 @@
   </body>
   <footer>
   <div class="container">
-    <p>Todos los derechos reservados &copy; {{ site.title }}</p>
+    <p>Todos los derechos reservados &copy; {{ site.title }} {{ site.date | date: '%Y' }}</p>
     <div class="social-media">
       <a href="#"><i class="fab fa-facebook"></i></a>
       <a href="#"><i class="fab fa-twitter"></i></a>
@@ -144,15 +144,15 @@ footer {
 }
 
 .social-media a {
-  display: inline-block;
-  margin-right: 1rem;
-  color: #333;
-  font-size: 1.5rem;
-  transition: color 0.3s;
+display: inline-block;
+margin-right: 1rem;
+color: #333;
+font-size: 1.5rem;
+transition: color 0.3s;
 }
 
 .social-media a:hover {
-  color: #007bff;
+color: #007bff;
 }
 </style>
 </html>
