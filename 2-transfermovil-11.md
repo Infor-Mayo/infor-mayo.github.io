@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: cabeza
 ---
 
 ## Paga tus facturas de teléfono con TransferMóvil
