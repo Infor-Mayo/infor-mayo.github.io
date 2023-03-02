@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: cabeza
 ---
 
 ## Cómo transferir efectivo a otras personas a través de TransferMóvil
