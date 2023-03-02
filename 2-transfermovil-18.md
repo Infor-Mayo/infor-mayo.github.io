@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: cabeza
 ---
 
 ## Cómo crear tu tarjeta MLC desde TransferMóvil: una guía completa
