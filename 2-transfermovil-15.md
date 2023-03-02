@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: cabeza
 ---
 
 ## Nauta Hogar desde TransferMóvil: una guía para disfrutar de Internet en casa
