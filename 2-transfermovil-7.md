@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: cabeza
 ---
 
 ## La pantalla de inicio de TransferMóvil: todo lo que necesitas saber
