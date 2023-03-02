@@ -6,7 +6,7 @@ layout: cabeza2
 
 # Bienvenidos a mi canal de YouTube
 
-¡Hola a todos! Mi nombre es [Mario Artola](https://www.facebook.com/mario.artola.524) y soy el creador del canal de YouTube [Infor Mayo](https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q). Me encanta compartir contenido interesante y entretenido con mis seguidores, y espero que disfrutes mi contenido tanto como yo disfruto creándolo.
+¡Hola a todos! Mi nombre es [Mario Artola](https://www.facebook.com/mario.artola.524) y soy el creador del canal de YouTube [Infor Mayo](https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q?sub_confirmation=1). Me encanta compartir contenido interesante y entretenido con mis seguidores, y espero que disfrutes mi contenido tanto como yo disfruto creándolo.
 
 ## Acerca de mi canal
 
@@ -21,7 +21,7 @@ No te pierdas ningún video. ¡Suscríbete a mi canal de YouTube hoy mismo y ase
 Para estar al tanto de todas las novedades, ¡asegúrate de seguirme en redes sociales! Puedes encontrarme en:
 
 - [Twitter](enlace a tu cuenta de Twitter)
-- [Youtube](https://www.youtube.com/@infor-Mayo/).
+- [Youtube](https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q?sub_confirmation=1).
 - [Instagram](https://www.instagram.com/infor_mayo)
 - [Facebook](https://www.facebook.com/groups/430222984636303)
 
