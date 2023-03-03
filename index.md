@@ -27,7 +27,7 @@ Para estar al tanto de todas las novedades, ¡asegúrate de seguirme en redes so
 
 ## Cursos y Futuros cursos
 
-| Estado       | Cursos   | nivel      | Artículo      |
+| Estado       | Cursos   | Nivel      | Linck      |
 |:-------------|:---------|:-----------|:--------------|
 | [Subido](https://youtube.com/playlist?list=PL9Lgme4PR4XA6vEINnWImbZq2kXyRPgev)       | c++      | `básico`   | [🔗👍](./1-curso-basico-c++.md)   |
 | No creado    | c++      | `medio`    | [🔗🙅‍♂️](./)   |
