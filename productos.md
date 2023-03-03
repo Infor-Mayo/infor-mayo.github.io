@@ -2,10 +2,10 @@
 layout: cabeza2
 ---
 
-## Entre los productos disponibles estan:
+## Entre los productos disponibles estñan:
 
-### [Cifrado Cesar:](./cifrado-cesar/)
+  ### [Cifrado Cesar:](./cifrado-cesar/)
 
-### [Generador de contraseñas:](./generador-contra/)
+  ### [Generador de contraseñas:](./generador-contra/)
 
 ¡Gracias por visitar nuestros productos! Esperamos haber sido de ayuda.
