@@ -10,6 +10,8 @@ layout: cabeza2
 
 ### [Divición en galera:](./operaciones-ninos/divicion_galera.html)
 
+### [Multiplicasion paso a paso:](./operaciones-ninos/multiplicasion.html)
+
 ### Conversor de colores:
 
   [CMYK](./convercion-de-colores/colores-CMYK.html)
