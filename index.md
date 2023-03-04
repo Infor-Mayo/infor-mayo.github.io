@@ -20,7 +20,7 @@ No te pierdas ningún video. ¡Suscríbete a mi canal de YouTube hoy mismo y ase
 
 Para estar al tanto de todas las novedades, ¡asegúrate de seguirme en redes sociales! Puedes encontrarme en:
 
-- [Twitter](enlace a tu cuenta de Twitter)
+- [Twitter](https://twitter.com/MarioArtola15) 
 - [Youtube](https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q?sub_confirmation=1).
 - [Instagram](https://www.instagram.com/infor_mayo)
 - [Facebook](https://www.facebook.com/groups/430222984636303)
