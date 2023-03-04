@@ -13,13 +13,13 @@ Redes Sociales
 
 Síguenos en nuestra página de Facebook para estar al tanto de nuestras últimas noticias, promociones y actualizaciones.
 
-### [Twitter:](#)
+### [Twitter:]([#](https://twitter.com/MarioArtola15))
 
-Síguenos en @nuestrousername para obtener noticias en tiempo real, actualizaciones y para conectarte con otros seguidores.
+Síguenos en @MarioArtola15 para obtener noticias en tiempo real, actualizaciones y para conectarte con otros seguidores.
 
 ### [Instagram:](https://www.instagram.com/infor_mayo/) 
 
-Síguenos en @nuestroperfil para ver nuestras fotos y compartir las tuyas.
+Síguenos en @infor_mayo para ver nuestras fotos y compartir las tuyas.
 
 ### [YouTube:](https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q?sub_confirmation=1) 
 
