@@ -12,6 +12,11 @@ layout: cabeza2
 
 ### [Multiplicasion paso a paso:](./operaciones-ninos/multiplicasion.html)
 
+### MCM:
+
+  [OPCION1](./operaciones-ninos/mcm.html)
+  [OPCION2](./operaciones-ninos/mcm1.html)
+
 ### Conversor de colores:
 
   [CMYK](./convercion-de-colores/colores-CMYK.html)
