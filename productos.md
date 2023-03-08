@@ -25,5 +25,7 @@ layout: cabeza2
   [HSL](./convercion-de-colores/colores-hsl.html)
   [RGB](./convercion-de-colores/colores-rgb.html)
   [RGBA](./convercion-de-colores/colores-rgba.html)
+  
+### [Traductor](./Traductor-de-Texto/traductor.html)
 
 ¡Gracias por visitar nuestros productos! Esperamos haber sido de ayuda. 
