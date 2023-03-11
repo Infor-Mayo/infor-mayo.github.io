@@ -32,4 +32,6 @@ layout: cabeza2
 
 ### [Calculadora web](./calculadora-web/)
 
+### [Tres en ralla](./tres-en-ralla/)
+
 ¡Gracias por visitar nuestros productos! Esperamos haber sido de ayuda. 
