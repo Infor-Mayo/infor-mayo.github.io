@@ -28,4 +28,6 @@ layout: cabeza2
   
 ### [Traductor](./Traductor-de-Texto/traductor.html)
 
+### [Gestor de tareas](https://infor-mayo.github.io/gestor-tareas/)
+
 ¡Gracias por visitar nuestros productos! Esperamos haber sido de ayuda. 
