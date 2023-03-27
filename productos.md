@@ -34,6 +34,6 @@ layout: cabeza2
 
 ### [Tres en ralla](./tres-en-ralla/)
 
-### [QR]./qrweb/)
+### [QR](./qrweb/)
 
 ¡Gracias por visitar nuestros productos! Esperamos haber sido de ayuda. 
