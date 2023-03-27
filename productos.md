@@ -34,8 +34,6 @@ layout: cabeza2
 
 ### [Tres en ralla](./tres-en-ralla/)
 
-### [Lector QR](https://infor-mayo.github.io/qrweb/lectorqr.html)
-
-### [Generador QR](https://infor-mayo.github.io/qrweb/generadorqr.html)
+### [QR]./qrweb/)
 
 ¡Gracias por visitar nuestros productos! Esperamos haber sido de ayuda. 
