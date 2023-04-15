@@ -36,4 +36,6 @@ layout: cabeza2
 
 ### [QR](./qrweb/) 
 
+### [Galeria de arte](./galeriaia/)
+
 ¡Gracias por visitar nuestros productos! Esperamos haber sido de ayuda. 
