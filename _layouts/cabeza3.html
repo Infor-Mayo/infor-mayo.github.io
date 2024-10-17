@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+  {% include head-custom.html %}
+  {% seo %}
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <a id="a-title" href="{{ '/' | relative_url }}">
+        <h1>{{ site.title | default: site.github.repository_name }}</h1>
+      </a>
+      <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+
+      <nav>
+        <ul id="menu">
+          <li><a href="{{ site.url }}/option1">Opción 1</a></li>
+          <li><a href="{{ site.url }}/option2">Opción 2</a></li>
+          <li>
+            <a href="{{ site.url }}/option3">Opción 3</a>
+            <ul class="submenu">
+              <li><a href="{{ site.url }}/option3/suboption1">Subopción 1</a></li>
+              <li><a href="{{ site.url }}/option3/suboption2">Subopción 2</a></li>
+            </ul>
+          </li>
+          <li><a href="{{ site.url }}/option4">Opción 4</a></li>
+        </ul>
+      </nav>
+
+      <section id="downloads">
+        {% if site.show_downloads %}
+          <a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>
+          <a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a>
+        {% endif %}
+        <a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+      </section>
+    </div>
+  </header>
+
+  <div class="container">
+    <section id="main_content">
+      {{ content }}
+    </section>
+  </div>
+
+  <style>
+    #menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 15px;
+    }
+
+    #menu > li {
+      position: relative;
+    }
+
+    #menu a {
+      text-decoration: none;
+      padding: 10px;
+      display: block;
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      border: 1px solid #ccc;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #menu > li:hover .submenu {
+      display: block;
+    }
+
+    .submenu li {
+      width: 150px;
+    }
+  </style>
+
+</body>
+</html>
