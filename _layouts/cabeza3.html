@@ -13,13 +13,7 @@
             background-size: cover;
             background-position: center;
             transition: background-image 0.5s;
-            margin: 0;
-        }
-        .container {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 1rem;
-            border-radius: 0.5rem;
-            margin-top: 80px; /* Deja espacio para el menú */
+            margin: 0; /* Eliminar margen para evitar el espacio en la parte superior */
         }
 
         /* Estilos para el menú */
@@ -29,15 +23,15 @@
             z-index: 1000; /* Coloca el menú sobre otros elementos */
             transition: top 0.3s; /* Transición suave al ocultar/mostrar el menú */
             background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Línea inferior del menú */
         }
 
         nav ul {
             display: flex;
+            justify-content: center; /* Centra el menú horizontalmente */
             list-style: none;
             padding: 0;
             margin: 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            border-radius: 0.5rem; /* Bordes redondeados */
         }
 
         nav ul li {
@@ -88,8 +82,8 @@
             font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s, opacity 0.3s;
-            display: block; /* Asegura que los botones ocupen todo el ancho */
+            transition: background-color 0.3s, opacity 0.3s; /* Cambiar opacidad en la transición */
+            display: block; /* Asegurar que los botones ocupen todo el ancho */
             margin-bottom: 0.5rem; /* Espacio entre los botones */
         }
 
@@ -102,6 +96,11 @@
         .hidden {
             opacity: 0; /* Oculta los botones */
             pointer-events: none; /* Desactiva la interacción */
+        }
+
+        /* Espaciado del contenido */
+        .content {
+            padding-top: 80px; /* Espacio para que el contenido no se superponga al menú */
         }
     </style>
 </head>
@@ -155,7 +154,7 @@
     <button class="change-background-btn" onclick="changeBackground()">Cambiar fondo</button>
 </div>
 
-<div class="container"> <!-- Para evitar que el contenido se superponga al menú -->
+<div class="content"> <!-- Para evitar que el contenido se superponga al menú -->
     {{ content }}
 </div>
 
@@ -190,7 +189,7 @@
 
     window.addEventListener('scroll', () => {
         const st = window.pageYOffset || document.documentElement.scrollTop;
-        
+
         // Ocultar/mostrar el menú al hacer scroll
         if (st > lastScrollTop) {
             mainNav.style.top = "-80px"; // Oculta el menú
@@ -216,16 +215,17 @@
 
 <style>
     footer {
-        background-color: #f2f2f2;
-        padding: 2rem;
+        background-color: #f8f9fa;
+        padding: 1rem;
         text-align: center;
-        font-size: 0.8rem;
-        margin-top: 2rem;
+    }
+
+    .social-media {
+        margin-top: 0.5rem;
     }
 
     .social-media a {
-        display: inline-block;
-        margin-right: 1rem;
+        margin: 0 0.5rem;
         color: #333;
         font-size: 1.5rem;
         transition: color 0.3s;
