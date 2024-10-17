@@ -36,7 +36,6 @@
             top: 0;
             left: 0;
             background-color: rgba(255, 255, 255, 0.9);
-            transition: top 0.3s, opacity 0.3s; /* Transición suave al ocultar/mostrar */
             text-align: center;
             padding: 10px 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -99,7 +98,7 @@
             font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s, opacity 0.3s;
+            transition: background-color 0.3s;
             display: block;
             margin-bottom: 0.5rem;
         }
@@ -109,20 +108,11 @@
             background-color: #0069d9;
         }
 
-        /* Ocultar los botones y menú al hacer scroll */
-        .hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        nav.hidden {
-            top: -80px;
-        }
-
         /* Agregar margen a los elementos del menú principal */
         nav ul li {
             margin: 0 20px;
         }
+
     </style>
 </head>
 
@@ -197,33 +187,6 @@
     function toggleTheme() {
         document.body.classList.toggle('dark-theme');
     }
-
-    // Manejar el comportamiento del scroll para ocultar/mostrar el header y los botones
-    let lastScrollTop = 0;
-    const mainNav = document.getElementById('main-nav');
-    const buttons = document.querySelectorAll('.toggle-theme-btn, .change-background-btn');
-
-    window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY || document.documentElement.scrollTop;
-        const st = scrollY;
-        const pageHeight = document.documentElement.scrollHeight;
-        const triggerHeight = pageHeight * 0.1; // 10% de la página
-
-        // Si estamos en el 10% superior de la página
-        if (scrollY <= triggerHeight) {
-            mainNav.classList.remove('hidden'); // Mostrar el menú
-        } else {
-            mainNav.classList.add('hidden'); // Ocultar el menú al salir del 10% superior
-        }
-
-        // Ocultar los botones y el menú si se hace scroll hacia abajo
-        if (st > lastScrollTop) {
-            buttons.forEach(btn => btn.classList.add('hidden'));
-        } else {
-            buttons.forEach(btn => btn.classList.remove('hidden'));
-        }
-        lastScrollTop = st <= 0 ? 0 : st;
-    });
 </script>
 
 <footer>
