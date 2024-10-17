@@ -9,16 +9,20 @@
   {% include head-custom.html %}
   {% seo %}
   <style>
+    /* Estilos por defecto (modo claro) */
     :root {
       --background-color: #ffffff;
       --text-color: #000000;
       --submenu-background: rgba(255, 255, 255, 0.9);
     }
 
-    [data-theme='dark'] {
-      --background-color: #1a1a1a;
-      --text-color: #ffffff;
-      --submenu-background: rgba(0, 0, 0, 0.6);
+    /* Modo oscuro */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background-color: #1a1a1a;
+        --text-color: #ffffff;
+        --submenu-background: rgba(0, 0, 0, 0.6);
+      }
     }
 
     body {
@@ -162,9 +166,8 @@
           </li>
         </ul>
       </nav>
-      <div style="display: flex; justify-content: center; gap: 1rem;">
+      <div style="display: flex; justify-content: center;">
         <button onclick="changeBackground()">Cambiar fondo</button>
-        <button onclick="toggleTheme()">Cambiar tema</button>
       </div>
     </div>
   </header>
@@ -183,15 +186,6 @@
         currentImageIndex = 0;
       }
       document.body.style.backgroundImage = `url('${images[currentImageIndex]}')`;
-    }
-
-    function toggleTheme() {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      if (currentTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'light');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
     }
   </script>
 
