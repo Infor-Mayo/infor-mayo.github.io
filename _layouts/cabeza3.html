@@ -13,36 +13,45 @@
             background-size: cover;
             background-position: center;
             transition: background-image 0.5s;
-            margin: 0; /* Eliminar margen para evitar el espacio en la parte superior */
+            margin: 0; /* Eliminar margen */
+            padding-top: 100px; /* Asegura que el contenido no se superponga con el header */
         }
         .container {
             background-color: rgba(255, 255, 255, 0.8);
             padding: 1rem;
             border-radius: 0.5rem;
-            margin-top: 80px; /* Ajustar para evitar que se superponga al menú */
+            margin: auto;
+            margin-top: 20px; /* Margen para que el contenido no quede pegado a los bordes */
+            max-width: 80%; /* Ajustar ancho para centrar */
+            text-align: center; /* Centrar contenido */
         }
 
         /* Estilos para el menú */
         nav {
-            position: fixed; /* Mantiene el menú en la parte superior */
-            width: 100%; /* Asegura que el menú ocupe todo el ancho */
+            position: fixed; /* Mantiene el menú fijo */
+            width: 100%;
             z-index: 1000; /* Coloca el menú sobre otros elementos */
+            top: 0; /* Fijar a la parte superior */
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
             transition: top 0.3s; /* Transición suave al ocultar/mostrar el menú */
+            text-align: center; /* Centra los elementos del menú */
+            padding: 10px 0; /* Añade un padding para darle más espacio */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         nav ul {
-            display: flex;
+            display: inline-flex; /* Cambia a inline-flex para que los elementos queden en línea */
             list-style: none;
             padding: 0;
             margin: 0;
-            background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+            background-color: transparent;
             border-radius: 0.5rem; /* Bordes redondeados */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         nav ul li {
             position: relative;
-            margin: 0 1.5rem; /* Margen horizontal para los elementos del menú */
+            margin: 0 1.5rem; /* Añade espacio horizontal entre los elementos */
         }
 
         nav ul li ul {
@@ -103,6 +112,11 @@
             opacity: 0; /* Oculta los botones */
             pointer-events: none; /* Desactiva la interacción */
         }
+
+        /* Añadir un efecto de desvanecimiento en el menú al hacer scroll */
+        nav.hidden {
+            top: -80px; /* Oculta el menú */
+        }
     </style>
 </head>
 
@@ -110,41 +124,36 @@
 <header>
     <nav id="main-nav">
         <div class="container">
-            <div style="display: flex; align-items: center;">
+            <div style="display: inline-block; align-items: center;">
                 <a id="a-title" href="{{ site.baseurl | relative_url }}">
                     <img src="{{ site.baseurl }}/assets/images/image.png" alt="Logo de la empresa" style="width: 60px;">
                 </a>
-                <div style="margin: auto; text-align: center;">
-                    <h1>{{ site.title | default: site.github.repository_name }}</h1>
-                    <h2>{{ site.description | default: site.github.project_tagline }}</h2>
-                    <h3>La tecnología más allá de tus expectativas</h3>
-                </div>
+                <ul>
+                    <li><a href="{{ site.baseurl }}/">Inicio</a></li>
+                    <li>
+                        <a href="{{ site.baseurl }}/acercade.html">Acerca de</a>
+                        <ul>
+                            <li><a href="{{ site.baseurl }}/equipo.html">Nuestro Equipo</a></li>
+                            <li><a href="{{ site.baseurl }}/historia.html">Nuestra Historia</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{{ site.baseurl }}/productos.html">Productos</a>
+                        <ul>
+                            <li><a href="{{ site.baseurl }}/producto1.html">Producto 1</a></li>
+                            <li><a href="{{ site.baseurl }}/producto2.html">Producto 2</a></li>
+                            <li><a href="{{ site.baseurl }}/producto3.html">Producto 3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{{ site.baseurl }}/contacto.html">Contacto</a>
+                        <ul>
+                            <li><a href="{{ site.baseurl }}/soporte.html">Soporte</a></li>
+                            <li><a href="{{ site.baseurl }}/consultas.html">Consultas</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            <ul>
-                <li><a href="{{ site.baseurl }}/">Inicio</a></li>
-                <li>
-                    <a href="{{ site.baseurl }}/acercade.html">Acerca de</a>
-                    <ul>
-                        <li><a href="{{ site.baseurl }}/equipo.html">Nuestro Equipo</a></li>
-                        <li><a href="{{ site.baseurl }}/historia.html">Nuestra Historia</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="{{ site.baseurl }}/productos.html">Productos</a>
-                    <ul>
-                        <li><a href="{{ site.baseurl }}/producto1.html">Producto 1</a></li>
-                        <li><a href="{{ site.baseurl }}/producto2.html">Producto 2</a></li>
-                        <li><a href="{{ site.baseurl }}/producto3.html">Producto 3</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="{{ site.baseurl }}/contacto.html">Contacto</a>
-                    <ul>
-                        <li><a href="{{ site.baseurl }}/soporte.html">Soporte</a></li>
-                        <li><a href="{{ site.baseurl }}/consultas.html">Consultas</a></li>
-                    </ul>
-                </li>
-            </ul>
         </div>
     </nav>
 </header>
@@ -193,10 +202,10 @@
         
         // Ocultar/mostrar el menú al hacer scroll
         if (st > lastScrollTop) {
-            mainNav.style.top = "-80px"; // Oculta el menú
+            mainNav.classList.add('hidden'); // Oculta el menú
             buttons.forEach(btn => btn.classList.add('hidden')); // Oculta los botones
         } else {
-            mainNav.style.top = "0"; // Muestra el menú
+            mainNav.classList.remove('hidden'); // Muestra el menú
             buttons.forEach(btn => btn.classList.remove('hidden')); // Muestra los botones
         }
         lastScrollTop = st <= 0 ? 0 : st; // Para evitar que se vuelva negativo
@@ -214,25 +223,5 @@
     </div>
 </footer>
 
-<style>
-    footer {
-        background-color: #f2f2f2;
-        padding: 2rem;
-        text-align: center;
-        font-size: 0.8rem;
-        margin-top: 2rem;
-    }
-
-    .social-media a {
-        display: inline-block;
-        margin-right: 1rem;
-        color: #333;
-        font-size: 1.5rem;
-        transition: color 0.3s;
-    }
-
-    .social-media a:hover {
-        color: #007bff;
-    }
-</style>
+</body>
 </html>
