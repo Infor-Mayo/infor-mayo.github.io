@@ -13,11 +13,13 @@
             background-size: cover;
             background-position: center;
             transition: background-image 0.5s;
+            margin: 0; /* Eliminar margen para evitar el espacio en la parte superior */
         }
         .container {
             background-color: rgba(255, 255, 255, 0.8);
             padding: 1rem;
             border-radius: 0.5rem;
+            margin-top: 80px; /* Ajustar para evitar que se superponga al menú */
         }
 
         /* Estilos para el menú */
@@ -87,6 +89,8 @@
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s, opacity 0.3s; /* Cambiar opacidad en la transición */
+            display: block; /* Asegurar que los botones ocupen todo el ancho */
+            margin-bottom: 0.5rem; /* Espacio entre los botones */
         }
 
         .change-background-btn:hover,
@@ -151,7 +155,7 @@
     <button class="change-background-btn" onclick="changeBackground()">Cambiar fondo</button>
 </div>
 
-<div class="container" style="margin-top: 100px;"> <!-- Para evitar que el contenido se superponga al menú -->
+<div class="container"> <!-- Para evitar que el contenido se superponga al menú -->
     {{ content }}
 </div>
 
