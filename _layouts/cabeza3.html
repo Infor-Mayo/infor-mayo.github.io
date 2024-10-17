@@ -13,45 +13,47 @@
             background-size: cover;
             background-position: center;
             transition: background-image 0.5s;
-            margin: 0; /* Eliminar margen */
-            padding-top: 100px; /* Asegura que el contenido no se superponga con el header */
+            margin: 0;
+            padding-top: 100px; /* Para evitar que el contenido quede bajo el header */
         }
+
+        /* Container de contenido */
         .container {
             background-color: rgba(255, 255, 255, 0.8);
             padding: 1rem;
             border-radius: 0.5rem;
             margin: auto;
-            margin-top: 20px; /* Margen para que el contenido no quede pegado a los bordes */
-            max-width: 80%; /* Ajustar ancho para centrar */
-            text-align: center; /* Centrar contenido */
+            margin-top: 20px;
+            max-width: 80%;
+            text-align: center;
         }
 
         /* Estilos para el menú */
         nav {
-            position: fixed; /* Mantiene el menú fijo */
+            position: fixed;
             width: 100%;
-            z-index: 1000; /* Coloca el menú sobre otros elementos */
-            top: 0; /* Fijar a la parte superior */
+            z-index: 1000;
+            top: 0;
             left: 0;
-            background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
-            transition: top 0.3s; /* Transición suave al ocultar/mostrar el menú */
-            text-align: center; /* Centra los elementos del menú */
-            padding: 10px 0; /* Añade un padding para darle más espacio */
+            background-color: rgba(255, 255, 255, 0.9);
+            transition: top 0.3s, opacity 0.3s; /* Transición suave al ocultar/mostrar */
+            text-align: center;
+            padding: 10px 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         nav ul {
-            display: inline-flex; /* Cambia a inline-flex para que los elementos queden en línea */
+            display: inline-flex;
             list-style: none;
             padding: 0;
             margin: 0;
             background-color: transparent;
-            border-radius: 0.5rem; /* Bordes redondeados */
+            border-radius: 0.5rem;
         }
 
         nav ul li {
             position: relative;
-            margin: 0 1.5rem; /* Añade espacio horizontal entre los elementos */
+            margin: 0 1.5rem;
         }
 
         nav ul li ul {
@@ -68,7 +70,7 @@
         }
 
         nav ul li:hover > ul {
-            display: block; /* Muestra el submenú al pasar el mouse */
+            display: block;
         }
 
         nav ul li ul li {
@@ -86,7 +88,7 @@
             background-color: #f2f2f2;
         }
 
-        /* Estilo de los botones para cambiar el fondo y tema */
+        /* Estilos de los botones de cambiar fondo y tema */
         .change-background-btn,
         .toggle-theme-btn {
             padding: 0.5rem 1rem;
@@ -97,9 +99,9 @@
             font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s, opacity 0.3s; /* Cambiar opacidad en la transición */
-            display: block; /* Asegurar que los botones ocupen todo el ancho */
-            margin-bottom: 0.5rem; /* Espacio entre los botones */
+            transition: background-color 0.3s, opacity 0.3s;
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
         .change-background-btn:hover,
@@ -107,15 +109,14 @@
             background-color: #0069d9;
         }
 
-        /* Estilos para ocultar los botones al hacer scroll */
+        /* Ocultar los botones y menú al hacer scroll */
         .hidden {
-            opacity: 0; /* Oculta los botones */
-            pointer-events: none; /* Desactiva la interacción */
+            opacity: 0;
+            pointer-events: none;
         }
 
-        /* Añadir un efecto de desvanecimiento en el menú al hacer scroll */
         nav.hidden {
-            top: -80px; /* Oculta el menú */
+            top: -80px;
         }
     </style>
 </head>
@@ -124,7 +125,7 @@
 <header>
     <nav id="main-nav">
         <div class="container">
-            <div style="display: inline-block; align-items: center;">
+            <div style="display: inline-block;">
                 <a id="a-title" href="{{ site.baseurl | relative_url }}">
                     <img src="{{ site.baseurl }}/assets/images/image.png" alt="Logo de la empresa" style="width: 60px;">
                 </a>
@@ -164,7 +165,7 @@
     <button class="change-background-btn" onclick="changeBackground()">Cambiar fondo</button>
 </div>
 
-<div class="container"> <!-- Para evitar que el contenido se superponga al menú -->
+<div class="container">
     {{ content }}
 </div>
 
@@ -192,23 +193,31 @@
         document.body.classList.toggle('dark-theme');
     }
 
-    // Manejar el comportamiento del scroll
+    // Manejar el comportamiento del scroll para ocultar/mostrar el header y los botones
     let lastScrollTop = 0;
     const mainNav = document.getElementById('main-nav');
     const buttons = document.querySelectorAll('.toggle-theme-btn, .change-background-btn');
 
     window.addEventListener('scroll', () => {
-        const st = window.pageYOffset || document.documentElement.scrollTop;
-        
-        // Ocultar/mostrar el menú al hacer scroll
-        if (st > lastScrollTop) {
-            mainNav.classList.add('hidden'); // Oculta el menú
-            buttons.forEach(btn => btn.classList.add('hidden')); // Oculta los botones
+        const scrollY = window.scrollY || document.documentElement.scrollTop;
+        const st = scrollY;
+        const pageHeight = document.documentElement.scrollHeight;
+        const triggerHeight = pageHeight * 0.1; // 10% de la página
+
+        // Si estamos en el 10% superior de la página
+        if (scrollY <= triggerHeight) {
+            mainNav.classList.remove('hidden'); // Mostrar el menú
         } else {
-            mainNav.classList.remove('hidden'); // Muestra el menú
-            buttons.forEach(btn => btn.classList.remove('hidden')); // Muestra los botones
+            mainNav.classList.add('hidden'); // Ocultar el menú al salir del 10% superior
         }
-        lastScrollTop = st <= 0 ? 0 : st; // Para evitar que se vuelva negativo
+
+        // Ocultar los botones y el menú si se hace scroll hacia abajo
+        if (st > lastScrollTop) {
+            buttons.forEach(btn => btn.classList.add('hidden'));
+        } else {
+            buttons.forEach(btn => btn.classList.remove('hidden'));
+        }
+        lastScrollTop = st <= 0 ? 0 : st;
     });
 </script>
 
