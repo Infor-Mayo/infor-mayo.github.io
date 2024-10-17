@@ -1,202 +1,92 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="nV9-KB8JGPnlqoxbI79EYlmyLLB5BrP1R0s0AoUIkNE" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    {% include head-custom.html %}
-    {% seo %}
-    <style>
-      body {
-        background-image: url("./assets/images/background.jpg");
-        background-size: cover;
-        background-position: center;
-        transition: background-image 0.5s;
-      }
-      .container {
-        background-color: rgba(255, 255, 255, 0.8);
-        padding: 1rem;
-        border-radius: 0.5rem;
-      }
-      
-      /* Estilos para el botón de cambio de fondo */
-      button {
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        border: none;
-        background-color: #007bff;
-        color: #fff;
-        font-size: 1rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
-      }
-      
-      button:hover {
-        background-color: #0069d9;
-      }
-      button:active {
-        transform: translateY(0.1rem);
-        box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.3);
-      }
+<html lang="{{ site.lang | default: 'en-US' }}">
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+  {% include head-custom.html %}
+  {% seo %}
+</head>
 
-      /* Estilos para el menú */
-      nav ul {
-        display: flex;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        position: relative;
-      }
-      nav ul li {
-        position: relative;
-        margin-right: 2rem;
-      }
-
-      nav ul li ul {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: white;
-        padding: 0.5rem;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        list-style: none;
-        z-index: 1000;
-      }
-
-      nav ul li:hover > ul {
-        display: block; /* Muestra el submenú al pasar el mouse */
-      }
-
-      nav ul li ul li {
-        margin-bottom: 0.5rem;
-      }
-
-      nav ul li ul li a {
-        display: block;
-        padding: 0.5rem 1rem;
-        white-space: nowrap;
-      }
-
-      nav ul li ul li a:hover {
-        background-color: #f2f2f2;
-      }
-
-      /* Estilos para dispositivos móviles */
-      @media (max-width: 768px) {
-        nav ul {
-          flex-direction: column;
-        }
-        nav ul li {
-          margin-right: 0;
-          margin-bottom: 1rem;
-        }
-        .container {
-          overflow: auto;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <header>
-      <div class="container">
-        <div style="display: flex; align-items: center;">
-          <a id="a-title" href="{{ '/' | relative_url }}">
-            <img src="./assets/images/image.png" alt="Logo de la empresa" style="width: 60px;">
-          </a>
-          <div style="margin: auto; text-align: center;">
-            <h1>{{ site.title | default: site.github.repository_name }}</h1>
-            <h2>{{ site.description | default: site.github.project_tagline }}</h2>
-            <h3>La tecnología más allá de tus expectativas</h3>
-          </div>
-        </div>
-        <nav style="display: flex; justify-content: center;">
-          <ul style="display: flex; list-style: none; padding: 0;">
-            <li style="margin-right: 4rem;"><a href="./">Inicio</a></li>
-            <li style="margin-right: 4rem;">
-              <a href="./acercade.html">Acerca de</a>
-              <ul>
-                <li><a href="./equipo.html">Nuestro Equipo</a></li>
-                <li><a href="./historia.html">Nuestra Historia</a></li>
-              </ul>
-            </li>
-            <li style="margin-right: 4rem;">
-              <a href="./productos.html">Productos</a>
-              <ul>
-                <li><a href="./producto1.html">Producto 1</a></li>
-                <li><a href="./producto2.html">Producto 2</a></li>
-                <li><a href="./producto3.html">Producto 3</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="./contacto.html">Contacto</a>
-              <ul>
-                <li><a href="./soporte.html">Soporte</a></li>
-                <li><a href="./consultas.html">Consultas</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-        <div style="display: flex; justify-content: center;">
-          <button onclick="changeBackground()">Cambiar fondo</button>
-        </div>
-      </div>
-    </header>
-
+<body>
+  <header>
     <div class="container">
+      <a id="a-title" href="{{ '/' | relative_url }}">
+        <h1>{{ site.title | default: site.github.repository_name }}</h1>
+      </a>
+      <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+
+      <nav>
+        <ul id="menu">
+          <li><a href="{{ site.url }}/option1">Opción 1</a></li>
+          <li><a href="{{ site.url }}/option2">Opción 2</a></li>
+          <li>
+            <a href="{{ site.url }}/option3">Opción 3</a>
+            <ul class="submenu">
+              <li><a href="{{ site.url }}/option3/suboption1">Subopción 1</a></li>
+              <li><a href="{{ site.url }}/option3/suboption2">Subopción 2</a></li>
+            </ul>
+          </li>
+          <li><a href="{{ site.url }}/option4">Opción 4</a></li>
+        </ul>
+      </nav>
+
+      <section id="downloads">
+        {% if site.show_downloads %}
+          <a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>
+          <a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a>
+        {% endif %}
+        <a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+      </section>
+    </div>
+  </header>
+
+  <div class="container">
+    <section id="main_content">
       {{ content }}
-    </div>
+    </section>
+  </div>
 
-    <script>
-      const images = ['./assets/images/background.jpg', './assets/images/background2.jpg', './assets/images/background3.jpg'];
-      let currentImageIndex = 0;
-
-      function changeBackground() {
-        currentImageIndex++;
-        if (currentImageIndex === images.length) {
-          currentImageIndex = 0;
-        }
-        document.body.style.backgroundImage = `url('${images[currentImageIndex]}')`;
-      }
-    </script>
-
-    <script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/main.js?v=' | append: site.github.build_revision | relative_url }}"></script>
-  </body>
-  <footer>
-    <div class="container">
-      <p>Todos los derechos reservados &copy; {{ site.title }} {{ site.date | date: '%Y' }}</p>
-      <div class="social-media">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-  </footer>
   <style>
-    footer {
-      background-color: #f2f2f2;
-      padding: 2rem;
-      text-align: center;
-      font-size: 0.8rem;
-      margin-top: 2rem;
+    #menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 15px;
     }
 
-    .social-media a {
-      display: inline-block;
-      margin-right: 1rem;
-      color: #333;
-      font-size: 1.5rem;
-      transition: color 0.3s;
+    #menu > li {
+      position: relative;
     }
 
-    .social-media a:hover {
-      color: #007bff;
+    #menu a {
+      text-decoration: none;
+      padding: 10px;
+      display: block;
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      border: 1px solid #ccc;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #menu > li:hover .submenu {
+      display: block;
+    }
+
+    .submenu li {
+      width: 150px;
     }
   </style>
+
+</body>
 </html>
