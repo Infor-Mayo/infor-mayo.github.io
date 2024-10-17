@@ -1,3 +1,7 @@
+---
+layout: cabeza2
+---
+
 # Cursos de Infor Mayo
 
 ¡Bienvenidos a la sección de cursos de **Infor Mayo**! Aquí encontrarás una lista de cursos organizados por temas, diseñados para ayudarte a mejorar tus habilidades en programación y tecnología. Cada curso incluye una descripción y un enlace directo a la serie de videos en YouTube.
