@@ -4,26 +4,36 @@ layout: cabeza3
 
 ![Octocat](https://yt3.ggpht.com/k7A3O2CifD373P1Fw-92W_F1xMTbtTjnHzgNj_VsXiz3DL3GQjcggN5Jb4ccV6cBMRSioj6WOA=s88-c-k-c0x00ffffff-no-rj)
 
-# Bienvenidos a mi canal de YouTube
+# Bienvenida a Infor Mayo
 
-¡Hola a todos! Mi nombre es [Mario Artola](https://www.facebook.com/mario.artola.524) y soy el creador del canal de YouTube [Infor Mayo](https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q?sub_confirmation=1). Me encanta compartir contenido interesante y entretenido con mis seguidores, y espero que disfrutes mi contenido tanto como yo disfruto creándolo.
+¡Hola a todos! Soy **Mario Artola**, el creador del canal de YouTube **Infor Mayo**. Estoy emocionado de compartir mi pasión por la tecnología y la programación con ustedes. Mi objetivo es ofrecer contenido que no solo sea educativo, sino también entretenido, ayudando a mis seguidores a desarrollar sus habilidades en informática.
 
-## Acerca de mi canal
+## Contenido del Canal
 
-En mi canal encontrarás tutoriales paso a paso, consejos y trucos para programar en diferentes lenguajes, proyectos prácticos, soluciones a problemas comunes y mucho más. Mi objetivo es ayudarte a mejorar tus habilidades en informática y ayudarte a alcanzar tus metas en el campo de la tecnología. Me enfocaré en lenguajes como Python, Java y C++, y en proyectos de inteligencia artificial, machine learning, programación de videojuegos y desarrollo web. No importa si eres un principiante o un experto, en mi canal encontrarás contenido para todos los niveles. ¡No te olvides suscribirte para no perderte ninguno de mis videos y habilita las notificaciones para estar al tanto de todas las actualizaciones!
+En **Infor Mayo**, encontrarás:
 
+- **Tutoriales Paso a Paso**: Desde lo más básico hasta conceptos avanzados en programación.
+- **Consejos y Trucos**: Estrategias útiles para mejorar tu eficiencia en varios lenguajes de programación.
+- **Proyectos Prácticos**: Aplicaciones reales que puedes seguir para poner en práctica lo aprendido.
+- **Soluciones a Problemas Comunes**: Respuestas a las dudas más frecuentes que enfrentan los programadores.
+
+Mis temas principales incluyen:
+
+- **Lenguajes de Programación**: Python, Java, C++.
+- **Áreas Especializadas**: Inteligencia artificial, machine learning, desarrollo de videojuegos y desarrollo web.
+
+No importa tu nivel de experiencia; hay algo para todos. ¡Asegúrate de suscribirte y activar las notificaciones para no perderte nada!
+
+## Redes Sociales
+
+Además de YouTube, puedes seguirme en mis otras plataformas para estar al tanto de mis actualizaciones:
+
+- [Twitter](https://twitter.com/MarioArtola15): Sígueme para obtener noticias rápidas y consejos breves.
+- [Instagram](https://www.instagram.com/infor_mayo): Descubre contenido visual y detrás de cámaras sobre mis proyectos.
+- [Facebook](https://www.facebook.com/groups/430222984636303): Únete a nuestra comunidad para discutir temas relacionados con la programación y la tecnología.
 ## Suscríbete a mi canal
 
 No te pierdas ningún video. ¡Suscríbete a mi canal de YouTube hoy mismo y asegúrate de estar al día con mis últimos videos! Puedes encontrar mi canal aquí: [Infor-Mayo](https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q?sub_confirmation=1).
-
-## Sígueme en redes sociales
-
-Para estar al tanto de todas las novedades, ¡asegúrate de seguirme en redes sociales! Puedes encontrarme en:
-
-- [Twitter](https://twitter.com/MarioArtola15)
-- [Youtube](https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q?sub_confirmation=1).
-- [Instagram](https://www.instagram.com/infor_mayo)
-- [Facebook](https://www.facebook.com/groups/430222984636303)
 
 ## Cursos y Futuros cursos
 
