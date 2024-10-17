@@ -19,41 +19,28 @@
         padding: 1rem;
         border-radius: 0.5rem;
       }
-      
-      /* Estilos para el botón de cambio de fondo */
-      .change-background-btn {
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        border: none;
-        background-color: #007bff;
-        color: #fff;
-        font-size: 1rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
-        margin-top: 2rem;
-      }
-      
-      .change-background-btn:hover {
-        background-color: #0069d9;
-      }
-      .change-background-btn:active {
-        transform: translateY(0.1rem);
-        box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.3);
-      }
 
       /* Estilos para el menú */
+      nav {
+        position: fixed; /* Fija el menú en la parte superior */
+        top: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+      
       nav ul {
         display: flex;
         list-style: none;
         padding: 0;
         margin: 0;
-        position: relative;
+        justify-content: center; /* Centra el menú */
       }
+
       nav ul li {
         position: relative;
-        margin-right: 2rem;
+        margin: 0 2rem; /* Margen a los lados */
       }
 
       nav ul li ul {
@@ -88,21 +75,26 @@
         background-color: #f2f2f2;
       }
 
-      /* Estilos para dispositivos móviles */
-      @media (max-width: 768px) {
-        nav ul {
-          flex-direction: column;
-        }
-        nav ul li {
-          margin-right: 0;
-          margin-bottom: 1rem;
-        }
-        .container {
-          overflow: auto;
-        }
+      /* Estilo del botón para cambiar el fondo */
+      .change-background-btn {
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+        margin-top: 1rem; /* Espacio superior */
       }
 
-      /* Estilo del botón para cambiar el modo de tema */
+      .change-background-btn:hover {
+        background-color: #0069d9;
+      }
+
+      /* Estilo del botón para cambiar el tema */
       .toggle-theme-btn {
         position: absolute;
         top: 10px;
@@ -121,63 +113,77 @@
       .toggle-theme-btn:hover {
         background-color: #0069d9;
       }
+
+      /* Espaciado para el contenido debajo del menú fijo */
+      .content {
+        margin-top: 4rem; /* Margen superior para no ocultar contenido bajo el menú fijo */
+      }
+
+      /* Estilo del footer */
+      footer {
+        background-color: #f2f2f2;
+        padding: 2rem;
+        text-align: center;
+        font-size: 0.8rem;
+        margin-top: 2rem;
+      }
+
+      .social-media a {
+        display: inline-block;
+        margin-right: 1rem;
+        color: #333;
+        font-size: 1.5rem;
+        transition: color 0.3s;
+      }
+
+      .social-media a:hover {
+        color: #007bff;
+      }
     </style>
   </head>
 
   <body>
-    <header>
+    <nav>
       <div class="container">
-        <div style="display: flex; align-items: center;">
-          <a id="a-title" href="{{ site.baseurl | relative_url }}">
-            <img src="{{ site.baseurl }}/assets/images/image.png" alt="Logo de la empresa" style="width: 60px;">
-          </a>
-          <div style="margin: auto; text-align: center;">
-            <h1>{{ site.title | default: site.github.repository_name }}</h1>
-            <h2>{{ site.description | default: site.github.project_tagline }}</h2>
-            <h3>La tecnología más allá de tus expectativas</h3>
-          </div>
-        </div>
-        <nav style="display: flex; justify-content: center;">
-          <ul>
-            <li><a href="{{ site.baseurl }}/">Inicio</a></li>
-            <li>
-              <a href="{{ site.baseurl }}/acercade.html">Acerca de</a>
-              <ul>
-                <li><a href="{{ site.baseurl }}/equipo.html">Nuestro Equipo</a></li>
-                <li><a href="{{ site.baseurl }}/historia.html">Nuestra Historia</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="{{ site.baseurl }}/productos.html">Productos</a>
-              <ul>
-                <li><a href="{{ site.baseurl }}/producto1.html">Producto 1</a></li>
-                <li><a href="{{ site.baseurl }}/producto2.html">Producto 2</a></li>
-                <li><a href="{{ site.baseurl }}/producto3.html">Producto 3</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="{{ site.baseurl }}/contacto.html">Contacto</a>
-              <ul>
-                <li><a href="{{ site.baseurl }}/soporte.html">Soporte</a></li>
-                <li><a href="{{ site.baseurl }}/consultas.html">Consultas</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
+        <ul>
+          <li><a href="{{ site.baseurl }}/">Inicio</a></li>
+          <li>
+            <a href="{{ site.baseurl }}/acercade.html">Acerca de</a>
+            <ul>
+              <li><a href="{{ site.baseurl }}/equipo.html">Nuestro Equipo</a></li>
+              <li><a href="{{ site.baseurl }}/historia.html">Nuestra Historia</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/productos.html">Productos</a>
+            <ul>
+              <li><a href="{{ site.baseurl }}/producto1.html">Producto 1</a></li>
+              <li><a href="{{ site.baseurl }}/producto2.html">Producto 2</a></li>
+              <li><a href="{{ site.baseurl }}/producto3.html">Producto 3</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/contacto.html">Contacto</a>
+            <ul>
+              <li><a href="{{ site.baseurl }}/soporte.html">Soporte</a></li>
+              <li><a href="{{ site.baseurl }}/consultas.html">Consultas</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
-    </header>
+    </nav>
 
+    <!-- Botón para cambiar el tema -->
+    <button class="toggle-theme-btn" onclick="toggleTheme()">Cambiar tema</button>
+    
     <!-- Botón para cambiar el fondo fuera de la cabecera -->
     <div style="text-align: center; margin-top: 2rem;">
       <button class="change-background-btn" onclick="changeBackground()">Cambiar fondo</button>
     </div>
 
-    <div class="container">
+    <div class="content container">
       {{ content }}
     </div>
-
-    <!-- Botón para cambiar el tema claro/oscuro -->
-    <button class="toggle-theme-btn" onclick="toggleTheme()">Cambiar tema</button>
 
     <script>
       // Rutas de imágenes para el cambio de fondo
@@ -217,26 +223,4 @@
       </div>
     </div>
   </footer>
-
-  <style>
-    footer {
-      background-color: #f2f2f2;
-      padding: 2rem;
-      text-align: center;
-      font-size: 0.8rem;
-      margin-top: 2rem;
-    }
-
-    .social-media a {
-      display: inline-block;
-      margin-right: 1rem;
-      color: #333;
-      font-size: 1.5rem;
-      transition: color 0.3s;
-    }
-
-    .social-media a:hover {
-      color: #007bff;
-    }
-  </style>
 </html>
