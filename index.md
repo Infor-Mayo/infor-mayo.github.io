@@ -29,7 +29,7 @@ Para estar al tanto de todas las novedades, ¡asegúrate de seguirme en redes so
 
 | Estado       | Cursos   | Nivel      | Links      |
 |:-------------|:---------|:-----------|:--------------|
-| [Subido](https://youtube.com/playlist?list=PL9Lgme4PR4XA6vEINnWImbZq2kXyRPgev)       | c++      | `básico`   | [🔗👍](./1-curso-basico-c++.md)   |
+| [Subido](https://youtube.com/playlist?list=PL9Lgme4PR4XA6vEINnWImbZq2kXyRPgev)       | c++      | `básico`   | [🔗👍](./cursobasicoc++/1-curso-basico-c++.md)   |
 | No creado    | c++      | `medio`    | [🔗🙅‍♂️](./)   |
 | No creado    | c++      | `avanzado` | [🔗🙅‍♂️](./)   |
 |   🔽🔽🔽🔽🔽       |      🔽🔽🔽🔽🔽🔽   |      🔽🔽🔽🔽🔽     |       🔽🔽         |
