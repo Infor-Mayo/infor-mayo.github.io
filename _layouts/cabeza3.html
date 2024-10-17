@@ -14,22 +14,28 @@
         background-position: center;
         transition: background-image 0.5s;
       }
+
       .container {
         background-color: rgba(255, 255, 255, 0.8);
         padding: 1rem;
         border-radius: 0.5rem;
       }
 
-      /* Estilos para el menú */
+      /* Estilo del menú */
       nav {
-        position: fixed; /* Fija el menú en la parte superior */
-        top: 0;
+        position: relative; /* Cambia a posición relativa por defecto */
         width: 100%;
         background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
         z-index: 1000;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition: top 0.3s; /* Transición suave para el encrustamiento */
       }
-      
+
+      nav.fixed {
+        position: fixed; /* Fija el menú en la parte superior */
+        top: 0; /* Se coloca en la parte superior de la ventana */
+      }
+
       nav ul {
         display: flex;
         list-style: none;
@@ -96,9 +102,6 @@
 
       /* Estilo del botón para cambiar el tema */
       .toggle-theme-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
         padding: 0.5rem 1rem;
         border-radius: 0.5rem;
         border: none;
@@ -108,15 +111,16 @@
         font-weight: bold;
         cursor: pointer;
         transition: background-color 0.3s;
+        margin-top: 1rem; /* Espacio superior */
       }
 
       .toggle-theme-btn:hover {
         background-color: #0069d9;
       }
 
-      /* Espaciado para el contenido debajo del menú fijo */
+      /* Espaciado para el contenido debajo del menú */
       .content {
-        margin-top: 4rem; /* Margen superior para no ocultar contenido bajo el menú fijo */
+        margin-top: 4rem; /* Margen superior para no ocultar contenido bajo el menú */
       }
 
       /* Estilo del footer */
@@ -143,7 +147,7 @@
   </head>
 
   <body>
-    <nav>
+    <nav id="navbar">
       <div class="container">
         <ul>
           <li><a href="{{ site.baseurl }}/">Inicio</a></li>
@@ -175,7 +179,7 @@
 
     <!-- Botón para cambiar el tema -->
     <button class="toggle-theme-btn" onclick="toggleTheme()">Cambiar tema</button>
-    
+
     <!-- Botón para cambiar el fondo fuera de la cabecera -->
     <div style="text-align: center; margin-top: 2rem;">
       <button class="change-background-btn" onclick="changeBackground()">Cambiar fondo</button>
@@ -210,6 +214,18 @@
       function toggleTheme() {
         document.body.classList.toggle('dark-theme');
       }
+
+      // Cambia el menú a fijo al hacer scroll
+      window.onscroll = function() {
+        const navbar = document.getElementById('navbar');
+        const sticky = navbar.offsetTop; // Offset de la barra de navegación
+
+        if (window.pageYOffset > sticky) {
+          navbar.classList.add('fixed'); // Agrega clase para fijar el menú
+        } else {
+          navbar.classList.remove('fixed'); // Remueve clase para no fijar
+        }
+      };
     </script>
   </body>
 
