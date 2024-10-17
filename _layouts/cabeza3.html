@@ -104,6 +104,14 @@
       background-color: rgba(242, 242, 242, 0.8);
     }
 
+    /* Botón en la esquina superior derecha */
+    #theme-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1000;
+    }
+
     /* Estilos para móviles */
     @media (max-width: 768px) {
       nav ul {
@@ -162,12 +170,13 @@
           </li>
         </ul>
       </nav>
-      <div style="display: flex; justify-content: center; gap: 1rem;">
-        <button onclick="changeBackground()">Cambiar fondo</button>
-        <button onclick="toggleTheme()">Cambiar tema</button>
-      </div>
     </div>
   </header>
+
+  <!-- Botón para cambiar el tema en la esquina superior derecha -->
+  <div id="theme-toggle">
+    <button onclick="toggleTheme()">Cambiar tema</button>
+  </div>
 
   <div class="container">
     {{ content }}
