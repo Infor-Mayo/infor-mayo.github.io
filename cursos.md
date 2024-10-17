@@ -1,5 +1,5 @@
 ---
-layout: cabeza2
+layout: cabeza3
 ---
 
 # Cursos de Infor Mayo
@@ -26,5 +26,7 @@ layout: cabeza2
 |     🔽🔽🔽🔽🔽         |     🔽🔽🔽🔽🔽🔽     |       🔽🔽🔽🔽🔽     | 🔽🔽  |
 | [Subiendo](https://youtube.com/playlist?list=PL9Lgme4PR4XDbaGv87gfR5AupKot9yf5Z)      | Transfermovil | `Completo`| [🔗👍](./cursos/transfermovil/curso-completo-transfermovil.md)   |
 | No creado    | Enzona      | `medio`    | [🔗🙅‍♂️](./)   |
+|     🔽🔽🔽🔽🔽         |     🔽🔽🔽🔽🔽🔽     |       🔽🔽🔽🔽🔽     | 🔽🔽  |
+| No creado    |QT| `medio`    | [🔗🙅‍♂️](./)   |
 
 
