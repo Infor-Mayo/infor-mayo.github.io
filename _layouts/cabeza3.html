@@ -222,48 +222,74 @@
   
   <footer>
     <div class="container">
+      <p>&copy; {{ site.title }} {{ site.date | date: '%Y' }} - Todos los derechos reservados.</p>
       <div class="social-media">
         <a href="https://twitter.com/MarioArtola15" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
         <a href="https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q?sub_confirmation=1" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
         <a href="https://www.instagram.com/infor_mayo" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
         <a href="https://www.facebook.com/groups/430222984636303" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
       </div>
-      
-      <p>Todos los derechos reservados &copy; {{ site.title }} {{ site.date | date: '%Y' }}</p>
+      <button id="scroll-to-top" onclick="scrollToTop()">Volver al principio</button>
     </div>
-  
-    <style>
-      footer {
-        background-color: #f2f2f2;
-        padding: 2rem;
-        text-align: center;
-        font-size: 0.8rem;
-        margin-top: 2rem;
-      }
-  
-      .social-media {
-        margin-top: 1rem;
-      }
-  
-      .social-media a {
-        display: inline-block;
-        margin-right: 1rem;
-        color: #333;
-        font-size: 1.5rem;
-        transition: color 0.3s;
-      }
-  
-      .social-media a:hover {
-        color: #007bff;
-      }
-  
-      .social-media a:last-child {
-        margin-right: 0;
-      }
-    </style>
   </footer>
   
-
+  <style>
+    footer {
+      background-color: #f2f2f2;
+      padding: 2rem;
+      text-align: center;
+      font-size: 1rem; /* Ajuste del tamaño del texto */
+      margin-top: 2rem;
+      border-top: 1px solid #ddd; /* Añadir un borde superior para separación */
+    }
+  
+    footer p {
+      margin-bottom: 1rem;
+      font-size: 0.9rem; /* Asegura consistencia en los tamaños de texto */
+    }
+  
+    .social-media {
+      margin-bottom: 1.5rem;
+    }
+  
+    .social-media a {
+      display: inline-block;
+      margin-right: 1rem;
+      color: #333;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+  
+    .social-media a:hover {
+      color: #007bff;
+    }
+  
+    #scroll-to-top {
+      background-color: #007bff;
+      color: white;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+  
+    #scroll-to-top:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  
+  <script>
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Hace que el scroll sea suave
+      });
+    }
+  </script>
+ 
   <style>
     footer {
       background-color: #f2f2f2;
