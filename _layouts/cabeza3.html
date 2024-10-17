@@ -221,108 +221,47 @@
   
   <footer>
     <div class="container">
-      <!-- Redes sociales con iconos -->
-      <div class="social-media" style="margin-bottom: 1rem;">
-        <p>Síguenos en nuestras redes sociales:</p>
-        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <p>Todos los derechos reservados &copy; {{ site.title }} {{ site.date | date: '%Y' }}</p>
+      <div class="social-media">
+        <a href="https://twitter.com/MarioArtola15" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q?sub_confirmation=1" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/infor_mayo" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/groups/430222984636303" target="_blank"><i class="fab fa-facebook"></i></a>
       </div>
-  
-      <!-- Mapa del sitio -->
-      <div class="footer-links" style="display: flex; justify-content: space-around; margin-bottom: 1rem;">
-        <div>
-          <h4>Mapa del sitio</h4>
-          <ul style="list-style: none; padding: 0;">
-            <li><a href="{{ site.baseurl }}/">Inicio</a></li>
-            <li><a href="{{ site.baseurl }}/acercade.html">Acerca de</a></li>
-            <li><a href="{{ site.baseurl }}/productos.html">Productos</a></li>
-            <li><a href="{{ site.baseurl }}/contacto.html">Contacto</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Recursos</h4>
-          <ul style="list-style: none; padding: 0;">
-            <li><a href="{{ site.baseurl }}/politica.html">Política de privacidad</a></li>
-            <li><a href="{{ site.baseurl }}/terminos.html">Términos de uso</a></li>
-            <li><a href="{{ site.baseurl }}/soporte.html">Soporte</a></li>
-          </ul>
-        </div>
-      </div>
-  
-      <!-- Información de contacto -->
-      <div class="contact-info" style="margin-bottom: 1rem;">
-        <p><strong>Contáctanos:</strong></p>
-        <p>Teléfono: +1 234 567 890</p>
-        <p>Email: contacto@empresa.com</p>
-        <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
-      </div>
-  
-      <!-- Derechos reservados y año -->
-      <p style="margin-top: 1rem;">Todos los derechos reservados &copy; {{ site.title }} {{ site.date | date: '%Y' }}</p>
     </div>
+  
+    <style>
+      footer {
+        background-color: #f2f2f2;
+        padding: 2rem;
+        text-align: center;
+        font-size: 0.8rem;
+        margin-top: 2rem;
+      }
+  
+      .social-media {
+        margin-top: 1rem;
+      }
+  
+      .social-media a {
+        display: inline-block;
+        margin-right: 1rem;
+        color: #333;
+        font-size: 1.5rem;
+        transition: color 0.3s;
+      }
+  
+      .social-media a:hover {
+        color: #007bff;
+      }
+  
+      .social-media a:last-child {
+        margin-right: 0;
+      }
+    </style>
   </footer>
   
-  <!-- Estilos adicionales para el footer -->
-  <style>
-    footer {
-      background-color: #f2f2f2;
-      padding: 2rem;
-      text-align: center;
-      font-size: 0.9rem;
-      margin-top: 2rem;
-    }
-  
-    .social-media p {
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
-      font-weight: bold;
-    }
-  
-    .social-media a {
-      display: inline-block;
-      margin-right: 1rem;
-      color: #333;
-      font-size: 2rem; /* Tamaño de los iconos */
-      transition: color 0.3s;
-    }
-  
-    .social-media a:hover {
-      color: #007bff;
-    }
-  
-    .footer-links h4 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-  
-    .footer-links ul {
-      list-style: none;
-      padding: 0;
-    }
-  
-    .footer-links ul li a {
-      text-decoration: none;
-      color: #333;
-      font-size: 0.9rem;
-      transition: color 0.3s;
-    }
-  
-    .footer-links ul li a:hover {
-      color: #007bff;
-    }
-  
-    .contact-info {
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-  </style>
-  
-  <!-- Font Awesome para íconos de redes sociales -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  
+
   <style>
     footer {
       background-color: #f2f2f2;
