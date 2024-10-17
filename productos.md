@@ -1,5 +1,5 @@
 ---
-layout: cabeza2
+layout: cabeza3
 ---
 
 ## Entre los productos disponibles están:

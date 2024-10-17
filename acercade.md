@@ -1,5 +1,5 @@
 ---
-layout: cabeza2
+layout: cabeza3
 ---
 
 ¡Hola! Bienvenido a mi página web de informática. En este sitio encontrarás tutoriales, consejos y trucos para programar en diferentes lenguajes, proyectos prácticos, soluciones a problemas comunes y mucho más. Mi objetivo es ayudarte a mejorar tus habilidades en informática y ayudarte a alcanzar tus metas en el campo de la tecnología. Me enfocaré en lenguajes como Python, Java y C++, y en proyectos de inteligencia artificial, machine learning, programación de videojuegos y desarrollo web. No importa si eres un principiante o un experto, aquí encontrarás contenido para todos los niveles. ¡No te olvides suscribirte para no perderte ninguno de mis videos y habilita las notificaciones para estar al tanto de todas las actualizaciones!
