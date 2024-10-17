@@ -218,15 +218,56 @@
       });
     </script>
   </body>
-
   <footer>
     <div class="container">
-      <p>Todos los derechos reservados &copy; {{ site.title }} {{ site.date | date: '%Y' }}</p>
-      <div class="social-media">
+      <!-- Redes sociales -->
+      <div class="social-media" style="margin-bottom: 1rem;">
         <a href="#"><i class="fab fa-facebook"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a> <!-- Agregar LinkedIn -->
       </div>
+  
+      <!-- Mapa del sitio -->
+      <div class="footer-links" style="display: flex; justify-content: space-around; margin-bottom: 1rem;">
+        <div>
+          <h4>Mapa del sitio</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li><a href="{{ site.baseurl }}/">Inicio</a></li>
+            <li><a href="{{ site.baseurl }}/acercade.html">Acerca de</a></li>
+            <li><a href="{{ site.baseurl }}/productos.html">Productos</a></li>
+            <li><a href="{{ site.baseurl }}/contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Recursos</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li><a href="{{ site.baseurl }}/politica.html">Política de privacidad</a></li>
+            <li><a href="{{ site.baseurl }}/terminos.html">Términos de uso</a></li>
+            <li><a href="{{ site.baseurl }}/soporte.html">Soporte</a></li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Información de contacto -->
+      <div class="contact-info" style="margin-bottom: 1rem;">
+        <p><strong>Contáctanos:</strong></p>
+        <p>Teléfono: +1 234 567 890</p>
+        <p>Email: contacto@empresa.com</p>
+        <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
+      </div>
+  
+      <!-- Formulario de suscripción -->
+      <div class="newsletter" style="margin-bottom: 1rem;">
+        <h4>Suscríbete a nuestro boletín</h4>
+        <form action="/suscribir" method="post">
+          <input type="email" name="email" placeholder="Tu correo electrónico" style="padding: 0.5rem; width: 70%;">
+          <button type="submit" style="padding: 0.5rem 1rem; margin-left: 0.5rem; background-color: #007bff; color: white; border: none; border-radius: 0.25rem;">Suscribirme</button>
+        </form>
+      </div>
+  
+      <!-- Derechos reservados y año -->
+      <p style="margin-top: 1rem;">Todos los derechos reservados &copy; {{ site.title }} {{ site.date | date: '%Y' }}</p>
     </div>
   </footer>
 
@@ -250,5 +291,77 @@
     .social-media a:hover {
       color: #007bff;
     }
+
+    footer {
+    background-color: #f2f2f2;
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+  }
+
+  .social-media a {
+    display: inline-block;
+    margin-right: 1rem;
+    color: #333;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+  }
+
+  .social-media a:hover {
+    color: #007bff;
+  }
+
+  .footer-links h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-links ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+  }
+
+  .footer-links ul li a:hover {
+    color: #007bff;
+  }
+
+  .contact-info {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .newsletter h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .newsletter input {
+    width: 60%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+  }
+
+  .newsletter button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .newsletter button:hover {
+    background-color: #0056b3;
+  }
   </style>
 </html>
