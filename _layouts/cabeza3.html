@@ -14,7 +14,12 @@
             background-position: center;
             transition: background-image 0.5s;
             margin: 0; /* Eliminar margen para evitar el espacio en la parte superior */
-            padding-top: 80px; /* Espacio para el menú fijo */
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 80px; /* Ajustar para evitar que se superponga al menú */
         }
 
         /* Estilos para el menú */
@@ -23,8 +28,6 @@
             width: 100%; /* Asegura que el menú ocupe todo el ancho */
             z-index: 1000; /* Coloca el menú sobre otros elementos */
             transition: top 0.3s; /* Transición suave al ocultar/mostrar el menú */
-            background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
-            border-radius: 0 0 10px 10px; /* Bordes redondeados en la parte inferior */
         }
 
         nav ul {
@@ -32,6 +35,9 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+            border-radius: 0.5rem; /* Bordes redondeados */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         nav ul li {
@@ -104,7 +110,7 @@
 <header>
     <nav id="main-nav">
         <div class="container">
-            <div style="display: flex; align-items: center; justify-content: center;">
+            <div style="display: flex; align-items: center;">
                 <a id="a-title" href="{{ site.baseurl | relative_url }}">
                     <img src="{{ site.baseurl }}/assets/images/image.png" alt="Logo de la empresa" style="width: 60px;">
                 </a>
@@ -144,12 +150,12 @@
 </header>
 
 <!-- Botones para cambiar el tema y fondo -->
-<div style="position: fixed; top: 10px; right: 10px; z-index: 1000; display: flex; flex-direction: column; align-items: flex-end;">
+<div style="position: fixed; top: 10px; right: 10px; z-index: 1000;">
     <button class="toggle-theme-btn" onclick="toggleTheme()">Cambiar tema</button>
     <button class="change-background-btn" onclick="changeBackground()">Cambiar fondo</button>
 </div>
 
-<div class="container">
+<div class="container"> <!-- Para evitar que el contenido se superponga al menú -->
     {{ content }}
 </div>
 
