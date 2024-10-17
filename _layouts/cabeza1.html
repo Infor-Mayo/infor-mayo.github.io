@@ -44,9 +44,9 @@
     <header>
       <div class="container">
         <div style="display: flex; align-items: center;">
-          <a id="a-title" href="{{ '/' | relative_url }}">
-            <img src="https://infor-mayo.github.io/assets/images/image.png" alt="Logo de la empresa" style="width: 60px;">
-          </a>
+          <a id="a-title" href="{{ site.baseurl | relative_url }}">
+            <img src="{{ site.baseurl }}/assets/images/image.png" alt="Logo de la empresa" style="width: 60px;">
+          </a>          
           <div style="margin: auto; text-align: center;">
             <h1>{{ site.title | default: site.github.repository_name }}</h1>
             <h2>{{ site.description | default: site.github.project_tagline }}</h2>
