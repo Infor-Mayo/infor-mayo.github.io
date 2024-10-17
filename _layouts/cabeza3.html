@@ -218,14 +218,17 @@
       });
     </script>
   </body>
+  
   <footer>
     <div class="container">
-      <!-- Redes sociales -->
+      <!-- Redes sociales con iconos -->
       <div class="social-media" style="margin-bottom: 1rem;">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a> <!-- Agregar LinkedIn -->
+        <p>Síguenos en nuestras redes sociales:</p>
+        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
       </div>
   
       <!-- Mapa del sitio -->
@@ -257,20 +260,69 @@
         <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
       </div>
   
-      <!-- Formulario de suscripción -->
-      <div class="newsletter" style="margin-bottom: 1rem;">
-        <h4>Suscríbete a nuestro boletín</h4>
-        <form action="/suscribir" method="post">
-          <input type="email" name="email" placeholder="Tu correo electrónico" style="padding: 0.5rem; width: 70%;">
-          <button type="submit" style="padding: 0.5rem 1rem; margin-left: 0.5rem; background-color: #007bff; color: white; border: none; border-radius: 0.25rem;">Suscribirme</button>
-        </form>
-      </div>
-  
       <!-- Derechos reservados y año -->
       <p style="margin-top: 1rem;">Todos los derechos reservados &copy; {{ site.title }} {{ site.date | date: '%Y' }}</p>
     </div>
   </footer>
-
+  
+  <!-- Estilos adicionales para el footer -->
+  <style>
+    footer {
+      background-color: #f2f2f2;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+  
+    .social-media p {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  
+    .social-media a {
+      display: inline-block;
+      margin-right: 1rem;
+      color: #333;
+      font-size: 2rem; /* Tamaño de los iconos */
+      transition: color 0.3s;
+    }
+  
+    .social-media a:hover {
+      color: #007bff;
+    }
+  
+    .footer-links h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+  
+    .footer-links ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+  
+    .footer-links ul li a:hover {
+      color: #007bff;
+    }
+  
+    .contact-info {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+  </style>
+  
+  <!-- Font Awesome para íconos de redes sociales -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  
   <style>
     footer {
       background-color: #f2f2f2;
@@ -291,77 +343,5 @@
     .social-media a:hover {
       color: #007bff;
     }
-
-    footer {
-    background-color: #f2f2f2;
-    padding: 2rem;
-    text-align: center;
-    font-size: 0.9rem;
-    margin-top: 2rem;
-  }
-
-  .social-media a {
-    display: inline-block;
-    margin-right: 1rem;
-    color: #333;
-    font-size: 1.5rem;
-    transition: color 0.3s;
-  }
-
-  .social-media a:hover {
-    color: #007bff;
-  }
-
-  .footer-links h4 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .footer-links ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .footer-links ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 0.9rem;
-    transition: color 0.3s;
-  }
-
-  .footer-links ul li a:hover {
-    color: #007bff;
-  }
-
-  .contact-info {
-    font-size: 0.9rem;
-    line-height: 1.6;
-  }
-
-  .newsletter h4 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .newsletter input {
-    width: 60%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-  }
-
-  .newsletter button {
-    background-color: #007bff;
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-
-  .newsletter button:hover {
-    background-color: #0056b3;
-  }
   </style>
 </html>
