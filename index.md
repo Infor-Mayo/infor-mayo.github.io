@@ -1,123 +1,53 @@
 ---
-layout: default
+layout: cabeza2
 ---
 
-Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
+![Octocat](https://yt3.ggpht.com/k7A3O2CifD373P1Fw-92W_F1xMTbtTjnHzgNj_VsXiz3DL3GQjcggN5Jb4ccV6cBMRSioj6WOA=s88-c-k-c0x00ffffff-no-rj)
 
-[Link to another page](./another-page.html).
+# Bienvenidos a mi canal de YouTube
 
-There should be whitespace between paragraphs.
+¡Hola a todos! Mi nombre es [Mario Artola](https://www.facebook.com/mario.artola.524) y soy el creador del canal de YouTube [Infor Mayo](https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q?sub_confirmation=1). Me encanta compartir contenido interesante y entretenido con mis seguidores, y espero que disfrutes mi contenido tanto como yo disfruto creándolo.
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+## Acerca de mi canal
 
-# Header 1
+En mi canal encontrarás tutoriales paso a paso, consejos y trucos para programar en diferentes lenguajes, proyectos prácticos, soluciones a problemas comunes y mucho más. Mi objetivo es ayudarte a mejorar tus habilidades en informática y ayudarte a alcanzar tus metas en el campo de la tecnología. Me enfocaré en lenguajes como Python, Java y C++, y en proyectos de inteligencia artificial, machine learning, programación de videojuegos y desarrollo web. No importa si eres un principiante o un experto, en mi canal encontrarás contenido para todos los niveles. ¡No te olvides suscribirte para no perderte ninguno de mis videos y habilita las notificaciones para estar al tanto de todas las actualizaciones!
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+## Suscríbete a mi canal
 
-## Header 2
+No te pierdas ningún video. ¡Suscríbete a mi canal de YouTube hoy mismo y asegúrate de estar al día con mis últimos videos! Puedes encontrar mi canal aquí: [Infor-Mayo](https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q?sub_confirmation=1).
 
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
+## Sígueme en redes sociales
 
-### Header 3
+Para estar al tanto de todas las novedades, ¡asegúrate de seguirme en redes sociales! Puedes encontrarme en:
 
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
+- [Twitter](https://twitter.com/MarioArtola15)
+- [Youtube](https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q?sub_confirmation=1).
+- [Instagram](https://www.instagram.com/infor_mayo)
+- [Facebook](https://www.facebook.com/groups/430222984636303)
 
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
+## Cursos y Futuros cursos
 
-#### Header 4
+| Estado       | Cursos   | Nivel      | Links      |
+|:-------------|:---------|:-----------|:--------------|
+| [Subido](https://youtube.com/playlist?list=PL9Lgme4PR4XA6vEINnWImbZq2kXyRPgev)       | c++      | `básico`   | [🔗👍](./1-curso-basico-c++.md)   |
+| No creado    | c++      | `medio`    | [🔗🙅‍♂️](./)   |
+| No creado    | c++      | `avanzado` | [🔗🙅‍♂️](./)   |
+|   🔽🔽🔽🔽🔽       |      🔽🔽🔽🔽🔽🔽   |      🔽🔽🔽🔽🔽     |       🔽🔽         |
+| [Subiendo](https://youtube.com/playlist?list=PL9Lgme4PR4XAJn7GkXBBTpnxWRGyQGMPU)   | python   | `básico`   | [🔗👍](./1-curso-basico-python.md)   |
+| No creado    | python   | `medio`    | [🔗🙅‍♂️](./)   |
+| No creado    | python   | `avanzado` | [🔗🙅‍♂️](./)   |
+|        🔽🔽🔽🔽🔽      |      🔽🔽🔽🔽🔽🔽    |      🔽🔽🔽🔽🔽      |  🔽🔽 |
+| No creado    | bash     | `básico`   | [🔗🙅‍♂️](./)   |
+| No creado    | bash     | `medio`    | [🔗🙅‍♂️](./)   |
+| No creado    | bash     | `avanzado` | [🔗🙅‍♂️](./)   |
+|     🔽🔽🔽🔽🔽         |     🔽🔽🔽🔽🔽🔽     |       🔽🔽🔽🔽🔽     | 🔽🔽  |
+| No creado    | gbscript | `básico`   | [🔗🙅‍♂️](./)   |
+|     🔽🔽🔽🔽🔽         |     🔽🔽🔽🔽🔽🔽     |       🔽🔽🔽🔽🔽     | 🔽🔽  |
+| [Subiendo](https://youtube.com/playlist?list=PL9Lgme4PR4XDbaGv87gfR5AupKot9yf5Z)      | Transfermovil | `Completo`| [🔗👍](./1-curso-completo-transfermovil.md)   |
+| No creado    | Enzona      | `medio`    | [🔗🙅‍♂️](./)   |
 
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
 
-##### Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
 
 * * *
 
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```
-The final element.
-```
+¡Gracias por visitar mi sitio web! Espero que disfrutes mi contenido tanto como yo disfruto creándolo. ¡Nos vemos pronto!
