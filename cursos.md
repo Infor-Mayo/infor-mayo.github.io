@@ -24,9 +24,9 @@ layout: cabeza3
 |     🔽🔽🔽🔽🔽         |     🔽🔽🔽🔽🔽🔽     |       🔽🔽🔽🔽🔽     | 🔽🔽  |
 | No creado    | gbscript | `básico`   | [🔗🙅‍♂️](./)   |
 |     🔽🔽🔽🔽🔽         |     🔽🔽🔽🔽🔽🔽     |       🔽🔽🔽🔽🔽     | 🔽🔽  |
-| [Subiendo](https://youtube.com/playlist?list=PL9Lgme4PR4XDbaGv87gfR5AupKot9yf5Z)      | Transfermovil | `Completo`| [🔗👍](./cursos/transfermovil/curso-completo-transfermovil.md)   |
+| [Subiendo](https://youtube.com/playlist?list=PL9Lgme4PR4XDbaGv87gfR5AupKot9yf5Z)      | Transfermovil | `completo`| [🔗👍](./cursos/transfermovil/curso-completo-transfermovil.md)   |
 | No creado    | Enzona      | `medio`    | [🔗🙅‍♂️](./)   |
 |     🔽🔽🔽🔽🔽         |     🔽🔽🔽🔽🔽🔽     |       🔽🔽🔽🔽🔽     | 🔽🔽  |
-| No creado    |QT| `medio`    | [🔗🙅‍♂️](./)   |
+| No creado    |QT| `completo`    | [🔗🙅‍♂️](./)   |
 
 
