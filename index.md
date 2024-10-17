@@ -29,11 +29,11 @@ Para estar al tanto de todas las novedades, ¡asegúrate de seguirme en redes so
 
 | Estado       | Cursos   | Nivel      | Links      |
 |:-------------|:---------|:-----------|:--------------|
-| [Subido](https://youtube.com/playlist?list=PL9Lgme4PR4XA6vEINnWImbZq2kXyRPgev)       | c++      | `básico`   | [🔗👍](./cursobasicoc++/1-curso-basico-c++.md)   |
+| [Subido](https://youtube.com/playlist?list=PL9Lgme4PR4XA6vEINnWImbZq2kXyRPgev)       | c++      | `básico`   | [🔗👍](./cursos/c++_basico/1-curso-basico-c++.md)   |
 | No creado    | c++      | `medio`    | [🔗🙅‍♂️](./)   |
 | No creado    | c++      | `avanzado` | [🔗🙅‍♂️](./)   |
 |   🔽🔽🔽🔽🔽       |      🔽🔽🔽🔽🔽🔽   |      🔽🔽🔽🔽🔽     |       🔽🔽         |
-| [Subiendo](https://youtube.com/playlist?list=PL9Lgme4PR4XAJn7GkXBBTpnxWRGyQGMPU)   | python   | `básico`   | [🔗👍](./1-curso-basico-python.md)   |
+| [Subiendo](https://youtube.com/playlist?list=PL9Lgme4PR4XAJn7GkXBBTpnxWRGyQGMPU)   | python   | `básico`   | [🔗👍](./cursos/python_basico/1-curso-basico-python.md)   |
 | No creado    | python   | `medio`    | [🔗🙅‍♂️](./)   |
 | No creado    | python   | `avanzado` | [🔗🙅‍♂️](./)   |
 |        🔽🔽🔽🔽🔽      |      🔽🔽🔽🔽🔽🔽    |      🔽🔽🔽🔽🔽      |  🔽🔽 |
@@ -43,7 +43,7 @@ Para estar al tanto de todas las novedades, ¡asegúrate de seguirme en redes so
 |     🔽🔽🔽🔽🔽         |     🔽🔽🔽🔽🔽🔽     |       🔽🔽🔽🔽🔽     | 🔽🔽  |
 | No creado    | gbscript | `básico`   | [🔗🙅‍♂️](./)   |
 |     🔽🔽🔽🔽🔽         |     🔽🔽🔽🔽🔽🔽     |       🔽🔽🔽🔽🔽     | 🔽🔽  |
-| [Subiendo](https://youtube.com/playlist?list=PL9Lgme4PR4XDbaGv87gfR5AupKot9yf5Z)      | Transfermovil | `Completo`| [🔗👍](./1-curso-completo-transfermovil.md)   |
+| [Subiendo](https://youtube.com/playlist?list=PL9Lgme4PR4XDbaGv87gfR5AupKot9yf5Z)      | Transfermovil | `Completo`| [🔗👍](./cursos/transfermovil/curso-completo-transfermovil.md)   |
 | No creado    | Enzona      | `medio`    | [🔗🙅‍♂️](./)   |
 
 
