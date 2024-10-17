@@ -104,11 +104,12 @@
       background-color: rgba(242, 242, 242, 0.8);
     }
 
-    /* Botones debajo de la cabecera */
-    #button-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 2rem; /* Espacio debajo de la cabecera */
+    /* Botón en la esquina superior derecha */
+    #theme-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1000;
     }
 
     /* Estilos para móviles */
@@ -172,10 +173,9 @@
     </div>
   </header>
 
-  <!-- Contenedor para los botones debajo de la cabecera -->
-  <div id="button-container">
+  <!-- Botón para cambiar el tema en la esquina superior derecha -->
+  <div id="theme-toggle">
     <button onclick="toggleTheme()">Cambiar tema</button>
-    <button onclick="changeBackground()">Cambiar fondo</button>
   </div>
 
   <div class="container">
@@ -207,7 +207,6 @@
   <script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
   <script src="{{ '/assets/js/main.js?v=' | append: site.github.build_revision | relative_url }}"></script>
 </body>
-
 <footer>
   <div class="container">
     <p>Todos los derechos reservados &copy; {{ site.title }} {{ site.date | date: '%Y' }}</p>
