@@ -14,6 +14,7 @@
             background-position: center;
             transition: background-image 0.5s;
             margin: 0; /* Eliminar margen para evitar el espacio en la parte superior */
+            padding-top: 80px; /* Espacio para el menú fijo */
         }
 
         /* Estilos para el menú */
@@ -23,12 +24,11 @@
             z-index: 1000; /* Coloca el menú sobre otros elementos */
             transition: top 0.3s; /* Transición suave al ocultar/mostrar el menú */
             background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Línea inferior del menú */
+            border-radius: 0 0 10px 10px; /* Bordes redondeados en la parte inferior */
         }
 
         nav ul {
             display: flex;
-            justify-content: center; /* Centra el menú horizontalmente */
             list-style: none;
             padding: 0;
             margin: 0;
@@ -97,11 +97,6 @@
             opacity: 0; /* Oculta los botones */
             pointer-events: none; /* Desactiva la interacción */
         }
-
-        /* Espaciado del contenido */
-        .content {
-            padding-top: 80px; /* Espacio para que el contenido no se superponga al menú */
-        }
     </style>
 </head>
 
@@ -109,7 +104,7 @@
 <header>
     <nav id="main-nav">
         <div class="container">
-            <div style="display: flex; align-items: center;">
+            <div style="display: flex; align-items: center; justify-content: center;">
                 <a id="a-title" href="{{ site.baseurl | relative_url }}">
                     <img src="{{ site.baseurl }}/assets/images/image.png" alt="Logo de la empresa" style="width: 60px;">
                 </a>
@@ -149,12 +144,12 @@
 </header>
 
 <!-- Botones para cambiar el tema y fondo -->
-<div style="position: fixed; top: 10px; right: 10px; z-index: 1000;">
+<div style="position: fixed; top: 10px; right: 10px; z-index: 1000; display: flex; flex-direction: column; align-items: flex-end;">
     <button class="toggle-theme-btn" onclick="toggleTheme()">Cambiar tema</button>
     <button class="change-background-btn" onclick="changeBackground()">Cambiar fondo</button>
 </div>
 
-<div class="content"> <!-- Para evitar que el contenido se superponga al menú -->
+<div class="container">
     {{ content }}
 </div>
 
@@ -189,7 +184,7 @@
 
     window.addEventListener('scroll', () => {
         const st = window.pageYOffset || document.documentElement.scrollTop;
-
+        
         // Ocultar/mostrar el menú al hacer scroll
         if (st > lastScrollTop) {
             mainNav.style.top = "-80px"; // Oculta el menú
@@ -215,17 +210,16 @@
 
 <style>
     footer {
-        background-color: #f8f9fa;
-        padding: 1rem;
+        background-color: #f2f2f2;
+        padding: 2rem;
         text-align: center;
-    }
-
-    .social-media {
-        margin-top: 0.5rem;
+        font-size: 0.8rem;
+        margin-top: 2rem;
     }
 
     .social-media a {
-        margin: 0 0.5rem;
+        display: inline-block;
+        margin-right: 1rem;
         color: #333;
         font-size: 1.5rem;
         transition: color 0.3s;
