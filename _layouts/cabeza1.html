@@ -1,9 +1,45 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
-  <header>
-    {% include header.html %}
-  </header>
-
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="nV9-KB8JGPnlqoxbI79EYlmyLLB5BrP1R0s0AoUIkNE" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    {% include head-custom.html %}
+    {% seo %}
+    <style>
+      body {
+        background-color: #fff;
+      }
+      .container {
+        background-color: rgba(  178, 255, 246 , 0.1);
+        padding: 1rem;
+        border-radius: 0.5rem;
+      }
+      /* Estilos para el menú */
+      nav ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      nav ul li {
+        margin-right: 2rem;
+      }
+      /* Estilos para dispositivos móviles */
+      @media (max-width: 768px) {
+        nav ul {
+          flex-direction: column;
+        }
+        nav ul li {
+          margin-right: 0;
+          margin-bottom: 1rem;
+        }
+      }
+    </style>
+  </head>
+  
 
   <body>
     <header>

@@ -1,8 +1,106 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
-  <header>
-    {% include header.html %}
-  </header>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="nV9-KB8JGPnlqoxbI79EYlmyLLB5BrP1R0s0AoUIkNE" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    {% include head-custom.html %}
+    {% seo %}
+    <style>
+      body {
+        background-image: url("./assets/images/background.jpg");
+        background-size: cover;
+        background-position: center;
+        transition: background-image 0.5s;
+      }
+      .container {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 1rem;
+        border-radius: 0.5rem;
+      }
+      
+      /* Estilos para el botón de cambio de fondo */
+      button {
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+      }
+      
+      button:hover {
+        background-color: #0069d9;
+      }
+      button:active {
+        transform: translateY(0.1rem);
+        box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.3);
+      }
+
+      /* Estilos para el menú */
+      nav ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: relative;
+      }
+      nav ul li {
+        position: relative;
+        margin-right: 2rem;
+      }
+
+      nav ul li ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: white;
+        padding: 0.5rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        list-style: none;
+        z-index: 1000;
+      }
+
+      nav ul li:hover > ul {
+        display: block; /* Muestra el submenú al pasar el mouse */
+      }
+
+      nav ul li ul li {
+        margin-bottom: 0.5rem;
+      }
+
+      nav ul li ul li a {
+        display: block;
+        padding: 0.5rem 1rem;
+        white-space: nowrap;
+      }
+
+      nav ul li ul li a:hover {
+        background-color: #f2f2f2;
+      }
+
+      /* Estilos para dispositivos móviles */
+      @media (max-width: 768px) {
+        nav ul {
+          flex-direction: column;
+        }
+        nav ul li {
+          margin-right: 0;
+          margin-bottom: 1rem;
+        }
+        .container {
+          overflow: auto;
+        }
+      }
+    </style>
+  </head>
 
   <body>
     <header>
