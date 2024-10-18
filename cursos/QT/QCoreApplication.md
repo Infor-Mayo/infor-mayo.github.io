@@ -13,17 +13,17 @@ La clase QCoreApplication se utiliza para manejar aplicaciones sin interfaz grá
     - QCoreApplication(int &argc, char **argv)
     o	Este constructor inicializa la aplicación, recibiendo los argumentos de la línea de comandos (argc y argv). Estos argumentos pueden ser utilizados para personalizar el comportamiento de la aplicación al arrancar.
 
-Ejemplo:
+    Ejemplo:
 
-```cpp
-int main(int argc, char *argv[]) {
-    QCoreApplication app(argc, argv);
-    qDebug() << "Número de argumentos:" << argc;
-    qDebug() << "Primer argumento:" << argv[0];
-    return app.exec();
-}
-```
-- En este caso, se crea una aplicación de consola y se imprime el número de argumentos y el primer argumento (normalmente, el nombre del ejecutable).
+    ```cpp
+    int main(int argc, char *argv[]) {
+        QCoreApplication app(argc, argv);
+        qDebug() << "Número de argumentos:" << argc;
+        qDebug() << "Primer argumento:" << argv[0];
+        return app.exec();
+    }
+    ```
+    - En este caso, se crea una aplicación de consola y se imprime el número de argumentos y el primer argumento (normalmente, el nombre del ejecutable).
 
 2. ## Método exec()
     - int exec(): Inicia el bucle de eventos de la aplicación. La aplicación permanece activa hasta que se llama a quit() o exit().
