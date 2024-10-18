@@ -128,26 +128,25 @@ La clase QCoreApplication se utiliza para manejar aplicaciones sin interfaz grá
 # Ejercicios de consolidación:
 
 1.	### Gestión de argumentos:
-Crea una aplicación que reciba dos números desde la línea de comandos y los sume. Imprime el resultado en la consola.
+    - Crea una aplicación que reciba dos números desde la línea de comandos y los sume. Imprime el resultado en la consola.
 
-Ejemplo:
-``` bash
-./miapp 5 10
-```
-
-El programa debe mostrar: La suma es: 15.
+    Ejemplo:
+    ``` bash
+    ./miapp 5 10
+    ```
+    El programa debe mostrar: La suma es: 15.
 
 2.	### Aplicación con temporizador:
-o	Escribe una aplicación que se cierre automáticamente después de 10 segundos usando QTimer y QCoreApplication::quit(). Mientras tanto, imprime un mensaje cada segundo usando QTimer.
+    - Escribe una aplicación que se cierre automáticamente después de 10 segundos usando QTimer y QCoreApplication::quit(). Mientras tanto, imprime un mensaje cada segundo usando QTimer.
 
 3. ### 	Información de la aplicación:
-o	Crea una aplicación que establezca el nombre, la versión, la organización y el dominio de la organización. Luego imprime esta información en la consola.
+    - Crea una aplicación que establezca el nombre, la versión, la organización y el dominio de la organización. Luego imprime esta información en la consola.
 
 4.	### Código de retorno:
-o	Desarrolla una aplicación que ejecute una tarea simple (como contar hasta 5) y luego cierre la aplicación con un código de retorno diferente en función del resultado (0 si todo sale bien, 1 si ocurre algún error).
+    - Desarrolla una aplicación que ejecute una tarea simple (como contar hasta 5) y luego cierre la aplicación con un código de retorno diferente en función del resultado (0 si todo sale bien, 1 si ocurre algún error).
 
 5.	### Aplicación multiargumentos:
-o	Crea una aplicación que procese múltiples argumentos de la línea de comandos. Si el primer argumento es saludar, imprime "Hola, [nombre]" (donde [nombre] es el segundo argumento), y si el primer argumento es adios, imprime "Adiós, [nombre]" antes de salir con un código 0.
+    - Crea una aplicación que procese múltiples argumentos de la línea de comandos. Si el primer argumento es saludar, imprime "Hola, [nombre]" (donde [nombre] es el segundo argumento), y si el primer argumento es adios, imprime "Adiós, [nombre]" antes de salir con un código 0.
 
 ***
 
