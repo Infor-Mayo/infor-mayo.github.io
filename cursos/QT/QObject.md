@@ -61,6 +61,7 @@ La clase QObject es fundamental en Qt porque proporciona una infraestructura par
     - QObject* findChild(const QString &name): Busca un hijo con el nombre dado.
     - QList<QObject*> findChildren(const QString &name): Devuelve una lista de hijos que coinciden con el nombre.
     Ejemplo:
+    
     ```cpp
     QObject *padre = new QObject;
     QObject *hijo = new QObject(padre);
