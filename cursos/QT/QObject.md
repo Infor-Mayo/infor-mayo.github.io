@@ -138,16 +138,16 @@ Una de las características más poderosas de QObject es su sistema de señales 
 ## Ejercicios de consolidación:
 
 1.	### Jerarquía de Objetos:
-o	Crea un programa que cree una jerarquía de objetos. Establece un objeto padre y varios hijos. Muestra el número de hijos del padre en la consola.
-Desafío adicional: Encuentra un hijo por su nombre usando findChild().
+    - Crea un programa que cree una jerarquía de objetos. Establece un objeto padre y varios hijos. Muestra el número de hijos del padre en la consola.
+    Desafío adicional: Encuentra un hijo por su nombre usando findChild().
 2.	### Comunicación con Señales y Slots:
-o	Crea dos clases. La primera clase emite una señal, y la segunda clase tiene un slot que imprime un mensaje cuando la señal es emitida. Conecta la señal al slot y haz que el programa ejecute esa comunicación.
+    - Crea dos clases. La primera clase emite una señal, y la segunda clase tiene un slot que imprime un mensaje cuando la señal es emitida. Conecta la señal al slot y haz que el programa ejecute esa comunicación.
 3.	### Conexión de Temporizadores:
-o	Utiliza un QTimer para emitir una señal cada segundo y conecta esta señal a un slot que imprima un mensaje en la consola. Usa el sistema de señales y slots para lograr esto.
+    - Utiliza un QTimer para emitir una señal cada segundo y conecta esta señal a un slot que imprima un mensaje en la consola. Usa el sistema de señales y slots para lograr esto.
 4.	### Manejo de Eventos:
-o	Sobreescribe el método event() en una subclase de QObject para capturar eventos de temporizador (QTimerEvent). Inicia un temporizador en tu objeto y maneja el evento de temporizador dentro de event().
+    - Sobreescribe el método event() en una subclase de QObject para capturar eventos de temporizador (QTimerEvent). Inicia un temporizador en tu objeto y maneja el evento de temporizador dentro de event().
 5.	### Destrucción Automática:
-o	Crea un programa que cree un objeto padre y varios objetos hijos. Implementa una función para destruir el padre y verifica si los hijos se destruyen automáticamente.
+    - Crea un programa que cree un objeto padre y varios objetos hijos. Implementa una función para destruir el padre y verifica si los hijos se destruyen automáticamente.
 
 ***
 
