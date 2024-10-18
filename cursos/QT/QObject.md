@@ -13,7 +13,9 @@ La clase QObject es fundamental en Qt porque proporciona una infraestructura par
 
 1. ### Constructor y Destructor
     - QObject(QObject *parent = nullptr): Crea un nuevo objeto QObject, opcionalmente con un objeto padre. Si el objeto padre se destruye, también se destruirán todos sus hijos automáticamente.
+    
     Ejemplo:
+    
     ```cpp
     QObject *padre = new QObject;
     QObject *hijo = new QObject(padre);  // Se destruirá automáticamente cuando "padre" sea destruido
@@ -21,7 +23,9 @@ La clase QObject es fundamental en Qt porque proporciona una infraestructura par
 
 2. ### Método parent()
     - QObject* parent(): Devuelve el padre del objeto si tiene uno.
+    
     Ejemplo:
+
     ```cpp
     QObject *objeto = new QObject;
     QObject *padre = new QObject(objeto);
@@ -30,7 +34,9 @@ La clase QObject es fundamental en Qt porque proporciona una infraestructura par
 
 3. ### Método children()
     - QList<QObject *> children(): Devuelve una lista con los hijos directos del objeto.
+    
     Ejemplo:
+
     ```cpp
     QObject *padre = new QObject;
     QObject *hijo1 = new QObject(padre);
@@ -41,7 +47,9 @@ La clase QObject es fundamental en Qt porque proporciona una infraestructura par
 
 4. ### Método deleteLater()
     - void deleteLater(): Marca el objeto para su destrucción en el próximo bucle de eventos. Esto es útil cuando quieres eliminar un objeto pero estás dentro de una función que lo sigue usando.
+
     Ejemplo:
+
     ```cpp
     QObject *objeto = new QObject;
     objeto->deleteLater();  // Se eliminará cuando finalice el ciclo de eventos actual
@@ -50,7 +58,9 @@ La clase QObject es fundamental en Qt porque proporciona una infraestructura par
 5. ### Método setObjectName() y objectName()
     - void setObjectName(const QString &name): Establece el nombre del objeto.
     - QString objectName(): Devuelve el nombre del objeto.
+
     Ejemplo:
+
     ```cpp
     QObject *objeto = new QObject;
     objeto->setObjectName("MiObjeto");
@@ -60,8 +70,9 @@ La clase QObject es fundamental en Qt porque proporciona una infraestructura par
 6. ### Método findChild() y findChildren()
     - QObject* findChild(const QString &name): Busca un hijo con el nombre dado.
     - QList<QObject*> findChildren(const QString &name): Devuelve una lista de hijos que coinciden con el nombre.
+
     Ejemplo:
-    
+
     ```cpp
     QObject *padre = new QObject;
     QObject *hijo = new QObject(padre);
@@ -75,7 +86,9 @@ La clase QObject es fundamental en Qt porque proporciona una infraestructura par
 
 7. ### Método event()
     - bool event(QEvent *event): Este método maneja los eventos enviados a los objetos. Es posible sobrescribir este método en clases derivadas para manejar eventos personalizados.
+
     Ejemplo:
+
     ```cpp
     class MiObjeto : public QObject {
         Q_OBJECT
