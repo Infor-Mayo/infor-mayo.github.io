@@ -27,5 +27,5 @@ layout: cabeza3
 | [Subido](https://youtube.com/playlist?list=PL9Lgme4PR4XDbaGv87gfR5AupKot9yf5Z)      | Transfermovil | `completo`| [🔗👍](./cursos/transfermovil/curso-completo-transfermovil.md)   |
 | No creado    | Enzona      | `medio`    | [🔗🙅‍♂️](./)   |
 |     🔽🔽🔽🔽🔽         |     🔽🔽🔽🔽🔽🔽     |       🔽🔽🔽🔽🔽     | 🔽🔽  |
-| [Subido](./#)    |QT| `completo`    | [🔗🙅‍♂️](./cursos/curso-completo-QT)   |
+| [Subido](./#)    |QT| `completo`    | [🔗🙅‍♂️](./cursos/curso-completo-QT.md)   |
 
