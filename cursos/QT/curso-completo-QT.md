@@ -21,7 +21,7 @@ Si quieres aprender a usar Transfermóvil para hacer tus operaciones financieras
 
 | Nombre       | link Youtube   | Artículo      |
 |:-------------|:---------|:--------------|
-| Cómo descargar la última versión de TransferMóvil en Cuba | [`1`](https://youtu.be/Ps8l2zVXyP0)   | [🖥️👈](./transfermovil-1.md)   |
+| QCoreApplication | [`1`](./#)   | [🖥️👈](./QCoreApplication.md)   |
 | Cómo autenticarse en la aplicación TransferMóvil     |[`2`](https://youtu.be/4BoEC5cykZw)| [🖥️👈](./transfermovil-2.md)   |
 | Cómo desconectarse de TransferMóvil de forma segura |[`3`](https://youtu.be/Gt0ldgh80Do)|[🖥️👈](./transfermovil-3.md)  |
 | Consulta de saldo en TransferMóvil: una guía paso a paso |[`4`](https://youtu.be/HpozyMhDbDE)| [🖥️👈](./transfermovil-4.md)   |
