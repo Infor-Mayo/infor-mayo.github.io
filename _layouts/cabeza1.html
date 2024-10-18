@@ -43,25 +43,7 @@
 
   <body>
     <header>
-      <div class="container">
-        <div style="display: flex; align-items: center;">
-          <a id="a-title" href="{{ site.baseurl | relative_url }}">
-            <img src="{{ site.baseurl }}/assets/images/image.png" alt="Logo de la empresa" style="width: 60px;">
-          </a>          
-          <div style="margin: auto; text-align: center;">
-            <h1>{{ site.title | default: site.github.repository_name }}</h1>
-            <h2>{{ site.description | default: site.github.project_tagline }}</h2>
-          </div>
-        </div>
-        <nav style="display: flex; justify-content: center;">
-          <ul style="display: flex; list-style: none; padding: 0;">
-            <li style="margin-right: 4rem;"><a href="./">Inicio</a></li>
-            <li style="margin-right: 4rem;"><a href="./acercade.html">Acerca de</a></li>
-            <li style="margin-right: 4rem;"><a href="./productos.html">Productos</a></li>
-            <li><a href="./contacto.html">Contacto</a></li>
-          </ul>
-        </nav>
-      </div>
+      {% include header.html %}
     </header>
 
     <div class="container">
