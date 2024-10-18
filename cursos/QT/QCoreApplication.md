@@ -1,17 +1,14 @@
 
-# ¡Vamos a profundizar en la clase QCoreApplication! 
+# Clase QCoreApplication 
 
 Esta clase es la base de toda aplicación en Qt y gestiona el ciclo de vida de la aplicación, incluyendo eventos, argumentos de la línea de comandos y el bucle de eventos.
-
-## Clase QCoreApplication
-
 La clase QCoreApplication se utiliza para manejar aplicaciones sin interfaz gráfica (generalmente en aplicaciones de consola o servicios) y proporciona la infraestructura básica necesaria para cualquier aplicación en Qt. Aunque en aplicaciones con GUI se usa QApplication (una subclase de QCoreApplication), muchos conceptos son compartidos.
 
 ***
 
-# Funcionalidades principales de QCoreApplication
+## Funcionalidades principales de QCoreApplication
 
-1. ## Constructor
+1. ### Constructor
     - QCoreApplication(int &argc, char **argv)
     o	Este constructor inicializa la aplicación, recibiendo los argumentos de la línea de comandos (argc y argv). Estos argumentos pueden ser utilizados para personalizar el comportamiento de la aplicación al arrancar.
 
@@ -27,7 +24,7 @@ La clase QCoreApplication se utiliza para manejar aplicaciones sin interfaz grá
     ```
     - En este caso, se crea una aplicación de consola y se imprime el número de argumentos y el primer argumento (normalmente, el nombre del ejecutable).
 
-2. ## Método exec()
+2. ### Método exec()
     - int exec(): Inicia el bucle de eventos de la aplicación. La aplicación permanece activa hasta que se llama a quit() o exit().
 
     Ejemplo:
@@ -40,7 +37,7 @@ La clase QCoreApplication se utiliza para manejar aplicaciones sin interfaz grá
     }
     ``` 
 
-3. ## Método quit()
+3. ### Método quit()
     - void quit(): Este método termina el bucle de eventos y cierra la aplicación. Se puede usar para finalizar la ejecución cuando sea necesario.
 
     Ejemplo:
@@ -50,7 +47,7 @@ La clase QCoreApplication se utiliza para manejar aplicaciones sin interfaz grá
     // Cierra la app después de 5 segundos
     ```
 
-4. ## Método exit()
+4. ### Método exit()
     - void exit(int returnCode = 0): Similar a quit(), pero permite especificar un código de retorno. Un valor diferente a 0 suele indicar un error.
 
     Ejemplo:
@@ -62,7 +59,7 @@ La clase QCoreApplication se utiliza para manejar aplicaciones sin interfaz grá
     });
     ```
 
-5. ## Método applicationName() y setApplicationName()
+5. ### Método applicationName() y setApplicationName()
     - QString applicationName(): Devuelve el nombre de la aplicación.
     - void setApplicationName(const QString &name): Establece el nombre de la aplicación.
 
@@ -73,7 +70,7 @@ La clase QCoreApplication se utiliza para manejar aplicaciones sin interfaz grá
     qDebug() << "Nombre de la aplicación:" << QCoreApplication::applicationName();
     ```
 
-6. ## Método applicationVersion() y setApplicationVersion()
+6. ### Método applicationVersion() y setApplicationVersion()
     - QString applicationVersion(): Devuelve la versión de la aplicación.
     - void setApplicationVersion(const QString &version): Establece la versión de la aplicación.
 
@@ -84,7 +81,7 @@ La clase QCoreApplication se utiliza para manejar aplicaciones sin interfaz grá
     qDebug() << "Versión de la aplicación:" << QCoreApplication::applicationVersion();
     ```
 
-7. ## Método organizationName() y setOrganizationName()
+7. ### Método organizationName() y setOrganizationName()
     - QString organizationName(): Devuelve el nombre de la organización.
     - void setOrganizationName(const QString &name): Establece el nombre de la organización.
 
@@ -95,7 +92,7 @@ La clase QCoreApplication se utiliza para manejar aplicaciones sin interfaz grá
     qDebug() << "Nombre de la organización:" << QCoreApplication::organizationName();
     ```
 
-8. ## Método organizationDomain() y setOrganizationDomain()
+8. ### Método organizationDomain() y setOrganizationDomain()
     - QString organizationDomain(): Devuelve el dominio de la organización.
     - void setOrganizationDomain(const QString &domain): Establece el dominio de la organización.
 
@@ -106,7 +103,7 @@ La clase QCoreApplication se utiliza para manejar aplicaciones sin interfaz grá
     qDebug() << "Dominio de la organización:" << QCoreApplication::organizationDomain();
     ```
 
-9. ## Método applicationDirPath()
+9. ### Método applicationDirPath()
     - QString applicationDirPath(): Devuelve la ruta del directorio donde está el ejecutable de la aplicación.
 
     Ejemplo:
@@ -115,7 +112,7 @@ La clase QCoreApplication se utiliza para manejar aplicaciones sin interfaz grá
     qDebug() << "Directorio del ejecutable:" << QCoreApplication::applicationDirPath();
     ```
 
-10. ## Método arguments()
+10. ### Método arguments()
     - QStringList arguments(): Devuelve una lista con los argumentos de la línea de comandos pasados al iniciar la aplicación.
 
     Ejemplo:
@@ -127,7 +124,7 @@ La clase QCoreApplication se utiliza para manejar aplicaciones sin interfaz grá
 
 ***
 
-# Ejercicios de consolidación:
+## Ejercicios de consolidación:
 
 1.	### Gestión de argumentos:
     - Crea una aplicación que reciba dos números desde la línea de comandos y los sume. Imprime el resultado en la consola.
