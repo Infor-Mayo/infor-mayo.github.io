@@ -14,7 +14,7 @@ ________________________________________
 
 Ejemplo:
 
-```cpp Copiar código
+```cpp
 int main(int argc, char *argv[]) {
     QCoreApplication app(argc, argv);
     qDebug() << "Número de argumentos:" << argc;
