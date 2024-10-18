@@ -2,7 +2,9 @@
 # ¡Vamos a profundizar en la clase QCoreApplication! 
 
 Esta clase es la base de toda aplicación en Qt y gestiona el ciclo de vida de la aplicación, incluyendo eventos, argumentos de la línea de comandos y el bucle de eventos.
-Clase QCoreApplication
+
+## Clase QCoreApplication
+
 La clase QCoreApplication se utiliza para manejar aplicaciones sin interfaz gráfica (generalmente en aplicaciones de consola o servicios) y proporciona la infraestructura básica necesaria para cualquier aplicación en Qt. Aunque en aplicaciones con GUI se usa QApplication (una subclase de QCoreApplication), muchos conceptos son compartidos.
 
 ***
