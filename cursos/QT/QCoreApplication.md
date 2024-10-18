@@ -28,91 +28,100 @@ La clase QCoreApplication se utiliza para manejar aplicaciones sin interfaz grá
 2. ## Método exec()
     - int exec(): Inicia el bucle de eventos de la aplicación. La aplicación permanece activa hasta que se llama a quit() o exit().
 
-Ejemplo:
-```cpp
-int main(int argc, char *argv[]) {
-    QCoreApplication app(argc, argv);
-    qDebug() << "Iniciando bucle de eventos...";
-    return app.exec();  // Mantiene la aplicación ejecutándose
-}
-```
+    Ejemplo:
+
+    ```cpp
+    int main(int argc, char *argv[]) {
+        QCoreApplication app(argc, argv);
+        qDebug() << "Iniciando bucle de eventos...";
+        return app.exec();  // Mantiene la aplicación ejecutándose
+    }
+    ``` 
 
 3. ## Método quit()
     - void quit(): Este método termina el bucle de eventos y cierra la aplicación. Se puede usar para finalizar la ejecución cuando sea necesario.
 
-Ejemplo:
-```cpp
-QTimer::singleShot(5000, &QCoreApplication::quit);  
-// Cierra la app después de 5 segundos
-```
+    Ejemplo:
+
+    ```cpp
+    QTimer::singleShot(5000, &QCoreApplication::quit);  
+    // Cierra la app después de 5 segundos
+    ```
 
 4. ## Método exit()
     - void exit(int returnCode = 0): Similar a quit(), pero permite especificar un código de retorno. Un valor diferente a 0 suele indicar un error.
 
-Ejemplo:
-```cpp
-QTimer::singleShot(3000, []() {
-    qDebug() << "Saliendo con error.";
-    QCoreApplication::exit(1);  // Código de retorno 1 indica error
-});
-```
+    Ejemplo:
+
+    ```cpp
+    QTimer::singleShot(3000, []() {
+        qDebug() << "Saliendo con error.";
+        QCoreApplication::exit(1);  // Código de retorno 1 indica error
+    });
+    ```
 
 5. ## Método applicationName() y setApplicationName()
     - QString applicationName(): Devuelve el nombre de la aplicación.
     - void setApplicationName(const QString &name): Establece el nombre de la aplicación.
 
-Ejemplo:
-```cpp
-QCoreApplication::setApplicationName("MiAplicacion");
-qDebug() << "Nombre de la aplicación:" << QCoreApplication::applicationName();
-```
+    Ejemplo:
+
+    ```cpp
+    QCoreApplication::setApplicationName("MiAplicacion");
+    qDebug() << "Nombre de la aplicación:" << QCoreApplication::applicationName();
+    ```
 
 6. ## Método applicationVersion() y setApplicationVersion()
     - QString applicationVersion(): Devuelve la versión de la aplicación.
     - void setApplicationVersion(const QString &version): Establece la versión de la aplicación.
 
-Ejemplo:
-```cpp
-QCoreApplication::setApplicationVersion("1.0.0");
-qDebug() << "Versión de la aplicación:" << QCoreApplication::applicationVersion();
-```
+    Ejemplo:
+
+    ```cpp
+    QCoreApplication::setApplicationVersion("1.0.0");
+    qDebug() << "Versión de la aplicación:" << QCoreApplication::applicationVersion();
+    ```
 
 7. ## Método organizationName() y setOrganizationName()
     - QString organizationName(): Devuelve el nombre de la organización.
     - void setOrganizationName(const QString &name): Establece el nombre de la organización.
 
-Ejemplo:
-```cpp
-QCoreApplication::setOrganizationName("MiOrganizacion");
-qDebug() << "Nombre de la organización:" << QCoreApplication::organizationName();
-```
+    Ejemplo:
+
+    ```cpp
+    QCoreApplication::setOrganizationName("MiOrganizacion");
+    qDebug() << "Nombre de la organización:" << QCoreApplication::organizationName();
+    ```
 
 8. ## Método organizationDomain() y setOrganizationDomain()
     - QString organizationDomain(): Devuelve el dominio de la organización.
     - void setOrganizationDomain(const QString &domain): Establece el dominio de la organización.
 
-Ejemplo:
-```cpp
-QCoreApplication::setOrganizationDomain("miempresa.com");
-qDebug() << "Dominio de la organización:" << QCoreApplication::organizationDomain();
-```
+    Ejemplo:
+
+    ```cpp
+    QCoreApplication::setOrganizationDomain("miempresa.com");
+    qDebug() << "Dominio de la organización:" << QCoreApplication::organizationDomain();
+    ```
 
 9. ## Método applicationDirPath()
     - QString applicationDirPath(): Devuelve la ruta del directorio donde está el ejecutable de la aplicación.
 
-Ejemplo:
-```cpp
-qDebug() << "Directorio del ejecutable:" << QCoreApplication::applicationDirPath();
-```
+    Ejemplo:
+
+    ```cpp
+    qDebug() << "Directorio del ejecutable:" << QCoreApplication::applicationDirPath();
+    ```
 
 10. ## Método arguments()
     - QStringList arguments(): Devuelve una lista con los argumentos de la línea de comandos pasados al iniciar la aplicación.
 
-Ejemplo:
-```cpp
-QStringList args = QCoreApplication::arguments();
-qDebug() << "Argumentos de la línea de comandos:" << args;
-```
+    Ejemplo:
+
+    ```cpp
+    QStringList args = QCoreApplication::arguments();
+    qDebug() << "Argumentos de la línea de comandos:" << args;
+    ```
 
 ***
 
