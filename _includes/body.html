@@ -1,0 +1,97 @@
+<body>
+  <header>
+    <div class="container">
+      <div style="display: flex; align-items: center;">
+        <a id="a-title" href="{{ site.baseurl | relative_url }}">
+          <img src="{{ site.baseurl }}/assets/images/image.png" alt="Logo de la empresa" style="width: 60px;">
+        </a>
+        <div style="margin: auto; text-align: center;">
+          <h1>{{ site.title | default: site.github.repository_name }}</h1>
+          <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+        </div>
+      </div>
+      <nav style="display: flex; justify-content: center;">
+        <ul>
+          <li><a href="{{ site.baseurl }}/">Inicio</a></li>
+          <li>
+            <a href="{{ site.baseurl }}/acercade.html">Acerca de</a>
+            <ul>
+              <li><a href="{{ site.baseurl }}/equipo.html">Nuestro Equipo</a></li>
+              <li><a href="{{ site.baseurl }}/historia.html">Nuestra Historia</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/productos.md">Productos</a>
+            <ul>
+              <li><a href="{{ site.baseurl }}/producto1.html">Producto 1</a></li>
+              <li><a href="{{ site.baseurl }}/producto2.html">Producto 2</a></li>
+              <li><a href="{{ site.baseurl }}/producto3.html">Producto 3</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/cursos.html">Cursos</a>
+            <ul>
+              <li><a href="{{ site.baseurl }}/cursos/c++_basico/1-curso-basico-c++.html">C++ basico</a></li>
+              <li><a href="{{ site.baseurl }}/cursos/transfermovil/curso-completo-transfermovil.html">Transfermovil</a></li>
+              <li><a href="{{ site.baseurl }}/cursos/QT/curso-completo-QT.html">QT</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/contacto.html">Contacto</a>
+            <ul>
+              <li><a href="{{ site.baseurl }}/soporte.html">Soporte</a></li>
+              <li><a href="{{ site.baseurl }}/consultas.html">Consultas</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Botones para cambiar el tema y fondo -->
+  <div class="buttons" id="buttons-container">
+    <button onclick="toggleTheme()">Cambiar tema</button>
+    <button onclick="changeBackground()">Cambiar fondo</button>
+  </div>
+
+  <div class="container">
+    {{ content }}
+  </div>
+
+  <script>
+    // Rutas de imágenes para el cambio de fondo
+    const images = [
+      '{{ site.baseurl }}/assets/images/background.jpg',
+      '{{ site.baseurl }}/assets/images/background2.jpg',
+      '{{ site.baseurl }}/assets/images/background3.jpg'
+    ];
+    let currentImageIndex = 0;
+
+    // Función para cambiar el fondo manualmente
+    function changeBackground() {
+      currentImageIndex++;
+      if (currentImageIndex === images.length) {
+        currentImageIndex = 0;
+      }
+      document.body.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+    }
+
+    // Cambio de fondo automáticamente cada minuto (60,000 ms)
+    setInterval(changeBackground, 60000);
+
+    // Función para cambiar entre temas claro y oscuro
+    function toggleTheme() {
+      document.body.classList.toggle('dark-theme');
+    }
+
+    // Desvanecer botones al hacer scroll
+    window.addEventListener('scroll', function() {
+      const buttonsContainer = document.getElementById('buttons-container');
+      if (window.scrollY > 100) {
+        buttonsContainer.classList.add('hidden');
+      } else {
+        buttonsContainer.classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
