@@ -14,7 +14,7 @@ layout: cabeza3
 | No creado    | c++      | `medio`    | [🔗🙅‍♂️](./)   |
 | No creado    | c++      | `avanzado` | [🔗🙅‍♂️](./)   |
 |   🔽🔽🔽🔽🔽       |      🔽🔽🔽🔽🔽🔽   |      🔽🔽🔽🔽🔽     |       🔽🔽         |
-| [Subiendo](https://youtube.com/playlist?list=PL9Lgme4PR4XAJn7GkXBBTpnxWRGyQGMPU)   | python   | `básico`   | [🔗👍](./cursos/python_basico/1-curso-basico-python.md)   |
+| [Subido](https://youtube.com/playlist?list=PL9Lgme4PR4XAJn7GkXBBTpnxWRGyQGMPU)   | python   | `básico`   | [🔗👍](./cursos/python_basico/1-curso-basico-python.md)   |
 | No creado    | python   | `medio`    | [🔗🙅‍♂️](./)   |
 | No creado    | python   | `avanzado` | [🔗🙅‍♂️](./)   |
 |        🔽🔽🔽🔽🔽      |      🔽🔽🔽🔽🔽🔽    |      🔽🔽🔽🔽🔽      |  🔽🔽 |
@@ -24,8 +24,8 @@ layout: cabeza3
 |     🔽🔽🔽🔽🔽         |     🔽🔽🔽🔽🔽🔽     |       🔽🔽🔽🔽🔽     | 🔽🔽  |
 | No creado    | gbscript | `básico`   | [🔗🙅‍♂️](./)   |
 |     🔽🔽🔽🔽🔽         |     🔽🔽🔽🔽🔽🔽     |       🔽🔽🔽🔽🔽     | 🔽🔽  |
-| [Subiendo](https://youtube.com/playlist?list=PL9Lgme4PR4XDbaGv87gfR5AupKot9yf5Z)      | Transfermovil | `completo`| [🔗👍](./cursos/transfermovil/curso-completo-transfermovil.md)   |
+| [Subido](https://youtube.com/playlist?list=PL9Lgme4PR4XDbaGv87gfR5AupKot9yf5Z)      | Transfermovil | `completo`| [🔗👍](./cursos/transfermovil/curso-completo-transfermovil.md)   |
 | No creado    | Enzona      | `medio`    | [🔗🙅‍♂️](./)   |
 |     🔽🔽🔽🔽🔽         |     🔽🔽🔽🔽🔽🔽     |       🔽🔽🔽🔽🔽     | 🔽🔽  |
-| No creado    |QT| `completo`    | [🔗🙅‍♂️](./cursos/curso-completo-QT)   |
+| [Subido](./#)    |QT| `completo`    | [🔗🙅‍♂️](./cursos/curso-completo-QT)   |
 
