@@ -42,17 +42,12 @@
   
 
   <body>
-    <header>
-      {% include header.html %}
-    </header>
-
+    {% include body.html %}
     <div class="container">
       {{ content }}
     </div>
-
-    <script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/main.js?v=' | append: site.github.build_revision | relative_url }}"></script>
   </body>
+  
  <footer>
   <div class="container">
     <p>Todos los derechos reservados &copy; {{ site.title }} {{ site.date | date: '%Y' }}</p>

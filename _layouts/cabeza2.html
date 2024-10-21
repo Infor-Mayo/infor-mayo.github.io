@@ -103,30 +103,12 @@
   </head>
 
   <body>
-    <header>
-      {% include header.html %}
-    </header>
-
+    {% include body.html %}
     <div class="container">
       {{ content }}
     </div>
-
-    <script>
-      const images = ['./assets/images/background.jpg', './assets/images/background2.jpg', './assets/images/background3.jpg'];
-      let currentImageIndex = 0;
-
-      function changeBackground() {
-        currentImageIndex++;
-        if (currentImageIndex === images.length) {
-          currentImageIndex = 0;
-        }
-        document.body.style.backgroundImage = `url('${images[currentImageIndex]}')`;
-      }
-    </script>
-
-    <script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/main.js?v=' | append: site.github.build_revision | relative_url }}"></script>
   </body>
+  
   <footer>
     <div class="container">
       <p>Todos los derechos reservados &copy; {{ site.title }} {{ site.date | date: '%Y' }}</p>

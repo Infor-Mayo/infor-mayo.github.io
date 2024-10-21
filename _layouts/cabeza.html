@@ -130,17 +130,12 @@
   </head>
 
   <body>
-    <header>
-      {% include header.html %}
-    </header>
-
+    {% include body.html %}
     <div class="container">
-      <section id="main_content">
-        {{ content }}
-      </section>
+      {{ content }}
     </div>
-
   </body>
+  
   <footer>
   <div class="container">
     <p>Todos los derechos reservados &copy; {{ site.title }} {{ site.date | date: '%Y' }}</p>
