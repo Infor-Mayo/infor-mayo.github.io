@@ -8,76 +8,25 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
     {% seo %}
-    <style>
-      body {
-        background-color: #fff;
-      }
-      .container {
-        background-color: rgba(  178, 255, 246 , 0.1);
-        padding: 1rem;
-        border-radius: 0.5rem;
-      }
-      /* Estilos para el menú */
-      nav ul {
-        display: flex;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-      nav ul li {
-        margin-right: 2rem;
-      }
-      /* Estilos para dispositivos móviles */
-      @media (max-width: 768px) {
-        nav ul {
-          flex-direction: column;
-        }
-        nav ul li {
-          margin-right: 0;
-          margin-bottom: 1rem;
-        }
-      }
-    </style>
   </head>
   
-
   <body>
     {% include body.html %}
     <div class="container">
       {{ content }}
     </div>
   </body>
-  
- <footer>
-  <div class="container">
-    <p>Todos los derechos reservados &copy; {{ site.title }} {{ site.date | date: '%Y' }}</p>
-    <div class="social-media">
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
+
+  <footer>
+    <div class="container">
+      <p>Todos los derechos reservados &copy; {{ site.title }} {{ site.date | date: '%Y' }}</p>
+      <div class="social-media">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
     </div>
-  </div>
-</footer>
-<style>
-footer {
-  background-color: #f2f2f2;
-  padding: 2rem;
-  text-align: center;
-  font-size: 0.8rem;
-  margin-top: 2rem;
-}
-
-.social-media a {
-display: inline-block;
-margin-right: 1rem;
-color: #333;
-font-size: 1.5rem;
-transition: color 0.3s;
-}
-
-.social-media a:hover {
-color: #007bff;
-}
-</style>
+  </footer>
+  {% include style.html %}
 </html>
 
