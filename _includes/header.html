@@ -45,49 +45,6 @@
       </ul>
     </nav>
   </div>
-  
-  <!-- Botones para cambiar el tema y fondo -->
-  <div class="buttons" id="buttons-container">
-    <button onclick="toggleTheme()">Cambiar tema</button>
-    <button onclick="changeBackground()">Cambiar fondo</button>
-  </div>
-
-  <script>
-    // Rutas de imágenes para el cambio de fondo
-    const images = [
-      '{{ site.baseurl }}/assets/images/background.jpg',
-      '{{ site.baseurl }}/assets/images/background2.jpg',
-      '{{ site.baseurl }}/assets/images/background3.jpg'
-    ];
-    let currentImageIndex = 0;
-
-    // Función para cambiar el fondo manualmente
-    function changeBackground() {
-      currentImageIndex++;
-      if (currentImageIndex === images.length) {
-        currentImageIndex = 0;
-      }
-      document.body.style.backgroundImage = `url('${images[currentImageIndex]}')`;
-    }
-
-    // Cambio de fondo automáticamente cada minuto (60,000 ms)
-    setInterval(changeBackground, 60000);
-
-    // Función para cambiar entre temas claro y oscuro
-    function toggleTheme() {
-      document.body.classList.toggle('dark-theme');
-    }
-
-    // Desvanecer botones al hacer scroll
-    window.addEventListener('scroll', function() {
-      const buttonsContainer = document.getElementById('buttons-container');
-      if (window.scrollY > 100) {
-        buttonsContainer.classList.add('hidden');
-      } else {
-        buttonsContainer.classList.remove('hidden');
-      }
-    });
-  </script>
 </header>
 
 
