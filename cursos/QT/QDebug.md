@@ -74,6 +74,7 @@ La clase QDebug proporciona una interfaz para escribir información de depuraci�
     ```
 
     Salida:
+    
     ```makefile
     Número: 42
     Texto: "Hola Qt"
