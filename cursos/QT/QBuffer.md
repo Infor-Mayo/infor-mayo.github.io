@@ -2,172 +2,167 @@
 layout: cabeza3
 ---
 
-# Clase QBluetoothDeviceInfo
-La clase QBluetoothDeviceInfo de Qt representa la información de un dispositivo Bluetooth en el entorno del dispositivo local. Proporciona detalles sobre dispositivos Bluetooth disponibles, como su nombre, dirección, clase de dispositivo y capacidades.
+# Clase QBuffer
+La clase QBuffer es una subclase de QIODevice que permite usar un buffer de memoria como un dispositivo de entrada/salida. Es decir, QBuffer proporciona una forma de leer y escribir datos en un array de bytes (QByteArray) en lugar de un archivo o una conexión de red, facilitando el manejo de datos en memoria.
 
 ***
 
-## Características Principales de QBluetoothDeviceInfo
-- Información del dispositivo: Permite acceder a detalles como el nombre, dirección, clase y tipo del dispositivo Bluetooth.
-- Servicios soportados: Proporciona los UUIDs de los servicios disponibles en el dispositivo.
-- Métodos de conveniencia: Ofrece funciones para verificar si un dispositivo es de bajo consumo (BLE) o si es un dispositivo clásico Bluetooth.
+## Características Principales de QBuffer
+- Manipulación en Memoria: Permite leer y escribir datos en memoria en lugar de hacerlo desde un dispositivo físico.
+- Interfaz de QIODevice: Se puede utilizar de manera similar a otros dispositivos de entrada/salida como QFile o QNetworkReply.
+- Uso de QByteArray: Los datos almacenados en el buffer son gestionados mediante QByteArray.
 
 ***
 
-## Métodos Principales de QBluetoothDeviceInfo
-1. ### Información del Dispositivo
-    - QBluetoothDeviceInfo()
+## Métodos Principales de QBuffer
+1. QBuffer()
 
-    Constructor por defecto que inicializa un objeto vacío.
-
-    Ejemplo:
+    Constructor de la clase QBuffer.
     ```cpp
-    QBluetoothDeviceInfo deviceInfo;
+    QBuffer(QObject *parent = nullptr);
+    QBuffer(QByteArray *byteArray, QObject *parent = nullptr);
     ```
-    - QBluetoothDeviceInfo(const QBluetoothAddress &address, const QString &name, quint32 classOfDevice)
-
-    Constructor que crea un objeto con una dirección, nombre y clase de dispositivo.
+    - byteArray: Un puntero a un QByteArray que se utiliza como el buffer de datos.
+    - parent: El objeto padre, si es necesario.
 
     Ejemplo:
     ```cpp
-    QBluetoothDeviceInfo deviceInfo(QBluetoothAddress("00:11:22:33:44:55"), "Mi Dispositivo Bluetooth", 0);
+    QBuffer buffer;
+    buffer.open(QIODevice::WriteOnly);
+    buffer.write("Datos en el buffer");
+    buffer.close();
     ```
-    - QString name() const
+2. open()
 
-    Devuelve el nombre del dispositivo.
-
-    Ejemplo:
+    Abre el buffer para operaciones de lectura y/o escritura. Funciona igual que para otros dispositivos de entrada/salida en Qt.
     ```cpp
-    qDebug() << "Nombre del dispositivo:" << deviceInfo.name();
+    bool open(QIODevice::OpenMode mode);
     ```
-    - QBluetoothAddress address() const
-
-    Devuelve la dirección Bluetooth del dispositivo.
+    - mode: Modo de apertura (lectura, escritura, etc.), como QIODevice::ReadOnly, QIODevice::WriteOnly, QIODevice::ReadWrite.
 
     Ejemplo:
     ```cpp
-    qDebug() << "Dirección del dispositivo:" << deviceInfo.address().toString();
+    QBuffer buffer;
+    buffer.open(QIODevice::ReadWrite);
     ```
-    - quint32 classOfDevice() const
+3. close()
 
-    Devuelve la clase del dispositivo Bluetooth.
-
-    Ejemplo:
+    Cierra el buffer. No elimina los datos almacenados, solo cierra la conexión para operaciones de entrada/salida.
     ```cpp
-    qDebug() << "Clase del dispositivo:" << deviceInfo.classOfDevice();
+    void close();
     ```
-2. ### Características del Dispositivo
-    - bool isValid() const
-
-    Verifica si el objeto QBluetoothDeviceInfo es válido.
 
     Ejemplo:
     ```cpp
-    if (deviceInfo.isValid()) {
-        qDebug() << "El dispositivo es válido.";
-    } else {
-        qDebug() << "El dispositivo no es válido.";
-    }
+    buffer.close();
     ```
-    - bool isCached() const
-
-    Devuelve true si el dispositivo está en la caché del sistema.
-
-    Ejemplo:
+4. write()
+    Escribe datos en el buffer. Este método es proporcionado por QIODevice y puede usarse con cualquier objeto que lo herede, como QBuffer.
     ```cpp
-    if (deviceInfo.isCached()) {
-        qDebug() << "El dispositivo está en caché.";
-    }
+    qint64 write(const char *data, qint64 len);
+    qint64 write(const QByteArray &byteArray);
     ```
-    - bool isLowEnergy() const
-
-    Verifica si el dispositivo es Bluetooth de bajo consumo (BLE).
+    - data: Un puntero a los datos que se desean escribir.
+    - len: La longitud de los datos a escribir.
+    - byteArray: Un QByteArray que contiene los datos a escribir.
 
     Ejemplo:
     ```cpp
-    if (deviceInfo.isLowEnergy()) {
-        qDebug() << "El dispositivo es de bajo consumo.";
-    } else {
-        qDebug() << "El dispositivo es Bluetooth clásico.";
-    }
+    buffer.write("Escribiendo en el buffer", 22);
     ```
-3. ### Servicios Bluetooth
-    - QList<QBluetoothUuid> serviceUuids() const
+5. read()
 
-    Devuelve una lista de los UUIDs de servicios que soporta el dispositivo.
-
-    Ejemplo:
+    Lee datos del buffer. Al igual que write(), este método es heredado de QIODevice.
     ```cpp
-    QList<QBluetoothUuid> services = deviceInfo.serviceUuids();
-    for (const auto &service : services) {
-        qDebug() << "Servicio UUID:" << service.toString();
-    }
+    qint64 read(char *data, qint64 maxSize);
+    QByteArray read(qint64 maxSize);
     ```
-4. ### Otros Métodos
-    - void setCached(bool cached)
-
-    Establece si el dispositivo debe estar marcado como en caché.
+    - data: Un puntero donde se almacenarán los datos leídos.
+    - maxSize: El número máximo de bytes que se pueden leer.
 
     Ejemplo:
     ```cpp
-    deviceInfo.setCached(true);
+    QByteArray data = buffer.read(10);
+    qDebug() << "Datos leídos:" << data;
     ```
-    - bool hasService(const QBluetoothUuid &uuid) const
-
-    Verifica si el dispositivo ofrece un servicio específico.
+6. buffer()
+    Devuelve el QByteArray que está utilizando el QBuffer internamente.
+    ```cpp
+    QByteArray &buffer();
+    const QByteArray &buffer() const;
+    ```
 
     Ejemplo:
     ```cpp
-    QBluetoothUuid uuid = QBluetoothUuid::SerialPort;
-    if (deviceInfo.hasService(uuid)) {
-        qDebug() << "El dispositivo soporta el servicio de puerto serie.";
-    }
+    QByteArray &internalBuffer = buffer.buffer();
+    qDebug() << "Contenido del buffer:" << internalBuffer;
+    ```
+7. setBuffer()
+    Asigna un QByteArray como el buffer del QBuffer.
+    ```cpp
+    void setBuffer(QByteArray *byteArray);
+    ```
+    - byteArray: El puntero a un QByteArray que se utilizará como el buffer de datos.
+
+    Ejemplo:
+    ```cpp
+    QByteArray byteArray;
+    QBuffer buffer;
+    buffer.setBuffer(&byteArray);
+    buffer.open(QIODevice::WriteOnly);
+    buffer.write("Nuevo contenido");
+    buffer.close();
+    qDebug() << "Contenido del QByteArray:" << byteArray;
     ```
 
 ***
 
-## Ejemplo Completo
-Este ejemplo busca dispositivos Bluetooth cercanos y muestra información de cada uno utilizando QBluetoothDeviceInfo.
+## Ejemplo Completo de Uso de QBuffer
+El siguiente código muestra cómo escribir y leer datos de un buffer en memoria utilizando QBuffer:
 ```cpp
 #include <QCoreApplication>
-#include <QBluetoothDeviceInfo>
-#include <QBluetoothDeviceDiscoveryAgent>
+#include <QBuffer>
+#include <QByteArray>
 #include <QDebug>
 
 int main(int argc, char *argv[]) {
     QCoreApplication app(argc, argv);
 
-    QBluetoothDeviceDiscoveryAgent *discoveryAgent = new QBluetoothDeviceDiscoveryAgent;
+    QByteArray byteArray;
+    QBuffer buffer(&byteArray);
 
-    QObject::connect(discoveryAgent, &QBluetoothDeviceDiscoveryAgent::deviceDiscovered,
-                     [](const QBluetoothDeviceInfo &device) {
-        qDebug() << "Dispositivo encontrado:";
-        qDebug() << "Nombre:" << device.name();
-        qDebug() << "Dirección:" << device.address().toString();
-        qDebug() << "Clase:" << device.classOfDevice();
-        qDebug() << "Es de bajo consumo:" << device.isLowEnergy();
-        qDebug() << "Servicios soportados:" << device.serviceUuids();
-    });
+    // Abrir el buffer para escritura
+    buffer.open(QIODevice::WriteOnly);
+    buffer.write("Este es un texto en memoria.");
+    buffer.close();
 
-    discoveryAgent->start();
+    qDebug() << "Datos almacenados en el QByteArray:" << byteArray;
+
+    // Abrir el buffer para lectura
+    buffer.open(QIODevice::ReadOnly);
+    QByteArray data = buffer.readAll();
+    buffer.close();
+
+    qDebug() << "Datos leídos del buffer:" << data;
 
     return app.exec();
 }
 ```
+En este ejemplo, los datos se escriben en un QByteArray a través de QBuffer y luego se leen de vuelta.
 
 ***
 
-## Ejercicios de Consolidación
-1.	Ejercicio 1: Explorador de Dispositivos Bluetooth
-- Crea una aplicación que busque dispositivos Bluetooth cercanos y muestre información sobre cada uno, incluyendo su nombre, dirección y si es de bajo consumo.
-2.	Ejercicio 2: Filtrado por Servicios
-- Modifica la aplicación anterior para que solo muestre los dispositivos que soporten un servicio específico, como el servicio de puerto serie.
-3.	Ejercicio 3: Almacenamiento en Caché
-- Implementa una aplicación que almacene en caché los dispositivos encontrados y permita al usuario ver la lista de dispositivos caché después de cerrar la búsqueda.
-4.	Ejercicio 4: Conexión Automática
-- Desarrolla una aplicación que se conecte automáticamente a un dispositivo específico si es encontrado durante la búsqueda, por ejemplo, un dispositivo conocido por su dirección MAC.
+Ejercicios de Consolidación
+1.	Ejercicio 1: Escritura y Lectura de Texto
+- Crea una aplicación que escriba y lea texto en un buffer de memoria utilizando QBuffer. Muestra el texto almacenado en un QTextEdit.
+2.	Ejercicio 2: Copia de Buffer
+- Implementa un programa que copie el contenido de un archivo en un buffer de memoria (usando QFile y QBuffer) y luego lo muestre en la consola.
+3.	Ejercicio 3: Modificación de Datos en Memoria
+- Escribe una aplicación que permita modificar el contenido de un buffer en memoria (usando un QByteArray) y luego guarde el resultado en un archivo.
+4.	Ejercicio 4: Almacenamiento de Imágenes en Memoria
+- Crea un programa que cargue una imagen desde el disco, la guarde en un buffer de memoria (QBuffer), y luego la muestre en un QLabel después de leerla de vuelta desde el buffer.
 
 ***
 
-Estos ejercicios te permitirán reforzar tus conocimientos en la búsqueda y manejo de dispositivos Bluetooth usando la clase QBluetoothDeviceInfo.
+QBuffer es útil cuando necesitas trabajar con datos en memoria de manera similar a cómo lo harías con archivos o conexiones de red, lo que lo convierte en una herramienta versátil en Qt para aplicaciones que manejan datos temporales o que no requieren almacenamiento persistente.
 
