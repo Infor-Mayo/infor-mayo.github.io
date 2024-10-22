@@ -23,7 +23,7 @@
           {% if site.show_downloads %}
             <a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>
             <a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a>
-            <a href="https://raw.githubusercontent.com/Infor-Mayo/infor-mayo.github.io/master/cursos/QT/QCoreApplication.md" class="btn" download="QCoreApplication.md">Descargar QCoreApplication.md</a>
+            <a href="https://raw.githubusercontent.com/Infor-Mayo/infor-mayo.github.io/master/cursos/QT/QCamera.docx" class="btn" download="QCamera.docx">Descargar QCamera.docx</a>
 
             <script>
             document.addEventListener('DOMContentLoaded', function() {
@@ -32,7 +32,7 @@
               downloadLink.addEventListener('click', function(e) {
                 e.preventDefault();
                 
-                fetch("https://raw.githubusercontent.com/Infor-Mayo/infor-mayo.github.io/master/cursos/QT/QCoreApplication.md")
+                fetch("https://raw.githubusercontent.com/Infor-Mayo/infor-mayo.github.io/master/cursos/QT/QCamera.docx")
                   .then(response => response.blob())
                   .then(blob => {
                     var link = document.createElement('a');
