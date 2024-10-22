@@ -1,4 +1,5 @@
 # Clase QDebug
+
 La clase QDebug, que es una clase muy útil en Qt para depuración. QDebug se utiliza principalmente para imprimir mensajes de diagnóstico y seguimiento en la consola o en otros medios, como archivos de registro. Es una herramienta fundamental cuando estás desarrollando aplicaciones y necesitas entender el comportamiento interno o encontrar errores en tu código.
 
 La clase QDebug proporciona una interfaz para escribir información de depuración en una salida, típicamente la consola. Se utiliza comúnmente con la función qDebug(), pero también puedes usar variantes como qWarning(), qCritical(), y qFatal() para distintos niveles de severidad.
