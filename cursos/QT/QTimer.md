@@ -1,4 +1,4 @@
-# Clase QCoreApplication 
+# Clase QTimer 
 
 Esta clase es fundamental para manejar temporizadores en Qt, y se utiliza para ejecutar código repetidamente en intervalos específicos o después de un tiempo determinado.
 
