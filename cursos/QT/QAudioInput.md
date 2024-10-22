@@ -2,129 +2,183 @@
 layout: cabeza3
 ---
 
-# Clase QAccelerometer
+# Clase QAudioInput
 
-La clase QAccelerometer es una especialización de QSensor que permite acceder a los datos del acelerómetro del dispositivo. Un acelerómetro mide la aceleración a lo largo de los tres ejes (X, Y, Z), y es útil para detectar movimiento, inclinación o la orientación del dispositivo.
-
-***
-
-## Características Principales
-
-- Mide aceleración: Proporciona la aceleración en los ejes X, Y y Z.
-- Datos en tiempo real: Actualiza continuamente los datos de aceleración del dispositivo.
-- Detección de movimientos y orientación: Puede detectar si el dispositivo está inclinado, en reposo o en movimiento.
+La clase QAudioInput en Qt se utiliza para capturar audio desde los dispositivos de entrada, como micrófonos. Es parte del módulo Qt Multimedia, y permite recibir datos de audio en un formato específico y manipularlos o guardarlos en archivos.
 
 ***
 
-## Métodos Principales
+## Características Principales de QAudioInput
+- Captura de Audio: Permite recibir datos de audio en tiempo real desde dispositivos de entrada.
+- Configuración del Formato de Audio: Se puede especificar el formato de audio que se recibirá (frecuencia de muestreo, canales, etc.).
+- Control del Estado: Permite pausar, reanudar y detener la captura de audio.
+- Control de Buffering: Proporciona métodos para gestionar y consultar el buffering de audio.
 
-1. ### Constructor
-    - QAccelerometer(QObject *parent = nullptr)
-    Crea una nueva instancia del acelerómetro. Si el dispositivo tiene un acelerómetro, este comenzará a leer los datos cuando se inicie.
+***
 
+## Métodos Principales de QAudioInput
+1. ### Constructores
+    - QAudioInput(const QAudioFormat &format, QObject *parent = nullptr)
+    Crea una instancia de QAudioInput con el formato de audio especificado.
+
+    Ejemplo:
     ```cpp
-    QAccelerometer *accelerometer = new QAccelerometer();
+    QAudioFormat format;
+    format.setSampleRate(44100);   // Frecuencia de muestreo
+    format.setChannelCount(2);     // Stereo
+    format.setSampleSize(16);      // Tamaño de muestra en bits
+    format.setCodec("audio/pcm");
+    format.setByteOrder(QAudioFormat::LittleEndian);
+    format.setSampleType(QAudioFormat::SignedInt);
+
+    QAudioInput *audioInput = new QAudioInput(format);
     ```
+2. ### Control de la Captura de Audio
+    - QIODevice* start(QIODevice *device = nullptr)
+    
+        Inicia la captura de audio y devuelve un dispositivo de entrada (puede ser un archivo o un flujo de datos). 
 
-2. ### Iniciar y Detener el Acelerómetro
-    - void start()
-    Inicia el acelerómetro, comenzando la recolección de datos.
+    Ejemplo:
     ```cpp
-    accelerometer->start();
+    QFile audioFile("captured_audio.raw");
+    audioFile.open(QIODevice::WriteOnly);
+    audioInput->start(&audioFile);
     ```
 
     - void stop()
-    Detiene el acelerómetro, finalizando la recolección de datos.
 
+        Detiene la captura de audio.
+
+    Ejemplo:
     ```cpp
-    accelerometer->stop();
+    audioInput->stop();
+    ```
+    - void suspend()
+
+        Suspende la captura de audio.
+
+    Ejemplo:
+    ```cpp
+    audioInput->suspend();
+    ```
+    - void resume()
+
+        Reanuda la captura de audio suspendida.
+
+    Ejemplo:
+    ```cpp
+    audioInput->resume();
     ```
 
-3. ### Obtener Lectura Actual
-    - QAccelerometerReading* reading() const
-    Devuelve la lectura actual del acelerómetro. QAccelerometerReading proporciona acceso a los valores de aceleración en los ejes X, Y y Z.
+3. ### Control de Volumen
+    - void setVolume(qreal volume)
+
+    Ajusta el volumen de captura de audio. El valor debe estar entre 0.0 (silencio) y 1.0 (volumen máximo).
+
+    Ejemplo:
+    ```cpp
+    audioInput->setVolume(0.8);  // Volumen al 80%
+    ```
+
+    - qreal volume() const
     
+    Devuelve el volumen de captura actual.
+
+    Ejemplo:
     ```cpp
-    QAccelerometerReading *reading = accelerometer->reading();
-    qDebug() << "X:" << reading->x();
-    qDebug() << "Y:" << reading->y();
-    qDebug() << "Z:" << reading->z();
+    qDebug() << "Volumen actual:" << audioInput->volume();
     ```
 
-4. ### Cambiar el Modo de Aceleración
-    - void setAccelerationMode(QAccelerometer::AccelerationMode mode)
+4. ### Buffering de Audio
+    - int bufferSize() const
 
-    Cambia el modo de aceleración. Hay dos modos disponibles:
-    - QAccelerometer::Gravity: El valor incluye la gravedad terrestre.
-    - QAccelerometer::User: Solo muestra la aceleración causada por el usuario.
+    Devuelve el tamaño del buffer de audio en bytes.
 
-
+    Ejemplo:
     ```cpp
-    accelerometer->setAccelerationMode(QAccelerometer::Gravity);
+    qDebug() << "Tamaño del buffer:" << audioInput->bufferSize();
+    ```
+    - int bytesReady() const
+
+    Devuelve el número de bytes listos para ser leídos desde el dispositivo de audio.
+
+    Ejemplo:
+    ```cpp
+    qDebug() << "Bytes listos para ser leídos:" << audioInput->bytesReady();
+    ```
+    - qint64 readAll()
+
+    Lee todos los datos disponibles desde el dispositivo de audio.
+
+    Ejemplo:
+    ```cpp
+    QByteArray audioData = audioInput->readAll();
+    ```
+5. ### Información del Estado de Audio
+    - QAudio::State state() const
+
+    Devuelve el estado actual de la captura de audio (QAudio::ActiveState, QAudio::SuspendedState, QAudio::StoppedState, etc.).
+
+    Ejemplo:
+    ```cpp
+    if (audioInput->state() == QAudio::ActiveState) {
+        qDebug() << "Capturando audio.";
+    }
     ```
 
-    - QAccelerometer::AccelerationMode accelerationMode() const
-    Devuelve el modo de aceleración actual.
-
-5. ### Señal de Cambio de Lectura
-    - void readingChanged()
-    Señal emitida cuando hay una nueva lectura del acelerómetro. Puedes conectarte a esta señal para procesar los datos en tiempo real.
-
-    ```cpp
-    connect(accelerometer, &QAccelerometer::readingChanged, [&]() {
-        QAccelerometerReading *reading = accelerometer->reading();
-        qDebug() << "X:" << reading->x();
-        qDebug() << "Y:" << reading->y();
-        qDebug() << "Z:" << reading->z();
-    });
-    ```
 ***
 
 ## Ejemplo Completo
 
-Este ejemplo muestra cómo iniciar un acelerómetro, leer sus datos en tiempo real y cambiar entre los modos de aceleración.
+Este ejemplo muestra cómo crear un objeto QAudioInput, configurar el formato de audio, capturar audio desde un micrófono y guardarlo en un archivo.
 
 ```cpp
 #include <QCoreApplication>
-#include <QAccelerometer>
+#include <QAudioInput>
+#include <QFile>
 #include <QDebug>
 
 int main(int argc, char *argv[]) {
-    QCoreApplication a(argc, argv);
+    QCoreApplication app(argc, argv);
 
-    // Crear el acelerómetro
-    QAccelerometer *accelerometer = new QAccelerometer();
-    accelerometer->setAccelerationMode(QAccelerometer::User); // Modo 'User'
+    // Configurar formato de audio
+    QAudioFormat format;
+    format.setSampleRate(44100);
+    format.setChannelCount(2);
+    format.setSampleSize(16);
+    format.setCodec("audio/pcm");
+    format.setByteOrder(QAudioFormat::LittleEndian);
+    format.setSampleType(QAudioFormat::SignedInt);
 
-    // Iniciar el acelerómetro
-    accelerometer->start();
+    // Crear QAudioInput
+    QAudioInput *audioInput = new QAudioInput(format);
 
-    // Conectar la señal de cambio de lectura
-    QObject::connect(accelerometer, &QAccelerometer::readingChanged, [&]() {
-        QAccelerometerReading *reading = accelerometer->reading();
-        qDebug() << "X:" << reading->x();
-        qDebug() << "Y:" << reading->y();
-        qDebug() << "Z:" << reading->z();
-    });
+    // Crear archivo para almacenar el audio capturado
+    QFile audioFile("captured_audio.raw");
+    if (!audioFile.open(QIODevice::WriteOnly)) {
+        qDebug() << "No se pudo abrir el archivo para escritura.";
+        return -1;
+    }
 
-    return a.exec();
+    // Iniciar captura de audio
+    audioInput->start(&audioFile);
+
+    return app.exec();
 }
 ```
-
 ***
 
 ## Ejercicios de Consolidación
-
-1.	Detección de Movimiento
-    - Crea una aplicación que emita una alerta cuando el dispositivo se mueve bruscamente (por ejemplo, si la aceleración en cualquier eje supera un cierto umbral).
-
-2.	Monitor de Inclinación
-    - Implementa una aplicación que utilice los datos del acelerómetro para determinar si el dispositivo está inclinado y muestra un mensaje cuando se detecta una inclinación significativa.
-
-3.	Modo Gravedad vs Modo Usuario
-    - Modifica una aplicación para alternar entre los modos QAccelerometer::Gravity y QAccelerometer::User, y muestra cómo varían las lecturas entre estos modos.
+1.	### Capturar y guardar audio
+- Crea una aplicación que capture audio desde el micrófono y lo guarde en un archivo utilizando QAudioInput. Asegúrate de poder detener la captura y guardar el archivo de forma correcta.
+2.	### Control de volumen de entrada
+- Modifica el ejercicio anterior para permitir al usuario ajustar el volumen de la captura de audio. Implementa una interfaz simple que controle el nivel de entrada entre 0 y 100%.
+3.	###  Indicador de estado de captura
+- Implementa una aplicación que muestre el estado de la captura de audio (activo, suspendido, detenido). Asegúrate de que el estado se actualice en tiempo real cuando cambie.
+4.	###  Monitoreo del buffer de audio
+- Crea una aplicación que monitoree el buffer de entrada de audio, mostrando el tamaño del buffer y los bytes listos para ser leídos en tiempo real.
 
 ***
 
-La clase QAccelerometer es ideal para aplicaciones que necesiten detectar movimiento o cambios de orientación en tiempo real, como aplicaciones de fitness, videojuegos o controladores por gestos.
+Con esto, has cubierto los aspectos más importantes de la clase QAudioInput, incluyendo sus métodos, ejemplos prácticos y ejercicios para poner en práctica lo aprendido.
 
