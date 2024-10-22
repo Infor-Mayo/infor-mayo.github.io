@@ -2,172 +2,172 @@
 layout: cabeza3
 ---
 
-# Clase QAudioOutput
-QAudioOutput es una clase en Qt que permite gestionar la salida de audio, permitiendo reproducir audio a través de los dispositivos de salida de audio del sistema, como altavoces o auriculares. Es parte del módulo Qt Multimedia, y es muy útil para aplicaciones que necesitan reproducir sonidos o música.
+# Clase QBluetoothDeviceInfo
+La clase QBluetoothDeviceInfo de Qt representa la información de un dispositivo Bluetooth en el entorno del dispositivo local. Proporciona detalles sobre dispositivos Bluetooth disponibles, como su nombre, dirección, clase de dispositivo y capacidades.
 
 ***
 
-## Características Principales de QAudioOutput
-- Reproducción de Audio: Permite enviar datos de audio a un dispositivo de salida.
-- Configuración de Volumen: Permite ajustar el volumen de salida.
-- Control de Estado: Ofrece métodos para iniciar, pausar, reanudar y detener la reproducción de audio.
-- Control de Buffering: Proporciona información sobre el buffering del audio para evitar problemas de reproducción.
+## Características Principales de QBluetoothDeviceInfo
+- Información del dispositivo: Permite acceder a detalles como el nombre, dirección, clase y tipo del dispositivo Bluetooth.
+- Servicios soportados: Proporciona los UUIDs de los servicios disponibles en el dispositivo.
+- Métodos de conveniencia: Ofrece funciones para verificar si un dispositivo es de bajo consumo (BLE) o si es un dispositivo clásico Bluetooth.
 
 ***
 
-## Métodos Principales de QAudioOutput
-1. ### Constructores
-    - QAudioOutput(const QAudioFormat &format, QObject *parent = nullptr)
+## Métodos Principales de QBluetoothDeviceInfo
+1. ### Información del Dispositivo
+    - QBluetoothDeviceInfo()
 
-    Crea una instancia de QAudioOutput utilizando un formato de audio específico.
+    Constructor por defecto que inicializa un objeto vacío.
 
     Ejemplo:
     ```cpp
-    QAudioFormat format;
-    format.setSampleRate(44100);  // Frecuencia de muestreo
-    format.setChannelCount(2);    // Stereo
-    format.setSampleSize(16);     // Tamaño de muestra en bits
-    format.setCodec("audio/pcm");
-    format.setByteOrder(QAudioFormat::LittleEndian);
-    format.setSampleType(QAudioFormat::SignedInt);
-
-    QAudioOutput *audioOutput = new QAudioOutput(format);
+    QBluetoothDeviceInfo deviceInfo;
     ```
-2. ### Control de la Reproducción
-    - void start(QIODevice *device)
+    - QBluetoothDeviceInfo(const QBluetoothAddress &address, const QString &name, quint32 classOfDevice)
 
-    Inicia la reproducción de audio desde un dispositivo de entrada, como un archivo o un flujo de audio.
+    Constructor que crea un objeto con una dirección, nombre y clase de dispositivo.
 
     Ejemplo:
     ```cpp
-    QFile audioFile(":/sounds/sample.wav");
-    audioFile.open(QIODevice::ReadOnly);
-    audioOutput->start(&audioFile);
+    QBluetoothDeviceInfo deviceInfo(QBluetoothAddress("00:11:22:33:44:55"), "Mi Dispositivo Bluetooth", 0);
     ```
-    void stop()
+    - QString name() const
 
-    Detiene la reproducción de audio.
+    Devuelve el nombre del dispositivo.
 
     Ejemplo:
     ```cpp
-    audioOutput->stop();
+    qDebug() << "Nombre del dispositivo:" << deviceInfo.name();
     ```
-    - void suspend()
+    - QBluetoothAddress address() const
 
-    Suspende la reproducción de audio.
+    Devuelve la dirección Bluetooth del dispositivo.
 
     Ejemplo:
     ```cpp
-    audioOutput->suspend();  // Pausa la reproducción
+    qDebug() << "Dirección del dispositivo:" << deviceInfo.address().toString();
     ```
-    - void resume()
+    - quint32 classOfDevice() const
 
-    Reanuda la reproducción de audio suspendida.
+    Devuelve la clase del dispositivo Bluetooth.
 
     Ejemplo:
     ```cpp
-    audioOutput->resume();  // Reanuda la reproducción pausada
+    qDebug() << "Clase del dispositivo:" << deviceInfo.classOfDevice();
     ```
-3. ### Control de Volumen
-    - void setVolume(qreal volume)
+2. ### Características del Dispositivo
+    - bool isValid() const
 
-    Ajusta el volumen de la salida de audio. El valor debe estar en el rango de 0.0 (silencio) a 1.0 (máximo volumen).
-
-    Ejemplo:
-    ```cpp
-    audioOutput->setVolume(0.5);  // Ajusta el volumen al 50%
-    ```
-    - qreal volume() const
-
-    Devuelve el nivel de volumen actual.
+    Verifica si el objeto QBluetoothDeviceInfo es válido.
 
     Ejemplo:
     ```cpp
-    qDebug() << "Volumen actual:" << audioOutput->volume();
-    ```
-4. ### Información del Estado de Audio
-    - QAudio::State state() const
-
-    Devuelve el estado actual de la reproducción de audio (QAudio::ActiveState, QAudio::SuspendedState, QAudio::StoppedState, etc.).
-
-    Ejemplo:
-    ```cpp
-    if (audioOutput->state() == QAudio::ActiveState) {
-        qDebug() << "Reproduciendo audio.";
+    if (deviceInfo.isValid()) {
+        qDebug() << "El dispositivo es válido.";
+    } else {
+        qDebug() << "El dispositivo no es válido.";
     }
     ```
-5. ### Buffering de Audio
-    - int bufferSize() const
+    - bool isCached() const
 
-    Devuelve el tamaño del buffer de audio en bytes.
+    Devuelve true si el dispositivo está en la caché del sistema.
 
     Ejemplo:
     ```cpp
-    qDebug() << "Tamaño del buffer:" << audioOutput->bufferSize();
+    if (deviceInfo.isCached()) {
+        qDebug() << "El dispositivo está en caché.";
+    }
     ```
-    - int bytesFree() const
+    - bool isLowEnergy() const
 
-    Devuelve la cantidad de bytes libres en el buffer de audio.
+    Verifica si el dispositivo es Bluetooth de bajo consumo (BLE).
 
     Ejemplo:
     ```cpp
-    qDebug() << "Bytes libres en el buffer:" << audioOutput->bytesFree();
+    if (deviceInfo.isLowEnergy()) {
+        qDebug() << "El dispositivo es de bajo consumo.";
+    } else {
+        qDebug() << "El dispositivo es Bluetooth clásico.";
+    }
+    ```
+3. ### Servicios Bluetooth
+    - QList<QBluetoothUuid> serviceUuids() const
+
+    Devuelve una lista de los UUIDs de servicios que soporta el dispositivo.
+
+    Ejemplo:
+    ```cpp
+    QList<QBluetoothUuid> services = deviceInfo.serviceUuids();
+    for (const auto &service : services) {
+        qDebug() << "Servicio UUID:" << service.toString();
+    }
+    ```
+4. ### Otros Métodos
+    - void setCached(bool cached)
+
+    Establece si el dispositivo debe estar marcado como en caché.
+
+    Ejemplo:
+    ```cpp
+    deviceInfo.setCached(true);
+    ```
+    - bool hasService(const QBluetoothUuid &uuid) const
+
+    Verifica si el dispositivo ofrece un servicio específico.
+
+    Ejemplo:
+    ```cpp
+    QBluetoothUuid uuid = QBluetoothUuid::SerialPort;
+    if (deviceInfo.hasService(uuid)) {
+        qDebug() << "El dispositivo soporta el servicio de puerto serie.";
+    }
     ```
 
 ***
 
 ## Ejemplo Completo
-Este ejemplo muestra cómo crear un objeto QAudioOutput, cargar un archivo de audio, ajustar el volumen y controlar la reproducción.
+Este ejemplo busca dispositivos Bluetooth cercanos y muestra información de cada uno utilizando QBluetoothDeviceInfo.
 ```cpp
 #include <QCoreApplication>
-#include <QAudioOutput>
-#include <QFile>
+#include <QBluetoothDeviceInfo>
+#include <QBluetoothDeviceDiscoveryAgent>
 #include <QDebug>
 
 int main(int argc, char *argv[]) {
     QCoreApplication app(argc, argv);
 
-    // Configurar formato de audio
-    QAudioFormat format;
-    format.setSampleRate(44100);
-    format.setChannelCount(2);
-    format.setSampleSize(16);
-    format.setCodec("audio/pcm");
-    format.setByteOrder(QAudioFormat::LittleEndian);
-    format.setSampleType(QAudioFormat::SignedInt);
+    QBluetoothDeviceDiscoveryAgent *discoveryAgent = new QBluetoothDeviceDiscoveryAgent;
 
-    // Crear QAudioOutput
-    QAudioOutput *audioOutput = new QAudioOutput(format);
+    QObject::connect(discoveryAgent, &QBluetoothDeviceDiscoveryAgent::deviceDiscovered,
+                     [](const QBluetoothDeviceInfo &device) {
+        qDebug() << "Dispositivo encontrado:";
+        qDebug() << "Nombre:" << device.name();
+        qDebug() << "Dirección:" << device.address().toString();
+        qDebug() << "Clase:" << device.classOfDevice();
+        qDebug() << "Es de bajo consumo:" << device.isLowEnergy();
+        qDebug() << "Servicios soportados:" << device.serviceUuids();
+    });
 
-    // Cargar archivo de audio
-    QFile audioFile(":/sounds/sample.wav");
-    if (!audioFile.open(QIODevice::ReadOnly)) {
-        qDebug() << "No se pudo abrir el archivo de audio.";
-        return -1;
-    }
-
-    // Iniciar la reproducción
-    audioOutput->start(&audioFile);
-
-    // Ajustar volumen
-    audioOutput->setVolume(0.5);  // Volumen al 50%
+    discoveryAgent->start();
 
     return app.exec();
 }
 ```
+
 ***
 
 ## Ejercicios de Consolidación
-1.	Ejercicio 1: Reproducir un archivo de audio
-- Crea una aplicación que cargue y reproduzca un archivo de audio utilizando QAudioOutput. Asegúrate de poder detener, pausar y reanudar la reproducción.
-2.	Ejercicio 2: Control de volumen
-- Modifica el ejercicio anterior para incluir un control de volumen. Implementa una interfaz simple donde el usuario pueda ajustar el volumen de reproducción entre 0 y 100%.
-3.	Ejercicio 3: Indicador de estado de reproducción
-- Crea una aplicación que muestre el estado actual de la reproducción de audio (activo, suspendido, detenido). Haz que se actualice en tiempo real cuando el estado cambie.
-4.	Ejercicio 4: Manejo del buffer de audio
-- Escribe una aplicación que monitoree el estado del buffer de audio durante la reproducción (tamaño del buffer y bytes libres). Ajusta el tamaño del buffer y observa cómo afecta la reproducción.
+1.	Ejercicio 1: Explorador de Dispositivos Bluetooth
+- Crea una aplicación que busque dispositivos Bluetooth cercanos y muestre información sobre cada uno, incluyendo su nombre, dirección y si es de bajo consumo.
+2.	Ejercicio 2: Filtrado por Servicios
+- Modifica la aplicación anterior para que solo muestre los dispositivos que soporten un servicio específico, como el servicio de puerto serie.
+3.	Ejercicio 3: Almacenamiento en Caché
+- Implementa una aplicación que almacene en caché los dispositivos encontrados y permita al usuario ver la lista de dispositivos caché después de cerrar la búsqueda.
+4.	Ejercicio 4: Conexión Automática
+- Desarrolla una aplicación que se conecte automáticamente a un dispositivo específico si es encontrado durante la búsqueda, por ejemplo, un dispositivo conocido por su dirección MAC.
 
 ***
 
-Con esto, has cubierto los aspectos más importantes de la clase QAudioOutput, incluyendo sus métodos más relevantes, ejemplos prácticos y ejercicios para consolidar lo aprendido.
+Estos ejercicios te permitirán reforzar tus conocimientos en la búsqueda y manejo de dispositivos Bluetooth usando la clase QBluetoothDeviceInfo.
 
