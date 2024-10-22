@@ -22,25 +22,10 @@ Si quieres aprender a usar Transfermóvil para hacer tus operaciones financieras
 | Nombre       | link Youtube   | Artículo      |
 |:-------------|:---------|:--------------|
 | QCoreApplication | [`1`](./#)   | [🖥️👈](./QCoreApplication.html)   |
-| QObject     |[`2`](./#)| [🖥️👈](./QObject.md)   |
-| Cómo desconectarse de TransferMóvil de forma segura |[`3`](https://youtu.be/Gt0ldgh80Do)|[🖥️👈](./transfermovil-3.md)  |
-| Consulta de saldo en TransferMóvil: una guía paso a paso |[`4`](https://youtu.be/HpozyMhDbDE)| [🖥️👈](./transfermovil-4.md)   |
-| Cómo consultar tus facturas en TransferMóvil |[`5`](https://youtu.be/95RE-rgY5VA)|  [🖥️👈](./transfermovil-5.md)   |
-| Revisa tus últimas operaciones en TransferMóvil |[`6`](https://youtu.be/fM-Nx2CuskE)|  [🖥️👈](./transfermovil-6.md)   |
-| La pantalla de inicio de TransferMóvil: todo lo que necesitas saber |[`7`](https://youtu.be/7tPKPvjyPgA)| [🖥️👈](./transfermovil-7.md)   |
-| Cómo consultar tus límites en TransferMóvil |[`8`](https://youtu.be/nJlkmQoOFs4)|  [🖥️👈](./transfermovil-8.md)   |
-| La tasa de cambio en TransferMóvil: ¿cómo funciona? |[`9`](https://youtu.be/TfnbUyG2Od4)|  [🖥️👈](./transfermovil-9.md)   |
-| Cómo transferir efectivo a otras personas a través de TransferMóvil |[`10`](https://youtu.be/rokZ-us3_5k)|  [🖥️👈](./transfermovil-10.md)   |
-| Paga tus facturas de teléfono con TransferMóvil|[`11`](https://youtu.be/4LIKsQ4hDxQ)|  [🖥️👈](./transfermovil-11.md)   |
-| Cómo pagar tu factura eléctrica con TransferMóvil|[`12`](https://youtu.be/czLbw2U9xEY)|  [🖥️👈](./transfermovil-12.md)   |
-| Cómo pagar la factura de agua desde TransferMóvil: una guía paso a paso|[`13`](https://youtu.be/guvbWELsvws)|  [🖥️👈](./transfermovil-13.md)   |
-| Cómo recargar tu móvil desde TransferMóvil: una guía fácil y rápida|[`14`](https://youtu.be/0wv8ifcr22c)|  [🖥️👈](./transfermovil-14.md)   |
-| Nauta Hogar desde TransferMóvil: una guía para disfrutar de Internet en casa|[`15`](https://youtu.be/8e6OPrtnYrc)|  [🖥️👈](./transfermovil-15.md)   |
-| Cómo hacer giros desde TransferMóvil: envía y recibe dinero al instante|[`16`](https://youtu.be/1PEUkXRt01Y)|  [🖥️👈](./transfermovil-16.md)   |
-| JovenCub desde TransferMóvil: descubre todo lo que puedes hacer con esta app|[`17`](https://youtu.be/OPt_bkKC-tU)|  [🖥️👈](./transfermovil-17.md)   |
-| Cómo crear tu tarjeta MLC desde TransferMóvil: una guía completa|[`18`](https://youtu.be/5jowoAe9vfk)|  [🖥️👈](./transfermovil-18.md)   |
-| |[`19`](./)|  [🖥️👈](./transfermovil-19.md)   |
-| Gestión de cuentas en TransferMóvil: Cómo agregar y eliminar cuentas bancarias|[`20`](https://youtu.be/rrCu_4bR24o)|  [🖥️👈](./transfermovil-20.md)   |
+| QObject     |[`2`](./#)| [🖥️👈](./QObject.html)   |
+| QTimer |[`3`](./#)|[🖥️👈](./QTimer.html)  |
+| QDebug |[`3`](./#)|[🖥️👈](./QDebug.html)  |
+
 
 Recuerda suscribirte a mi canal para estar al tanto de las actualizaciones y nuevos videos. 
 
