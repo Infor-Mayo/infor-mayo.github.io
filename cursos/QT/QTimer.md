@@ -12,6 +12,7 @@ La clase QTimer es parte del módulo de QtCore y proporciona un temporizador de 
     - QTimer(QObject *parent = nullptr): Crea un temporizador que, opcionalmente, tiene un objeto padre. Si se le asigna un padre, el temporizador será destruido automáticamente cuando se destruya el objeto padre.
     
     Ejemplo:
+
     ```cpp
     QTimer *timer = new QTimer(this);  // Se destruirá automáticamente con "this"
     ```
@@ -19,6 +20,7 @@ La clase QTimer es parte del módulo de QtCore y proporciona un temporizador de 
     - void start(int msec): Inicia el temporizador con el intervalo especificado en milisegundos. El temporizador emitirá una señal (timeout()) cada vez que se cumpla el intervalo.
     
     Ejemplo:
+
     ```cpp
     QTimer *timer = new QTimer(this);
     timer->start(1000);  // Se activará cada 1000 ms (1 segundo)
@@ -27,6 +29,7 @@ La clase QTimer es parte del módulo de QtCore y proporciona un temporizador de 
     - void stop(): Detiene el temporizador. No emitirá más señales hasta que se vuelva a iniciar.
     
     Ejemplo:
+
     ```cpp
     timer->stop();  // Detiene el temporizador
     ```
@@ -35,6 +38,7 @@ La clase QTimer es parte del módulo de QtCore y proporciona un temporizador de 
     - int interval(): Devuelve el intervalo actual del temporizador.
     
     Ejemplo:
+
     ```cpp
     timer->setInterval(2000);  // Cambia el intervalo a 2000 ms (2 segundos)
     qDebug() << "Intervalo actual:" << timer->interval();  // Devuelve 2000
@@ -43,6 +47,7 @@ La clase QTimer es parte del módulo de QtCore y proporciona un temporizador de 
     - static void singleShot(int msec, const QObject *receiver, const char *method): Crea un temporizador de disparo único. Después de que transcurra el tiempo especificado, se ejecutará el método del receptor una sola vez.
     
     Ejemplo:
+
     ```cpp
     QTimer::singleShot(5000, this, SLOT(onTimeout()));  // Llama a onTimeout() después de 5 segundos
     ```
@@ -50,6 +55,7 @@ La clase QTimer es parte del módulo de QtCore y proporciona un temporizador de 
     - bool isActive(): Devuelve true si el temporizador está en funcionamiento (si fue iniciado y no se ha detenido).
     
     Ejemplo:
+
     ```cpp
     if (timer->isActive()) {
         qDebug() << "El temporizador está activo.";
@@ -59,6 +65,7 @@ La clase QTimer es parte del módulo de QtCore y proporciona un temporizador de 
     - int remainingTime(): Devuelve el tiempo que queda hasta que el temporizador emita la siguiente señal timeout(), en milisegundos.
     
     Ejemplo:
+
     ```cpp
     qDebug() << "Tiempo restante para el siguiente timeout:" << timer->remainingTime();
     ```
@@ -67,6 +74,7 @@ La clase QTimer es parte del módulo de QtCore y proporciona un temporizador de 
     - Señal timeout(): Esta señal es emitida cada vez que el temporizador alcanza el final de su intervalo.
     
     Ejemplo:
+    
     ```cpp
     connect(timer, &QTimer::timeout, this, &MyClass::onTimeout);  // Conecta la señal con un slot
     ```

@@ -11,11 +11,13 @@ La clase QDebug proporciona una interfaz para escribir información de depuraci�
     - qDebug(): Imprime un mensaje de depuración en la consola. Este mensaje se muestra solo si las configuraciones de compilación están en modo "Debug" (depuración). En aplicaciones de producción, estos mensajes no aparecerán si la aplicación se compila en modo "Release".
 
     Ejemplo:
+
     ```cpp
     qDebug() << "Este es un mensaje de depuración.";
     ```
 
     Salida:
+
     ```
     Este es un mensaje de depuración.
     ```
@@ -23,11 +25,13 @@ La clase QDebug proporciona una interfaz para escribir información de depuraci�
     - qWarning(): Imprime un mensaje de advertencia. Esto se utiliza para señalar condiciones inesperadas pero no críticas.
 
     Ejemplo:
+
     ```cpp
     qWarning() << "Advertencia: algo inesperado ocurrió.";
     ```
 
     Salida:
+
     ```makefile
     Advertencia: algo inesperado ocurrió.
     ```
@@ -35,11 +39,13 @@ La clase QDebug proporciona una interfaz para escribir información de depuraci�
     - qCritical(): Se usa para mensajes de error críticos que pueden afectar seriamente el comportamiento de la aplicación.
 
     Ejemplo:
+
     ```cpp
     qCritical() << "Error crítico: algo falló.";
     ```
 
     Salida:
+
     ```javascript
     Error crítico: algo falló.
     ```
@@ -47,11 +53,13 @@ La clase QDebug proporciona una interfaz para escribir información de depuraci�
     - qFatal(): Imprime un mensaje de error grave y finaliza la aplicación inmediatamente después de mostrar el mensaje.
 
     Ejemplo:
+
     ```cpp
     qFatal("Error fatal: no se puede continuar.");
     ```
 
     Salida:
+
     ```yaml
     Error fatal: no se puede continuar.
     ```
@@ -63,6 +71,7 @@ La clase QDebug proporciona una interfaz para escribir información de depuraci�
         - Objetos personalizados (si implementas el operador <<)
 
     Ejemplo:
+
     ```cpp
     int numero = 42;
     QString texto = "Hola Qt";
@@ -74,7 +83,7 @@ La clase QDebug proporciona una interfaz para escribir información de depuraci�
     ```
 
     Salida:
-    
+
     ```makefile
     Número: 42
     Texto: "Hola Qt"
@@ -85,11 +94,13 @@ La clase QDebug proporciona una interfaz para escribir información de depuraci�
     - Puedes cambiar el comportamiento de QDebug para ajustar cómo se muestra la información. Por ejemplo, puedes configurar el formato de salida para que no haya espacios entre los elementos.
 
     Ejemplo:
+
     ```cpp
     QDebug debugg(qDebug());
     debugg.noquote().nospace() << "Valor de X:" << 123;
 
     Salida:
+
     ```
     Valor de X:123
     ```
@@ -98,6 +109,7 @@ La clase QDebug proporciona una interfaz para escribir información de depuraci�
     - Puedes redirigir la salida de QDebug para que se guarde en un archivo en lugar de mostrarse en la consola. Esto es útil cuando quieres mantener un registro de eventos mientras la aplicación está en ejecución.
 
     Ejemplo (redirigiendo a un archivo):
+
     ```cpp
     QFile archivo("registro.txt");
     archivo.open(QIODevice::WriteOnly | QIODevice::Text);
@@ -110,6 +122,7 @@ La clase QDebug proporciona una interfaz para escribir información de depuraci�
     - Puedes definir cómo se comporta QDebug para tus propios objetos si implementas el operador de inserción (<<).
 
     Ejemplo:
+
     ```cpp
     class MiClase {
     public:
@@ -127,6 +140,7 @@ La clase QDebug proporciona una interfaz para escribir información de depuraci�
     ```
 
     Salida:
+    
     ```scss
     MiClase(valor=10)
     ```
