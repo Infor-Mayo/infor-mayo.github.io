@@ -2,129 +2,170 @@
 layout: cabeza3
 ---
 
-# Clase QAccelerometer
-
-La clase QAccelerometer es una especialización de QSensor que permite acceder a los datos del acelerómetro del dispositivo. Un acelerómetro mide la aceleración a lo largo de los tres ejes (X, Y, Z), y es útil para detectar movimiento, inclinación o la orientación del dispositivo.
-
+# Clase QFileInfo
+QFileInfo es una clase en Qt que proporciona información detallada sobre archivos y directorios, como su tamaño, permisos, fechas de modificación, y si son archivos regulares o directorios. Esta clase se utiliza comúnmente para inspeccionar el estado de un archivo o directorio y extraer detalles como su ruta absoluta, el tipo de archivo, y más.
 ***
-
-## Características Principales
-
-- Mide aceleración: Proporciona la aceleración en los ejes X, Y y Z.
-- Datos en tiempo real: Actualiza continuamente los datos de aceleración del dispositivo.
-- Detección de movimientos y orientación: Puede detectar si el dispositivo está inclinado, en reposo o en movimiento.
-
+## Características Principales de QFileInfo
+- Información sobre archivos y directorios: Proporciona detalles como el tamaño, las fechas de acceso y modificación, el tipo de archivo, y si es legible o escribible.
+- Rutas de archivo: Ofrece rutas absolutas y relativas, extensiones de archivos y nombres base.
+- Interacción con permisos: Permite verificar los permisos de lectura, escritura y ejecución en archivos o directorios.
 ***
+## Métodos Principales de QFileInfo
+1. ### QFileInfo()
+    Constructor predeterminado que crea un objeto QFileInfo vacío.
 
-## Métodos Principales
-
-1. ### Constructor
-    - QAccelerometer(QObject *parent = nullptr)
-    Crea una nueva instancia del acelerómetro. Si el dispositivo tiene un acelerómetro, este comenzará a leer los datos cuando se inicie.
-
+    Ejemplo:
     ```cpp
-    QAccelerometer *accelerometer = new QAccelerometer();
+    QFileInfo info;
     ```
+2. ### QFileInfo(const QString &file)
+    Constructor que crea un QFileInfo a partir de la ruta de un archivo o directorio especificado.
 
-2. ### Iniciar y Detener el Acelerómetro
-    - void start()
-    Inicia el acelerómetro, comenzando la recolección de datos.
+    Ejemplo:
     ```cpp
-    accelerometer->start();
+    QFileInfo info("/home/usuario/archivo.txt");
     ```
+3. ### bool exists() const
+    Verifica si el archivo o directorio asociado a este QFileInfo existe.
+    - Retorno: true si el archivo o directorio existe, false de lo contrario.
 
-    - void stop()
-    Detiene el acelerómetro, finalizando la recolección de datos.
-
+    Ejemplo:
     ```cpp
-    accelerometer->stop();
+    if (info.exists()) {
+        // El archivo o directorio existe
+    }
     ```
+4. ### QString absoluteFilePath() const
+    Devuelve la ruta absoluta completa del archivo o directorio.
+    - Retorno: La ruta absoluta como QString.
 
-3. ### Obtener Lectura Actual
-    - QAccelerometerReading* reading() const
-    Devuelve la lectura actual del acelerómetro. QAccelerometerReading proporciona acceso a los valores de aceleración en los ejes X, Y y Z.
+    Ejemplo:
+    ```cpp
+    QString ruta = info.absoluteFilePath();
+    ```
+5. ### QString fileName() const
+    Devuelve el nombre base del archivo o directorio (sin la ruta).
+    - Retorno: El nombre del archivo o directorio como QString.
+
+    Ejemplo:
+    ```cpp
+    QString nombreArchivo = info.fileName();
+    ```
+6. ### qint64 size() const
+    Devuelve el tamaño del archivo en bytes. Si es un directorio, devuelve 0.
+    - Retorno: Un valor entero que representa el tamaño del archivo.
+
+    Ejemplo:
+    ```cpp
+    qint64 tamano = info.size();
+    ```
+7. ### bool isFile() const
+    Verifica si QFileInfo representa un archivo regular.
+    - Retorno: true si es un archivo, false si es un directorio o no existe.
+
+    Ejemplo:
+    ```cpp
+    if (info.isFile()) {
+        // Es un archivo
+    }
+    ```
+8. ### bool isDir() const
+    Verifica si QFileInfo representa un directorio.
+    - Retorno: true si es un directorio, false si es un archivo o no existe.
+    Ejemplo:
+    ```cpp
+    if (info.isDir()) {
+        // Es un directorio
+    }
+    ```
+9. ### bool isReadable() const
+    Verifica si el archivo o directorio es legible.
+    - Retorno: true si es legible, false de lo contrario.
     
+    Ejemplo:
     ```cpp
-    QAccelerometerReading *reading = accelerometer->reading();
-    qDebug() << "X:" << reading->x();
-    qDebug() << "Y:" << reading->y();
-    qDebug() << "Z:" << reading->z();
+    if (info.isReadable()) {
+        // El archivo o directorio es legible
+    }
     ```
+10. ### bool isWritable() const
+    Verifica si el archivo o directorio es escribible.
+    - Retorno: true si es escribible, false de lo contrario.
 
-4. ### Cambiar el Modo de Aceleración
-    - void setAccelerationMode(QAccelerometer::AccelerationMode mode)
-
-    Cambia el modo de aceleración. Hay dos modos disponibles:
-    - QAccelerometer::Gravity: El valor incluye la gravedad terrestre.
-    - QAccelerometer::User: Solo muestra la aceleración causada por el usuario.
-
-
+    Ejemplo:
     ```cpp
-    accelerometer->setAccelerationMode(QAccelerometer::Gravity);
+    if (info.isWritable()) {
+        // El archivo o directorio es escribible
+    }
     ```
+11. ### QDateTime lastModified() const
+    Devuelve la fecha y hora de la última modificación del archivo o directorio.
+    - Retorno: Un objeto QDateTime que representa la fecha y hora de la última modificación.
 
-    - QAccelerometer::AccelerationMode accelerationMode() const
-    Devuelve el modo de aceleración actual.
-
-5. ### Señal de Cambio de Lectura
-    - void readingChanged()
-    Señal emitida cuando hay una nueva lectura del acelerómetro. Puedes conectarte a esta señal para procesar los datos en tiempo real.
-
+    Ejemplo:
     ```cpp
-    connect(accelerometer, &QAccelerometer::readingChanged, [&]() {
-        QAccelerometerReading *reading = accelerometer->reading();
-        qDebug() << "X:" << reading->x();
-        qDebug() << "Y:" << reading->y();
-        qDebug() << "Z:" << reading->z();
-    });
+    QDateTime modificado = info.lastModified();
+    ```
+12. ### QString suffix() const
+    Devuelve la extensión del archivo (el sufijo después del punto, por ejemplo, "txt" para un archivo de texto).
+    - Retorno: Un QString con la extensión del archivo.
+
+    Ejemplo:
+    ```cpp
+    QString extension = info.suffix();
+    ```
+13. ### QString baseName() const
+    Devuelve el nombre base del archivo sin la extensión.
+    - Retorno: Un QString con el nombre base del archivo.
+
+    Ejemplo:
+    ```cpp
+    QString nombreBase = info.baseName();
+    ```
+14. ### bool isExecutable() const
+    Verifica si el archivo es ejecutable.
+    - Retorno: true si el archivo es ejecutable, false de lo contrario.
+
+    Ejemplo:
+    ```cpp
+    if (info.isExecutable()) {
+        // El archivo es ejecutable
+    }
     ```
 ***
-
 ## Ejemplo Completo
-
-Este ejemplo muestra cómo iniciar un acelerómetro, leer sus datos en tiempo real y cambiar entre los modos de aceleración.
-
+El siguiente ejemplo muestra cómo obtener información detallada de un archivo utilizando QFileInfo:
 ```cpp
 #include <QCoreApplication>
-#include <QAccelerometer>
+#include <QFileInfo>
 #include <QDebug>
 
 int main(int argc, char *argv[]) {
-    QCoreApplication a(argc, argv);
+    QCoreApplication app(argc, argv);
 
-    // Crear el acelerómetro
-    QAccelerometer *accelerometer = new QAccelerometer();
-    accelerometer->setAccelerationMode(QAccelerometer::User); // Modo 'User'
+    QFileInfo fileInfo("/path/to/file.txt");
 
-    // Iniciar el acelerómetro
-    accelerometer->start();
+    qDebug() << "Nombre del archivo:" << fileInfo.fileName();
+    qDebug() << "Ruta absoluta:" << fileInfo.absoluteFilePath();
+    qDebug() << "Tamaño:" << fileInfo.size() << "bytes";
+    qDebug() << "Última modificación:" << fileInfo.lastModified();
+    qDebug() << "Es archivo:" << fileInfo.isFile();
+    qDebug() << "Es directorio:" << fileInfo.isDir();
+    qDebug() << "Es legible:" << fileInfo.isReadable();
+    qDebug() << "Es escribible:" << fileInfo.isWritable();
+    qDebug() << "Extensión:" << fileInfo.suffix();
 
-    // Conectar la señal de cambio de lectura
-    QObject::connect(accelerometer, &QAccelerometer::readingChanged, [&]() {
-        QAccelerometerReading *reading = accelerometer->reading();
-        qDebug() << "X:" << reading->x();
-        qDebug() << "Y:" << reading->y();
-        qDebug() << "Z:" << reading->z();
-    });
-
-    return a.exec();
+    return app.exec();
 }
 ```
-
 ***
-
 ## Ejercicios de Consolidación
-
-1.	Detección de Movimiento
-    - Crea una aplicación que emita una alerta cuando el dispositivo se mueve bruscamente (por ejemplo, si la aceleración en cualquier eje supera un cierto umbral).
-
-2.	Monitor de Inclinación
-    - Implementa una aplicación que utilice los datos del acelerómetro para determinar si el dispositivo está inclinado y muestra un mensaje cuando se detecta una inclinación significativa.
-
-3.	Modo Gravedad vs Modo Usuario
-    - Modifica una aplicación para alternar entre los modos QAccelerometer::Gravity y QAccelerometer::User, y muestra cómo varían las lecturas entre estos modos.
-
-***
-
-La clase QAccelerometer es ideal para aplicaciones que necesiten detectar movimiento o cambios de orientación en tiempo real, como aplicaciones de fitness, videojuegos o controladores por gestos.
+1.	### Inspección de archivos
+- Implementa un programa que solicite al usuario la ruta de un archivo, y luego muestre toda la información posible utilizando QFileInfo (nombre, tamaño, permisos, fecha de modificación, etc.).
+2.	### Verificación de permisos
+- Crea una aplicación que lea un directorio y verifique qué archivos en ese directorio son legibles, escribibles y ejecutables.
+3.	### Comparación de fechas de modificación
+- Implementa un programa que compare dos archivos y determine cuál fue modificado más recientemente utilizando el método lastModified() de QFileInfo.
+4.	### Listado de archivos con extensión
+- Crea una aplicación que liste todos los archivos en un directorio con una extensión específica (por ejemplo, ".txt" o ".cpp") usando QFileInfo.
 
