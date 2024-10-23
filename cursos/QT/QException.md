@@ -2,129 +2,83 @@
 layout: cabeza3
 ---
 
-# Clase QAccelerometer
-
-La clase QAccelerometer es una especialización de QSensor que permite acceder a los datos del acelerómetro del dispositivo. Un acelerómetro mide la aceleración a lo largo de los tres ejes (X, Y, Z), y es útil para detectar movimiento, inclinación o la orientación del dispositivo.
-
+# Clase QException
+La clase QException en Qt es una clase base para manejar excepciones en las aplicaciones que utilizan Qt. Aunque las excepciones no son tan comunes en el código Qt como en otras bibliotecas debido al enfoque en el manejo de errores mediante códigos de retorno y señales, QException proporciona una manera consistente de lanzar y capturar excepciones en aplicaciones Qt, particularmente cuando se necesita un mecanismo de manejo de errores más robusto.
 ***
-
-## Características Principales
-
-- Mide aceleración: Proporciona la aceleración en los ejes X, Y y Z.
-- Datos en tiempo real: Actualiza continuamente los datos de aceleración del dispositivo.
-- Detección de movimientos y orientación: Puede detectar si el dispositivo está inclinado, en reposo o en movimiento.
-
+## Características Principales de QException
+- Manejo de errores: Permite a los desarrolladores definir sus propias excepciones personalizadas derivadas de QException.
+- Compatibilidad con el estándar C++: Proporciona un mecanismo de excepción familiar para los programadores de C++.
+- Clonable: Una característica única de QException es que permite clonar la excepción. Esto es útil cuando se necesita re-lanzar excepciones en diferentes contextos, como en diferentes hilos.
 ***
+## Métodos Principales de QException
+1. ### Manejo de Excepciones
+    - virtual void raise() const
+    Este método lanza la excepción de nuevo. Es una función virtual pura que debe ser implementada por las subclases.
 
-## Métodos Principales
-
-1. ### Constructor
-    - QAccelerometer(QObject *parent = nullptr)
-    Crea una nueva instancia del acelerómetro. Si el dispositivo tiene un acelerómetro, este comenzará a leer los datos cuando se inicie.
-
+    Ejemplo:
     ```cpp
-    QAccelerometer *accelerometer = new QAccelerometer();
+    void MyException::raise() const {
+        throw *this;
+    }
     ```
+    - virtual QException *clone() const
+    Crea y devuelve una copia de la excepción. Este método permite clonar la excepción para ser lanzada en otro contexto.
 
-2. ### Iniciar y Detener el Acelerómetro
-    - void start()
-    Inicia el acelerómetro, comenzando la recolección de datos.
+    Ejemplo:
     ```cpp
-    accelerometer->start();
+    QException *MyException::clone() const {
+        return new MyException(*this);
+    }
     ```
+2. ### Uso en Excepciones Personalizadas
+    QException puede ser usada como base para crear excepciones personalizadas.
 
-    - void stop()
-    Detiene el acelerómetro, finalizando la recolección de datos.
-
+    Ejemplo de una Excepción Personalizada:
     ```cpp
-    accelerometer->stop();
-    ```
-
-3. ### Obtener Lectura Actual
-    - QAccelerometerReading* reading() const
-    Devuelve la lectura actual del acelerómetro. QAccelerometerReading proporciona acceso a los valores de aceleración en los ejes X, Y y Z.
-    
-    ```cpp
-    QAccelerometerReading *reading = accelerometer->reading();
-    qDebug() << "X:" << reading->x();
-    qDebug() << "Y:" << reading->y();
-    qDebug() << "Z:" << reading->z();
-    ```
-
-4. ### Cambiar el Modo de Aceleración
-    - void setAccelerationMode(QAccelerometer::AccelerationMode mode)
-
-    Cambia el modo de aceleración. Hay dos modos disponibles:
-    - QAccelerometer::Gravity: El valor incluye la gravedad terrestre.
-    - QAccelerometer::User: Solo muestra la aceleración causada por el usuario.
-
-
-    ```cpp
-    accelerometer->setAccelerationMode(QAccelerometer::Gravity);
-    ```
-
-    - QAccelerometer::AccelerationMode accelerationMode() const
-    Devuelve el modo de aceleración actual.
-
-5. ### Señal de Cambio de Lectura
-    - void readingChanged()
-    Señal emitida cuando hay una nueva lectura del acelerómetro. Puedes conectarte a esta señal para procesar los datos en tiempo real.
-
-    ```cpp
-    connect(accelerometer, &QAccelerometer::readingChanged, [&]() {
-        QAccelerometerReading *reading = accelerometer->reading();
-        qDebug() << "X:" << reading->x();
-        qDebug() << "Y:" << reading->y();
-        qDebug() << "Z:" << reading->z();
-    });
+    class MyCustomException : public QException {
+    public:
+        void raise() const override { throw *this; }
+        QException *clone() const override { return new MyCustomException(*this); }
+    };
     ```
 ***
-
 ## Ejemplo Completo
-
-Este ejemplo muestra cómo iniciar un acelerómetro, leer sus datos en tiempo real y cambiar entre los modos de aceleración.
-
+Este ejemplo muestra cómo lanzar y capturar excepciones personalizadas derivadas de QException.
 ```cpp
 #include <QCoreApplication>
-#include <QAccelerometer>
+#include <QException>
 #include <QDebug>
+
+class MyCustomException : public QException {
+public:
+    void raise() const override { throw *this; }
+    QException *clone() const override { return new MyCustomException(*this); }
+};
 
 int main(int argc, char *argv[]) {
     QCoreApplication a(argc, argv);
 
-    // Crear el acelerómetro
-    QAccelerometer *accelerometer = new QAccelerometer();
-    accelerometer->setAccelerationMode(QAccelerometer::User); // Modo 'User'
-
-    // Iniciar el acelerómetro
-    accelerometer->start();
-
-    // Conectar la señal de cambio de lectura
-    QObject::connect(accelerometer, &QAccelerometer::readingChanged, [&]() {
-        QAccelerometerReading *reading = accelerometer->reading();
-        qDebug() << "X:" << reading->x();
-        qDebug() << "Y:" << reading->y();
-        qDebug() << "Z:" << reading->z();
-    });
+    try {
+        // Lanzar una excepción personalizada
+        throw MyCustomException();
+    } catch (const QException &ex) {
+        // Capturar la excepción
+        qDebug() << "Se capturó una excepción personalizada.";
+    }
 
     return a.exec();
 }
 ```
-
 ***
-
 ## Ejercicios de Consolidación
+1.	###  Excepción Personalizada
+- Crea una clase que derive de QException y represente un error específico en tu aplicación, como un error de conexión o un fallo de autenticación. Lanza y captura esta excepción en una función.
+2.	### Manejo de Excepciones en Hilos
+- Crea un programa multihilo donde uno de los hilos lanza una excepción derivada de QException. En el hilo principal, captura la excepción y maneja el error de manera adecuada.
+3.	### Clonación de Excepciones
+- Implementa una clase que herede de QException y que se pueda clonar. Lanza una excepción en una función, clónala y vuelve a lanzarla en otra función.
+4.	### Jerarquía de Excepciones
+- Define una jerarquía de excepciones personalizadas derivadas de QException (por ejemplo, FileException, NetworkException) y lanza diferentes tipos de excepciones en distintas partes del código. Asegúrate de manejarlas apropiadamente en bloques try-catch.
 
-1.	Detección de Movimiento
-    - Crea una aplicación que emita una alerta cuando el dispositivo se mueve bruscamente (por ejemplo, si la aceleración en cualquier eje supera un cierto umbral).
-
-2.	Monitor de Inclinación
-    - Implementa una aplicación que utilice los datos del acelerómetro para determinar si el dispositivo está inclinado y muestra un mensaje cuando se detecta una inclinación significativa.
-
-3.	Modo Gravedad vs Modo Usuario
-    - Modifica una aplicación para alternar entre los modos QAccelerometer::Gravity y QAccelerometer::User, y muestra cómo varían las lecturas entre estos modos.
-
-***
-
-La clase QAccelerometer es ideal para aplicaciones que necesiten detectar movimiento o cambios de orientación en tiempo real, como aplicaciones de fitness, videojuegos o controladores por gestos.
+Estos ejercicios te ayudarán a reforzar el manejo de excepciones dentro del contexto de Qt y C++.
 
