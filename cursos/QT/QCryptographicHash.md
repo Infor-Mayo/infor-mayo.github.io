@@ -2,129 +2,126 @@
 layout: cabeza3
 ---
 
-# Clase QAccelerometer
-
-La clase QAccelerometer es una especialización de QSensor que permite acceder a los datos del acelerómetro del dispositivo. Un acelerómetro mide la aceleración a lo largo de los tres ejes (X, Y, Z), y es útil para detectar movimiento, inclinación o la orientación del dispositivo.
-
-***
-
-## Características Principales
-
-- Mide aceleración: Proporciona la aceleración en los ejes X, Y y Z.
-- Datos en tiempo real: Actualiza continuamente los datos de aceleración del dispositivo.
-- Detección de movimientos y orientación: Puede detectar si el dispositivo está inclinado, en reposo o en movimiento.
+# Clase QCryptographicHash
+La clase QCryptographicHash de Qt proporciona una interfaz para calcular valores hash criptográficos usando diversos algoritmos estándar. Un valor hash es un resumen (digest) fijo, generado a partir de un conjunto de datos, y se utiliza en muchas áreas como la verificación de la integridad de los datos, autenticación, firmas digitales, entre otras.
 
 ***
 
-## Métodos Principales
+## Algoritmos Soportados
+QCryptographicHash soporta varios algoritmos de hash comunes:
+- MD4: Protocolo hash ya obsoleto y no recomendado por problemas de seguridad.
+- MD5: Algo más seguro que MD4, pero también con vulnerabilidades conocidas y no recomendado para nuevos desarrollos.
+- SHA-1: Más seguro que MD5, pero aún vulnerable a ataques de colisión. También obsoleto.
+- SHA-224, SHA-256, SHA-384, SHA-512: Parte de la familia SHA-2, son los algoritmos hash recomendados para usos criptográficos.
 
+***
+
+## Métodos Principales de QCryptographicHash
 1. ### Constructor
-    - QAccelerometer(QObject *parent = nullptr)
-    Crea una nueva instancia del acelerómetro. Si el dispositivo tiene un acelerómetro, este comenzará a leer los datos cuando se inicie.
 
     ```cpp
-    QAccelerometer *accelerometer = new QAccelerometer();
+    QCryptographicHash(QCryptographicHash::Algorithm method);
     ```
+    Crea un objeto QCryptographicHash para calcular el hash usando el algoritmo especificado.
+    - method: Especifica el algoritmo de hash a usar, por ejemplo, QCryptographicHash::Sha256.
 
-2. ### Iniciar y Detener el Acelerómetro
-    - void start()
-    Inicia el acelerómetro, comenzando la recolección de datos.
+    Ejemplo:
     ```cpp
-    accelerometer->start();
+    QCryptographicHash hash(QCryptographicHash::Sha256);
     ```
-
-    - void stop()
-    Detiene el acelerómetro, finalizando la recolección de datos.
-
+2. ### addData()
+    Este método se usa para añadir más datos al objeto de hash. Puede añadirse a través de una cadena de bytes (QByteArray), un puntero a datos o un flujo de datos.
     ```cpp
-    accelerometer->stop();
+    bool addData(const QByteArray &data);
+    bool addData(const char *data, qint64 length);
     ```
 
-3. ### Obtener Lectura Actual
-    - QAccelerometerReading* reading() const
-    Devuelve la lectura actual del acelerómetro. QAccelerometerReading proporciona acceso a los valores de aceleración en los ejes X, Y y Z.
-    
+    Ejemplo:
     ```cpp
-    QAccelerometerReading *reading = accelerometer->reading();
-    qDebug() << "X:" << reading->x();
-    qDebug() << "Y:" << reading->y();
-    qDebug() << "Z:" << reading->z();
+    QCryptographicHash hash(QCryptographicHash::Sha256);
+    hash.addData("Hola, mundo");
     ```
-
-4. ### Cambiar el Modo de Aceleración
-    - void setAccelerationMode(QAccelerometer::AccelerationMode mode)
-
-    Cambia el modo de aceleración. Hay dos modos disponibles:
-    - QAccelerometer::Gravity: El valor incluye la gravedad terrestre.
-    - QAccelerometer::User: Solo muestra la aceleración causada por el usuario.
-
-
+3. ### result()
+    Devuelve el valor hash calculado como un QByteArray. Este método debe llamarse una vez que todos los datos han sido añadidos.
     ```cpp
-    accelerometer->setAccelerationMode(QAccelerometer::Gravity);
+    QByteArray result() const;
     ```
 
-    - QAccelerometer::AccelerationMode accelerationMode() const
-    Devuelve el modo de aceleración actual.
-
-5. ### Señal de Cambio de Lectura
-    - void readingChanged()
-    Señal emitida cuando hay una nueva lectura del acelerómetro. Puedes conectarte a esta señal para procesar los datos en tiempo real.
-
+    Ejemplo:
     ```cpp
-    connect(accelerometer, &QAccelerometer::readingChanged, [&]() {
-        QAccelerometerReading *reading = accelerometer->reading();
-        qDebug() << "X:" << reading->x();
-        qDebug() << "Y:" << reading->y();
-        qDebug() << "Z:" << reading->z();
-    });
+    QCryptographicHash hash(QCryptographicHash::Sha256);
+    hash.addData("Qt Framework");
+    QByteArray digest = hash.result();
+    qDebug() << "Hash SHA-256:" << digest.toHex();
     ```
+4. ### hash()
+    Este método estático permite calcular el hash de una única vez, sin necesidad de crear un objeto QCryptographicHash.
+    ```cpp
+    static QByteArray hash(const QByteArray &data, QCryptographicHash::Algorithm method);
+    ```
+
+    Ejemplo:
+    ```cpp
+    QByteArray hashValue = QCryptographicHash::hash("Qt Framework", QCryptographicHash::Sha256);
+    qDebug() << "Hash calculado:" << hashValue.toHex();
+    ```
+
+5. ### reset()
+    Reinicia el objeto QCryptographicHash, limpiando los datos actuales y permitiendo empezar el cálculo de un nuevo hash.
+    ```cpp
+    void reset();
+    ```
+
+    Ejemplo:
+    ```cpp
+    hash.reset();
+    hash.addData("Nuevo contenido");
+    ```
+
 ***
 
 ## Ejemplo Completo
-
-Este ejemplo muestra cómo iniciar un acelerómetro, leer sus datos en tiempo real y cambiar entre los modos de aceleración.
-
+A continuación se muestra un ejemplo que utiliza QCryptographicHash para calcular el hash SHA-256 de un archivo:
 ```cpp
-#include <QCoreApplication>
-#include <QAccelerometer>
+#include <QCryptographicHash>
+#include <QFile>
 #include <QDebug>
 
-int main(int argc, char *argv[]) {
-    QCoreApplication a(argc, argv);
+int main() {
+    QFile file("ruta/del/archivo.txt");
+    if (!file.open(QIODevice::ReadOnly)) {
+        qWarning() << "No se pudo abrir el archivo";
+        return -1;
+    }
 
-    // Crear el acelerómetro
-    QAccelerometer *accelerometer = new QAccelerometer();
-    accelerometer->setAccelerationMode(QAccelerometer::User); // Modo 'User'
-
-    // Iniciar el acelerómetro
-    accelerometer->start();
-
-    // Conectar la señal de cambio de lectura
-    QObject::connect(accelerometer, &QAccelerometer::readingChanged, [&]() {
-        QAccelerometerReading *reading = accelerometer->reading();
-        qDebug() << "X:" << reading->x();
-        qDebug() << "Y:" << reading->y();
-        qDebug() << "Z:" << reading->z();
-    });
-
-    return a.exec();
+    QCryptographicHash hash(QCryptographicHash::Sha256);
+    
+    if (!hash.addData(&file)) {
+        qWarning() << "Error al añadir datos al hash";
+        return -1;
+    }
+    
+    QByteArray result = hash.result();
+    qDebug() << "Hash SHA-256 del archivo:" << result.toHex();
+    
+    return 0;
 }
 ```
+Este programa abre un archivo y calcula su hash SHA-256, mostrándolo en formato hexadecimal.
 
 ***
 
 ## Ejercicios de Consolidación
-
-1.	Detección de Movimiento
-    - Crea una aplicación que emita una alerta cuando el dispositivo se mueve bruscamente (por ejemplo, si la aceleración en cualquier eje supera un cierto umbral).
-
-2.	Monitor de Inclinación
-    - Implementa una aplicación que utilice los datos del acelerómetro para determinar si el dispositivo está inclinado y muestra un mensaje cuando se detecta una inclinación significativa.
-
-3.	Modo Gravedad vs Modo Usuario
-    - Modifica una aplicación para alternar entre los modos QAccelerometer::Gravity y QAccelerometer::User, y muestra cómo varían las lecturas entre estos modos.
+1.	### Hash de Cadenas
+- Escribe un programa que solicite al usuario una cadena de texto, calcule su hash usando SHA-256, y lo muestre en formato hexadecimal.
+2.	### Verificación de Integridad
+- Crea una función que tome dos archivos como entrada y compare sus valores hash (MD5) para determinar si son idénticos.
+3.	### Hashes Progresivos
+- Escribe un programa que lea un archivo en bloques de 1024 bytes, añadiendo cada bloque al QCryptographicHash y calcule el hash final una vez se haya procesado todo el archivo.
+4.	### Implementación de un Almacén de Contraseñas
+- Crea una pequeña aplicación que permita almacenar contraseñas seguras. Cada contraseña se debe guardar como un hash SHA-256. Añade la funcionalidad para verificar si una contraseña ingresada coincide con el hash guardado.
 
 ***
 
-La clase QAccelerometer es ideal para aplicaciones que necesiten detectar movimiento o cambios de orientación en tiempo real, como aplicaciones de fitness, videojuegos o controladores por gestos.
+La clase QCryptographicHash es extremadamente útil para cualquier tipo de operación que requiera hashes criptográficos, desde verificación de integridad de datos hasta almacenamiento seguro de contraseñas.
 
