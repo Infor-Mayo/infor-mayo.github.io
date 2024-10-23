@@ -2,129 +2,160 @@
 layout: cabeza3
 ---
 
-# Clase QAccelerometer
-
-La clase QAccelerometer es una especialización de QSensor que permite acceder a los datos del acelerómetro del dispositivo. Un acelerómetro mide la aceleración a lo largo de los tres ejes (X, Y, Z), y es útil para detectar movimiento, inclinación o la orientación del dispositivo.
-
+# Clase QFileSystemWatcher
+QFileSystemWatcher es una clase en Qt que permite monitorizar cambios en archivos o directorios del sistema de archivos en tiempo real. Utiliza señales para notificar cuando un archivo o directorio es modificado, agregado o eliminado. Es particularmente útil en aplicaciones que necesitan actualizarse automáticamente cuando el contenido del sistema de archivos cambia, como editores de texto o administradores de archivos.
 ***
-
-## Características Principales
-
-- Mide aceleración: Proporciona la aceleración en los ejes X, Y y Z.
-- Datos en tiempo real: Actualiza continuamente los datos de aceleración del dispositivo.
-- Detección de movimientos y orientación: Puede detectar si el dispositivo está inclinado, en reposo o en movimiento.
-
+## Características Principales de QFileSystemWatcher
+- Monitorización de Archivos: Puede observar archivos individuales para detectar cambios como modificaciones, eliminación o renombrado.
+- Monitorización de Directorios: Puede observar directorios completos para detectar cambios en cualquier archivo dentro del directorio.
+- Soporte en Tiempo Real: Utiliza señales para notificar cambios en tiempo real sin necesidad de una consulta continua.
 ***
-
-## Métodos Principales
-
+## Métodos Principales de QFileSystemWatcher
 1. ### Constructor
-    - QAccelerometer(QObject *parent = nullptr)
-    Crea una nueva instancia del acelerómetro. Si el dispositivo tiene un acelerómetro, este comenzará a leer los datos cuando se inicie.
-
+    Inicializa un QFileSystemWatcher vacío o con una lista de archivos y directorios para monitorizar.
     ```cpp
-    QAccelerometer *accelerometer = new QAccelerometer();
+    QFileSystemWatcher(QObject *parent = nullptr);
+    QFileSystemWatcher(const QStringList &paths, QObject *parent = nullptr);
+    ```
+    - paths: Lista de rutas a archivos o directorios que se deben monitorizar desde el principio.
+    - parent: El widget padre que será propietario del objeto (opcional).
+
+    Ejemplo:
+    ```cpp
+    QFileSystemWatcher *watcher = new QFileSystemWatcher();
+    ```
+2. ### addPath()
+    Añade una ruta de archivo o directorio a la lista de elementos monitorizados.
+    ```cpp
+    void addPath(const QString &path);
+    ```
+    - path: La ruta al archivo o directorio que se quiere observar.
+
+    Ejemplo:
+    ```cpp
+    watcher->addPath("/ruta/al/archivo.txt");
+    ```
+3. ### addPaths()
+    Añade una lista de rutas de archivos o directorios para monitorizar.
+    ```cpp
+    void addPaths(const QStringList &paths);
+    ```
+    - paths: Lista de rutas de archivos o directorios.
+
+    Ejemplo:
+    ```cpp
+    watcher->addPaths(QStringList() << "/ruta/al/archivo1.txt" << "/ruta/al/archivo2.txt");
+    ```
+4. ### removePath()
+    Elimina una ruta de archivo o directorio de la lista de elementos monitorizados.
+    ```cpp
+    void removePath(const QString &path);
+    ```
+    - path: La ruta al archivo o directorio que se desea dejar de observar.
+
+    Ejemplo:
+    ```cpp
+    watcher->removePath("/ruta/al/archivo.txt");
+    ```
+5. ### removePaths()
+    Elimina una lista de rutas de archivos o directorios de la lista de elementos monitorizados.
+    ```cpp
+    void removePaths(const QStringList &paths);
+    ```
+    - paths: Lista de rutas de archivos o directorios que se desean dejar de observar.
+
+    Ejemplo:
+    ```cpp
+    watcher->removePaths(QStringList() << "/ruta/al/archivo1.txt" << "/ruta/al/archivo2.txt");
+    ```
+6. ### files()
+    Devuelve una lista de archivos que están siendo monitorizados.
+    ```cpp
+    QStringList files() const;
     ```
 
-2. ### Iniciar y Detener el Acelerómetro
-    - void start()
-    Inicia el acelerómetro, comenzando la recolección de datos.
+    Ejemplo:
     ```cpp
-    accelerometer->start();
+    QStringList monitoredFiles = watcher->files();
+    ```
+7. ### directories()
+    Devuelve una lista de directorios que están siendo monitorizados.
+    ```cpp
+    QStringList directories() const;
     ```
 
-    - void stop()
-    Detiene el acelerómetro, finalizando la recolección de datos.
-
+    Ejemplo:
     ```cpp
-    accelerometer->stop();
+    QStringList monitoredDirectories = watcher->directories();
     ```
-
-3. ### Obtener Lectura Actual
-    - QAccelerometerReading* reading() const
-    Devuelve la lectura actual del acelerómetro. QAccelerometerReading proporciona acceso a los valores de aceleración en los ejes X, Y y Z.
-    
+***
+## Señales Importantes
+1. ### fileChanged()
+    Esta señal es emitida cuando el archivo especificado ha sido modificado, eliminado o renombrado.
     ```cpp
-    QAccelerometerReading *reading = accelerometer->reading();
-    qDebug() << "X:" << reading->x();
-    qDebug() << "Y:" << reading->y();
-    qDebug() << "Z:" << reading->z();
+    void fileChanged(const QString &path);
     ```
+    - path: La ruta del archivo que ha sido modificado o eliminado.
 
-4. ### Cambiar el Modo de Aceleración
-    - void setAccelerationMode(QAccelerometer::AccelerationMode mode)
-
-    Cambia el modo de aceleración. Hay dos modos disponibles:
-    - QAccelerometer::Gravity: El valor incluye la gravedad terrestre.
-    - QAccelerometer::User: Solo muestra la aceleración causada por el usuario.
-
-
+    Ejemplo:
     ```cpp
-    accelerometer->setAccelerationMode(QAccelerometer::Gravity);
+    connect(watcher, &QFileSystemWatcher::fileChanged, this, [](const QString &path) {
+        qDebug() << "El archivo ha cambiado:" << path;
+    });
     ```
-
-    - QAccelerometer::AccelerationMode accelerationMode() const
-    Devuelve el modo de aceleración actual.
-
-5. ### Señal de Cambio de Lectura
-    - void readingChanged()
-    Señal emitida cuando hay una nueva lectura del acelerómetro. Puedes conectarte a esta señal para procesar los datos en tiempo real.
-
+2. ### directoryChanged()
+    Esta señal es emitida cuando el contenido del directorio especificado ha cambiado.
     ```cpp
-    connect(accelerometer, &QAccelerometer::readingChanged, [&]() {
-        QAccelerometerReading *reading = accelerometer->reading();
-        qDebug() << "X:" << reading->x();
-        qDebug() << "Y:" << reading->y();
-        qDebug() << "Z:" << reading->z();
+    void directoryChanged(const QString &path);
+    ```
+    - path: La ruta del directorio que ha cambiado.
+
+    Ejemplo:
+    ```cpp
+    connect(watcher, &QFileSystemWatcher::directoryChanged, this, [](const QString &path) {
+        qDebug() << "El directorio ha cambiado:" << path;
     });
     ```
 ***
-
-## Ejemplo Completo
-
-Este ejemplo muestra cómo iniciar un acelerómetro, leer sus datos en tiempo real y cambiar entre los modos de aceleración.
-
+## Ejemplo Completo de Uso de QFileSystemWatcher
+A continuación, un ejemplo que muestra cómo usar QFileSystemWatcher para monitorizar un archivo y un directorio.
 ```cpp
-#include <QCoreApplication>
-#include <QAccelerometer>
+#include <QApplication>
+#include <QFileSystemWatcher>
 #include <QDebug>
 
 int main(int argc, char *argv[]) {
-    QCoreApplication a(argc, argv);
+    QApplication app(argc, argv);
 
-    // Crear el acelerómetro
-    QAccelerometer *accelerometer = new QAccelerometer();
-    accelerometer->setAccelerationMode(QAccelerometer::User); // Modo 'User'
+    QFileSystemWatcher watcher;
 
-    // Iniciar el acelerómetro
-    accelerometer->start();
+    // Añadir archivo y directorio a la lista de observación
+    watcher.addPath("/ruta/al/archivo.txt");
+    watcher.addPath("/ruta/al/directorio");
 
-    // Conectar la señal de cambio de lectura
-    QObject::connect(accelerometer, &QAccelerometer::readingChanged, [&]() {
-        QAccelerometerReading *reading = accelerometer->reading();
-        qDebug() << "X:" << reading->x();
-        qDebug() << "Y:" << reading->y();
-        qDebug() << "Z:" << reading->z();
+    // Conectar las señales a los slots
+    QObject::connect(&watcher, &QFileSystemWatcher::fileChanged, [](const QString &path) {
+        qDebug() << "El archivo ha cambiado:" << path;
     });
 
-    return a.exec();
+    QObject::connect(&watcher, &QFileSystemWatcher::directoryChanged, [](const QString &path) {
+        qDebug() << "El directorio ha cambiado:" << path;
+    });
+
+    return app.exec();
 }
 ```
-
+Este ejemplo monitoriza tanto un archivo como un directorio y emite mensajes cuando hay cambios en el sistema de archivos.
 ***
-
 ## Ejercicios de Consolidación
-
-1.	Detección de Movimiento
-    - Crea una aplicación que emita una alerta cuando el dispositivo se mueve bruscamente (por ejemplo, si la aceleración en cualquier eje supera un cierto umbral).
-
-2.	Monitor de Inclinación
-    - Implementa una aplicación que utilice los datos del acelerómetro para determinar si el dispositivo está inclinado y muestra un mensaje cuando se detecta una inclinación significativa.
-
-3.	Modo Gravedad vs Modo Usuario
-    - Modifica una aplicación para alternar entre los modos QAccelerometer::Gravity y QAccelerometer::User, y muestra cómo varían las lecturas entre estos modos.
-
+1.	### Monitorización de Archivos
+- Crea una aplicación que monitorice varios archivos de texto en tu sistema. Cuando un archivo sea modificado, la aplicación debe imprimir en la consola un mensaje indicando qué archivo ha cambiado.
+2.	### Monitorización de Directorios
+- Escribe una aplicación que observe un directorio específico y muestre un mensaje cada vez que se añada, elimine o modifique un archivo en ese directorio.
+3.	### Actualización de Vista de Directorio
+- Implementa una interfaz gráfica en la que una QListWidget muestre los archivos de un directorio. Usa QFileSystemWatcher para actualizar la lista automáticamente cuando se agreguen o eliminen archivos en ese directorio.
+4.	### Monitorización Dinámica
+- Escribe un programa que permita al usuario agregar o eliminar archivos y directorios para monitorizar usando QFileSystemWatcher. La lista de elementos monitorizados debe actualizarse dinámicamente y mostrar cambios en la interfaz.
 ***
-
-La clase QAccelerometer es ideal para aplicaciones que necesiten detectar movimiento o cambios de orientación en tiempo real, como aplicaciones de fitness, videojuegos o controladores por gestos.
+Con QFileSystemWatcher, puedes construir aplicaciones reactivas que respondan a cambios en archivos y directorios, ofreciendo una experiencia de usuario más dinámica y adaptable.
 
