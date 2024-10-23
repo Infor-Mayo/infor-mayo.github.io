@@ -2,129 +2,128 @@
 layout: cabeza3
 ---
 
-# Clase QAccelerometer
-
-La clase QAccelerometer es una especialización de QSensor que permite acceder a los datos del acelerómetro del dispositivo. Un acelerómetro mide la aceleración a lo largo de los tres ejes (X, Y, Z), y es útil para detectar movimiento, inclinación o la orientación del dispositivo.
-
+# Clase QFuture
+La clase QFuture de Qt proporciona una forma de manejar tareas asíncronas y permite consultar su estado mientras se ejecutan en segundo plano. Es parte del módulo Qt Concurrent y se usa en combinación con funciones como QtConcurrent::run() o QtConcurrent::map().
+QFuture es una abstracción de una tarea que está en progreso o se completará en algún momento futuro. Permite consultar si la tarea ha terminado, cancelar la ejecución, o recuperar el resultado una vez completada.
 ***
-
 ## Características Principales
-
-- Mide aceleración: Proporciona la aceleración en los ejes X, Y y Z.
-- Datos en tiempo real: Actualiza continuamente los datos de aceleración del dispositivo.
-- Detección de movimientos y orientación: Puede detectar si el dispositivo está inclinado, en reposo o en movimiento.
-
+- Se usa para manejar tareas que se ejecutan de manera asíncrona en un hilo separado.
+- Permite comprobar el estado de la tarea (si está en progreso, terminada, etc.).
+- Puede devolver el resultado de la tarea, si corresponde.
+- Proporciona soporte para la cancelación y finalización anticipada de tareas.
 ***
-
 ## Métodos Principales
+1. ### Estado de la Tarea
+    - bool isFinished() const
 
-1. ### Constructor
-    - QAccelerometer(QObject *parent = nullptr)
-    Crea una nueva instancia del acelerómetro. Si el dispositivo tiene un acelerómetro, este comenzará a leer los datos cuando se inicie.
-
+    Devuelve true si la tarea ha finalizado.
     ```cpp
-    QAccelerometer *accelerometer = new QAccelerometer();
+    QFuture<int> future = QtConcurrent::run([]() { return 42; });
+    if (future.isFinished()) {
+        qDebug() << "La tarea ha finalizado.";
+    }
     ```
+    - bool isRunning() const
 
-2. ### Iniciar y Detener el Acelerómetro
-    - void start()
-    Inicia el acelerómetro, comenzando la recolección de datos.
+    Devuelve true si la tarea está en ejecución.
     ```cpp
-    accelerometer->start();
+    if (future.isRunning()) {
+        qDebug() << "La tarea está en progreso.";
+    }
     ```
+    - bool isCanceled() const
 
-    - void stop()
-    Detiene el acelerómetro, finalizando la recolección de datos.
-
+    Devuelve true si la tarea fue cancelada.
     ```cpp
-    accelerometer->stop();
+    if (future.isCanceled()) {
+        qDebug() << "La tarea fue cancelada.";
+    }
     ```
+    - int progressValue() const
 
-3. ### Obtener Lectura Actual
-    - QAccelerometerReading* reading() const
-    Devuelve la lectura actual del acelerómetro. QAccelerometerReading proporciona acceso a los valores de aceleración en los ejes X, Y y Z.
-    
+    Devuelve el progreso de la tarea, normalmente en un rango de 0 a 100.
     ```cpp
-    QAccelerometerReading *reading = accelerometer->reading();
-    qDebug() << "X:" << reading->x();
-    qDebug() << "Y:" << reading->y();
-    qDebug() << "Z:" << reading->z();
+    qDebug() << "Progreso:" << future.progressValue() << "%";
     ```
+2. ### Recuperación del Resultado
+    - T result() const
 
-4. ### Cambiar el Modo de Aceleración
-    - void setAccelerationMode(QAccelerometer::AccelerationMode mode)
-
-    Cambia el modo de aceleración. Hay dos modos disponibles:
-    - QAccelerometer::Gravity: El valor incluye la gravedad terrestre.
-    - QAccelerometer::User: Solo muestra la aceleración causada por el usuario.
-
-
+    Devuelve el resultado de la tarea cuando se ha completado. Este método bloqueará la ejecución hasta que la tarea finalice si aún no ha terminado.
     ```cpp
-    accelerometer->setAccelerationMode(QAccelerometer::Gravity);
+    int result = future.result();
+    qDebug() << "Resultado de la tarea:" << result;
     ```
+    - QList<T> results() const
 
-    - QAccelerometer::AccelerationMode accelerationMode() const
-    Devuelve el modo de aceleración actual.
-
-5. ### Señal de Cambio de Lectura
-    - void readingChanged()
-    Señal emitida cuando hay una nueva lectura del acelerómetro. Puedes conectarte a esta señal para procesar los datos en tiempo real.
-
+    Si la tarea devuelve múltiples resultados, este método los devolverá todos en forma de lista.
     ```cpp
-    connect(accelerometer, &QAccelerometer::readingChanged, [&]() {
-        QAccelerometerReading *reading = accelerometer->reading();
-        qDebug() << "X:" << reading->x();
-        qDebug() << "Y:" << reading->y();
-        qDebug() << "Z:" << reading->z();
-    });
+    QFuture<QList<int>> future = QtConcurrent::run([]() { return QList<int> {1, 2, 3}; });
+    QList<int> results = future.results();
     ```
+3. ### Cancelación y Finalización de Tareas
+    - void cancel()
+
+    Intenta cancelar la tarea si es posible. No todas las tareas permiten ser canceladas.
+    ```cpp
+    future.cancel();
+    if (future.isCanceled()) {
+        qDebug() << "La tarea ha sido cancelada.";
+    }
+    ```
+    - void waitForFinished()
+
+    Bloquea la ejecución actual hasta que la tarea haya finalizado.
+    ```cpp
+    future.waitForFinished();
+    qDebug() << "La tarea ha finalizado.";
+    ```
+4. ### Interacción con QFutureWatcher
+    Para manejar eventos o notificaciones cuando una tarea asíncrona cambia de estado, QFuture se puede combinar con QFutureWatcher, que emite señales cuando la tarea ha terminado, ha sido cancelada, etc.
 ***
-
 ## Ejemplo Completo
-
-Este ejemplo muestra cómo iniciar un acelerómetro, leer sus datos en tiempo real y cambiar entre los modos de aceleración.
-
+El siguiente ejemplo muestra cómo ejecutar una tarea asíncrona que devuelve un valor entero usando QtConcurrent::run() y luego recuperar el resultado de la tarea con QFuture.
+main.cpp
 ```cpp
 #include <QCoreApplication>
-#include <QAccelerometer>
+#include <QtConcurrent/QtConcurrent>
 #include <QDebug>
+#include <QFuture>
+
+int calculateFactorial(int n) {
+    int result = 1;
+    for (int i = 1; i <= n; ++i) {
+        result *= i;
+    }
+    return result;
+}
 
 int main(int argc, char *argv[]) {
     QCoreApplication a(argc, argv);
 
-    // Crear el acelerómetro
-    QAccelerometer *accelerometer = new QAccelerometer();
-    accelerometer->setAccelerationMode(QAccelerometer::User); // Modo 'User'
+    // Ejecutar tarea asíncrona
+    QFuture<int> future = QtConcurrent::run(calculateFactorial, 5);
 
-    // Iniciar el acelerómetro
-    accelerometer->start();
+    // Esperar a que la tarea finalice
+    future.waitForFinished();
 
-    // Conectar la señal de cambio de lectura
-    QObject::connect(accelerometer, &QAccelerometer::readingChanged, [&]() {
-        QAccelerometerReading *reading = accelerometer->reading();
-        qDebug() << "X:" << reading->x();
-        qDebug() << "Y:" << reading->y();
-        qDebug() << "Z:" << reading->z();
-    });
+    // Recuperar el resultado
+    int result = future.result();
+    qDebug() << "El factorial de 5 es:" << result;
 
     return a.exec();
 }
 ```
-
+Este ejemplo ejecuta una tarea de cálculo del factorial de un número y espera a que la tarea termine para imprimir el resultado.
 ***
-
 ## Ejercicios de Consolidación
-
-1.	Detección de Movimiento
-    - Crea una aplicación que emita una alerta cuando el dispositivo se mueve bruscamente (por ejemplo, si la aceleración en cualquier eje supera un cierto umbral).
-
-2.	Monitor de Inclinación
-    - Implementa una aplicación que utilice los datos del acelerómetro para determinar si el dispositivo está inclinado y muestra un mensaje cuando se detecta una inclinación significativa.
-
-3.	Modo Gravedad vs Modo Usuario
-    - Modifica una aplicación para alternar entre los modos QAccelerometer::Gravity y QAccelerometer::User, y muestra cómo varían las lecturas entre estos modos.
-
+1.	### Cálculo Concurrente
+- Crea una función que calcule la suma de los números del 1 al n de manera concurrente usando QFuture. Implementa un mecanismo para consultar el progreso de la tarea.
+2.	### Tareas Cancelables
+- Modifica la tarea anterior para que sea cancelable antes de completarse. Implementa un botón o evento que permita cancelar la tarea y muestra un mensaje si la tarea fue cancelada con éxito.
+3.	### Uso de QFutureWatcher
+- Integra QFutureWatcher con una tarea concurrente que realice operaciones sobre un archivo grande. Muestra el progreso del procesamiento del archivo y notifica cuando la tarea ha terminado o ha sido cancelada.
+4.	### Múltiples Resultados
+- Crea una tarea concurrente que procese una lista de números y devuelva una lista de resultados (por ejemplo, cuadrado de cada número). Usa QFuture para recoger y mostrar los resultados.
 ***
-
-La clase QAccelerometer es ideal para aplicaciones que necesiten detectar movimiento o cambios de orientación en tiempo real, como aplicaciones de fitness, videojuegos o controladores por gestos.
+Con QFuture, es posible gestionar tareas asíncronas y mantener la interacción con la aplicación mientras esas tareas se ejecutan en segundo plano. Esto es útil para evitar bloqueos en la interfaz de usuario y permitir la ejecución fluida de tareas que puedan tardar en completarse.
 
