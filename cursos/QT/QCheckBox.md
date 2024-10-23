@@ -2,128 +2,83 @@
 layout: cabeza3
 ---
 
-# Clase QCamera
-La clase QCamera en Qt proporciona una interfaz para manejar cámaras de video o fotografía en una aplicación. Permite controlar dispositivos de cámara, ajustar configuraciones como la resolución, balance de blancos, exposición, y capturar imágenes o videos.
+# Clase QCheckBox
+QCheckBox proporciona una casilla de verificación con una etiqueta de texto al lado. Permite controlar si está marcada, desmarcada o en un estado intermedio (tristado). Además, emite señales cuando cambia su estado, lo que permite reaccionar a las acciones del usuario.
 
 ***
 
-## Características Principales de QCamera
-- Control de la cámara: Permite manejar el encendido, apagado y los estados de la cámara.
-- Ajustes de imagen: Configuración de resolución, balance de blancos, brillo, contraste, y otros parámetros relacionados con la imagen.
-- Captura de video: Posibilidad de grabar videos y controlar los flujos de video en vivo.
-- Compatibilidad con múltiples cámaras: En sistemas con múltiples cámaras, permite seleccionar cuál utilizar.
-- Control avanzado: Soporte para funciones avanzadas como el enfoque automático, exposición, y zoom.
-
-***
-
-## Métodos Principales de QCamera
-1. ### Control de la cámara
-    - QCamera(QObject *parent = nullptr)
-
-    Crea una instancia de QCamera, seleccionando por defecto el dispositivo de cámara predeterminado.
+## Funcionalidades clave de QCheckBox
+1. ### Constructores
+    - QCheckBox(QWidget *parent = nullptr): Crea una casilla de verificación vacía sin texto.
+    - QCheckBox(const QString &text, QWidget *parent = nullptr): Crea una casilla de verificación con una etiqueta de texto.
 
     Ejemplo:
     ```cpp
-    QCamera *camera = new QCamera;
+    QCheckBox *checkBox = new QCheckBox("Aceptar términos y condiciones", this);
     ```
-    - void start()
-
-    Inicia la cámara y comienza a emitir datos de video.
-
-    Ejemplo:
-    ```cpp
-    camera->start();
-    ```
-    - void stop()
-
-    Detiene la cámara y deja de emitir datos de video.
+2. ### Verificar el estado
+    QCheckBox tiene tres posibles estados:
+    - Marcado (Qt::Checked)
+    - No marcado (Qt::Unchecked)
+    - Tristado o estado intermedio (Qt::PartiallyChecked), que se puede habilitar cuando se requiere un tercer estado.
+    - isChecked(): Devuelve true si el checkbox está marcado.
+    - setChecked(bool checked): Establece el estado marcado o desmarcado.
+    - checkState(): Devuelve el estado actual del QCheckBox (Qt::Checked, Qt::Unchecked, Qt::PartiallyChecked).
+    - setCheckState(Qt::CheckState state): Cambia el estado de la casilla de verificación.
 
     Ejemplo:
     ```cpp
-    camera->stop();
-    ```
-    - QCamera::Status status() const
-
-    Devuelve el estado actual de la cámara (por ejemplo, si está encendida, apagada, en inicialización, etc.).
-
-    Ejemplo:
-    ```cpp
-    if (camera->status() == QCamera::ActiveStatus) {
-        qDebug() << "La cámara está activa.";
+    QCheckBox *checkBox = new QCheckBox("Mostrar notificaciones", this);
+    if (checkBox->isChecked()) {
+        // Realizar acción si está marcado
     }
     ```
-2. ### Ajustes de la Cámara
-    - void setViewfinder(QCameraViewfinder *viewfinder)
-
-    Establece un visor (viewfinder) para mostrar el video en tiempo real.
-
-    Ejemplo:
-    ```cpp
-    camera->setViewfinder(viewfinder);
-    ```
-    - void setCaptureMode(QCamera::CaptureMode mode)
-
-    Establece el modo de captura de la cámara (fotografía, video, etc.).
+3. ### Estado tristado (intermedio)
+    Puedes habilitar un estado intermedio en el checkbox, comúnmente usado cuando quieres reflejar que solo una parte de una serie de opciones está seleccionada.
+    - setTristate(bool tristate = true): Habilita o deshabilita el estado intermedio (tristado).
 
     Ejemplo:
     ```cpp
-    camera->setCaptureMode(QCamera::CaptureStillImage);
+    QCheckBox *checkBox = new QCheckBox("Estado intermedio permitido", this);
+    checkBox->setTristate(true);  // Habilitar el estado intermedio
+    checkBox->setCheckState(Qt::PartiallyChecked);  // Establecer el estado intermedio
     ```
-    - QCamera::CaptureMode captureMode() const
-
-    Devuelve el modo de captura actual de la cámara.
+4. ### Conectar señales
+    QCheckBox emite señales cuando cambia su estado. Las señales más importantes son:
+    - toggled(bool checked): Emitida cuando el estado de la casilla cambia.
+    - stateChanged(int state): Emitida cuando el estado de la casilla cambia a Qt::Checked, Qt::Unchecked o Qt::PartiallyChecked.
 
     Ejemplo:
     ```cpp
-    if (camera->captureMode() == QCamera::CaptureStillImage) {
-        qDebug() << "Modo de captura: imagen fija.";
-    }
+    QCheckBox *checkBox = new QCheckBox("Habilitar opciones avanzadas", this);
+    connect(checkBox, &QCheckBox::toggled, this, [](bool checked) {
+        if (checked) {
+            qDebug() << "Opciones avanzadas habilitadas";
+        } else {
+            qDebug() << "Opciones avanzadas deshabilitadas";
+        }
+    });
     ```
-3. ### Control de Configuraciones
-    - void setExposureCompensation(float ev)
-
-    Ajusta la compensación de exposición de la cámara.
+5. ### Texto en la etiqueta
+    Puedes cambiar o establecer el texto que acompaña al QCheckBox.
+    - setText(const QString &text): Establece el texto de la etiqueta.
+    - text(): Devuelve el texto actual de la etiqueta.
 
     Ejemplo:
     ```cpp
-    camera->setExposureCompensation(1.0); // Aumenta la exposición
+    QCheckBox *checkBox = new QCheckBox(this);
+    checkBox->setText("Aceptar política de privacidad");
     ```
-    - void focusToPoint(const QPointF &point)
-
-    Establece el punto de enfoque en la cámara.
-
-    Ejemplo:
-    ```cpp
-    QPointF focusPoint(0.5, 0.5); // Punto medio de la pantalla
-    camera->focusToPoint(focusPoint);
-    ```
-4. ### Control del Zoom
-    - void zoomTo(qreal opticalZoom)
-
-    Realiza un zoom óptico a un valor especificado.
-
-    Ejemplo:
-    ```cpp
-    camera->zoomTo(2.0); // Zoom 2x
-    ```
-    - qreal maximumOpticalZoom() const
-
-    Devuelve el nivel máximo de zoom óptico soportado por la cámara.
-
-    Ejemplo:
-    ```cpp
-    qDebug() << "Zoom óptico máximo:" << camera->maximumOpticalZoom();
-    ```
+6. ### Estados visuales
+Al igual que otros widgets en Qt, puedes modificar el estilo y los estados visuales de un QCheckBox mediante hojas de estilo (QSS) o métodos como setStyleSheet().
 
 ***
 
-## Ejemplo Completo
-A continuación se muestra un ejemplo de cómo usar QCamera para capturar una imagen fija y mostrar el video en un QCameraViewfinder.
+## Ejemplos prácticos
+1. ### Casilla de verificación básica
 ```cpp
 #include <QApplication>
-#include <QCamera>
-#include <QCameraViewfinder>
-#include <QPushButton>
+#include <QCheckBox>
 #include <QVBoxLayout>
 #include <QWidget>
 
@@ -131,28 +86,67 @@ int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
 
     QWidget window;
-    QVBoxLayout *layout = new QVBoxLayout;
+    QVBoxLayout layout;
 
-    QCamera *camera = new QCamera;
-    QCameraViewfinder *viewfinder = new QCameraViewfinder;
-    camera->setViewfinder(viewfinder);
+    QCheckBox *checkBox = new QCheckBox("Aceptar términos y condiciones");
+    layout.addWidget(checkBox);
 
-    QPushButton *startButton = new QPushButton("Iniciar cámara");
-    QPushButton *stopButton = new QPushButton("Detener cámara");
+    window.setLayout(&layout);
+    window.show();
 
-    layout->addWidget(viewfinder);
-    layout->addWidget(startButton);
-    layout->addWidget(stopButton);
-    window.setLayout(layout);
+    return app.exec();
+}
+```
+2. ### Manejar el cambio de estado
+```cpp
+#include <QApplication>
+#include <QCheckBox>
+#include <QMessageBox>
+#include <QVBoxLayout>
+#include <QWidget>
 
-    QObject::connect(startButton, &QPushButton::clicked, [=]() {
-        camera->start();
+int main(int argc, char *argv[]) {
+    QApplication app(argc, argv);
+
+    QWidget window;
+    QVBoxLayout layout;
+
+    QCheckBox *checkBox = new QCheckBox("Habilitar notificaciones");
+    layout.addWidget(checkBox);
+
+    QObject::connect(checkBox, &QCheckBox::toggled, [&](bool checked) {
+        if (checked) {
+            QMessageBox::information(&window, "Notificaciones", "Notificaciones habilitadas");
+        } else {
+            QMessageBox::information(&window, "Notificaciones", "Notificaciones deshabilitadas");
+        }
     });
 
-    QObject::connect(stopButton, &QPushButton::clicked, [=]() {
-        camera->stop();
-    });
+    window.setLayout(&layout);
+    window.show();
 
+    return app.exec();
+}
+```
+3. ### Estado intermedio (tristado)
+```cpp
+#include <QApplication>
+#include <QCheckBox>
+#include <QVBoxLayout>
+#include <QWidget>
+
+int main(int argc, char *argv[]) {
+    QApplication app(argc, argv);
+
+    QWidget window;
+    QVBoxLayout layout;
+
+    QCheckBox *checkBox = new QCheckBox("Seleccionar parcialmente");
+    checkBox->setTristate(true);  // Habilitar estado tristado
+    checkBox->setCheckState(Qt::PartiallyChecked);  // Establecer estado intermedio
+    layout.addWidget(checkBox);
+
+    window.setLayout(&layout);
     window.show();
 
     return app.exec();
@@ -162,16 +156,16 @@ int main(int argc, char *argv[]) {
 ***
 
 ## Ejercicios de Consolidación
-1.	### Captura de imagen fija
-- Crea una aplicación que permita capturar imágenes fijas desde la cámara y guardarlas en un archivo local.
-2.	### Ajuste de parámetros de imagen
-- Implementa una interfaz que permita al usuario ajustar parámetros como brillo, contraste, exposición, y zoom, y ver los efectos en tiempo real en el visor.
-3.	### Selección de cámara
-- Crea un programa que permita seleccionar entre múltiples cámaras disponibles en el sistema y capturar video desde la cámara seleccionada.
-4.	### Grabación de video
-- Implementa una aplicación que permita grabar video desde la cámara y almacenarlo en un archivo.
+1.	Formulario de preferencias:
+- Crea un formulario con varias casillas de verificación para que el usuario pueda seleccionar diferentes preferencias, como habilitar notificaciones, activar modo oscuro y recibir boletines informativos. Cambia el comportamiento de la aplicación dependiendo de las selecciones.
+2.	Casilla de verificación intermedia:
+- Diseña una aplicación donde un checkbox padre controla varias casillas hijas (por ejemplo, seleccionar o deseleccionar todas las opciones). Usa el estado tristado para reflejar si algunas, pero no todas, las casillas hijas están seleccionadas.
+3.	Validación de formularios:
+- Crea un formulario que tenga un botón de enviar deshabilitado hasta que el usuario haya marcado una casilla que dice "Acepto los términos y condiciones". Habilita el botón cuando el checkbox esté marcado.
+4.	Cambio de estilo dinámico:
+- Implementa una casilla de verificación que al estar marcada cambia el estilo de otros widgets en la aplicación (por ejemplo, cambiar el color de fondo o el estilo de los botones).
 
 ***
 
-Con esto, tienes una comprensión sólida de la clase QCamera y sus capacidades para manejar cámaras en Qt.
+Esta es una introducción a las funcionalidades más importantes de QCheckBox.
 
