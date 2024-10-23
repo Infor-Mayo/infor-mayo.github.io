@@ -114,12 +114,12 @@ int main(int argc, char *argv[]) {
 ```
 ***
 ## Ejercicios de Consolidación
-1.	Ejercicio 1: Selección de múltiples archivos
+1.	###  Selección de múltiples archivos
 - Crea una aplicación que permita seleccionar múltiples archivos y luego mostrar sus nombres y rutas completas en una lista.
-2.	Ejercicio 2: Guardar un archivo
+2.	###  Guardar un archivo
 - Implementa un programa que permita al usuario escribir texto en un cuadro de entrada y luego abrir un cuadro de diálogo para guardar ese texto en un archivo utilizando QFileDialog::getSaveFileName().
-3.	Ejercicio 3: Selección de directorios
+3.	### Selección de directorios
 - Crea una aplicación que permita seleccionar un directorio mediante QFileDialog::getExistingDirectory() y luego liste todos los archivos y subdirectorios dentro de ese directorio.
-4.	Ejercicio 4: Filtro de tipos de archivos
+4.	### Filtro de tipos de archivos
 - Implementa un programa que permita abrir un cuadro de diálogo para seleccionar archivos de imagen (por ejemplo, ".png", ".jpg") y luego muestre solo los archivos que coincidan con el filtro especificado.
 
