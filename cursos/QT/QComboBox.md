@@ -2,126 +2,91 @@
 layout: cabeza3
 ---
 
-# Clase QClipboard
-La clase QClipboard en Qt proporciona acceso al portapapeles del sistema. El portapapeles es una herramienta utilizada para transferir datos entre aplicaciones o dentro de la misma aplicación mediante las operaciones de "copiar", "cortar" y "pegar". QClipboard permite gestionar el texto, imágenes y otros tipos de contenido que se guardan temporalmente en el portapapeles.
+# Clase QComboBox
+QComboBox ofrece una lista desplegable de opciones, y el usuario puede elegir una opción de la lista. También puede permitir la edición para que los usuarios escriban en él, además de elegir entre las opciones predefinidas.
 
 ***
 
-## Características Principales de QClipboard
-- Interfaz para el Portapapeles del Sistema: Proporciona una manera fácil de interactuar con el portapapeles del sistema operativo.
-- Gestión de Varios Tipos de Datos: Soporta texto, imágenes y otros formatos MIME.
-- Notificaciones de Cambios: Puede notificar cuando el contenido del portapapeles cambia.
-
-***
-
-## Métodos Principales de QClipboard
-1. ### text()
-    Devuelve el texto almacenado en el portapapeles.
-    ```cpp
-    QString text(QClipboard::Mode mode = QClipboard::Clipboard) const;
-    ```
-    - mode: Especifica el portapapeles. Por defecto, usa QClipboard::Clipboard.
-    - QClipboard::Clipboard: El portapapeles estándar.
-    - QClipboard::Selection: Usado en algunos sistemas Unix para manejar la selección primaria.
+## Funcionalidades clave de QComboBox
+1. ### Constructores
+    - QComboBox(QWidget *parent = nullptr): Crea un cuadro combinado vacío sin elementos.
 
     Ejemplo:
     ```cpp
-    QString clipboardText = QGuiApplication::clipboard()->text();
-    qDebug() << "Texto en el portapapeles:" << clipboardText;
+    QComboBox *comboBox = new QComboBox(this);
     ```
-2. ### setText()
-    Establece un texto en el portapapeles.
-    ```cpp
-    void setText(const QString &text, QClipboard::Mode mode = QClipboard::Clipboard);
-    ```
-    - text: El texto que se va a almacenar en el portapapeles.
-    - mode: Especifica el portapapeles, similar a text().
+2. ### Añadir elementos
+    Puedes agregar elementos al QComboBox de diferentes formas, como mediante texto o con elementos asociados a datos.
+    - addItem(const QString &text): Añade un solo elemento con solo texto.
+    - addItems(const QStringList &items): Añade varios elementos a la vez.
 
     Ejemplo:
     ```cpp
-    QGuiApplication::clipboard()->setText("Texto copiado al portapapeles");
+    QComboBox *comboBox = new QComboBox(this);
+    comboBox->addItem("Opción 1");
+    comboBox->addItems({"Opción 2", "Opción 3", "Opción 4"});
     ```
-3. ### image()
-    Devuelve la imagen almacenada en el portapapeles como un QImage.
-    ```cpp
-    QImage image(QClipboard::Mode mode = QClipboard::Clipboard) const;
-    ```
-    Ejemplo:
-    ```cpp
-    QImage clipboardImage = QGuiApplication::clipboard()->image();
-    if (!clipboardImage.isNull()) {
-        qDebug() << "Imagen obtenida del portapapeles.";
-    }
-    ```
-4. ### setImage()
-    Establece una imagen en el portapapeles.
-    ```cpp
-    void setImage(const QImage &image, QClipboard::Mode mode = QClipboard::Clipboard);
-    ```
-    - image: La imagen que se va a almacenar en el portapapeles.
-    Ejemplo:
-    ```cpp
-    QImage image("ruta/a/la/imagen.png");
-    QGuiApplication::clipboard()->setImage(image);
-    ```
-5. ### pixmap()
-    Devuelve la imagen como un QPixmap desde el portapapeles.
-    ```cpp
-    QPixmap pixmap(QClipboard::Mode mode = QClipboard::Clipboard) const;
-    ```
-    Ejemplo:
-    ```cpp
-    QPixmap clipboardPixmap = QGuiApplication::clipboard()->pixmap();
-    if (!clipboardPixmap.isNull()) {
-        qDebug() << "Pixmap obtenido del portapapeles.";
-    }
-    ```
-6. ### setPixmap()
-    Establece un QPixmap en el portapapeles.
-    ```cpp
-    void setPixmap(const QPixmap &pixmap, QClipboard::Mode mode = QClipboard::Clipboard);
-    ```
-    Ejemplo:
-    ```cpp
-    QPixmap pixmap("ruta/a/la/imagen.png");
-    QGuiApplication::clipboard()->setPixmap(pixmap);
-    ```
-7. ### clear()
-    Limpia el contenido del portapapeles.
-    ```cpp
-    void clear(QClipboard::Mode mode = QClipboard::Clipboard);
-    ```
-    Ejemplo:
-    ```cpp
-    QGuiApplication::clipboard()->clear();
-    qDebug() << "Portapapeles limpiado.";
-    ```
+3. ### Obtener y establecer el índice seleccionado
+    El índice seleccionado es el elemento actualmente mostrado o elegido por el usuario.
+    - currentIndex(): Devuelve el índice del elemento actualmente seleccionado.
+    - setCurrentIndex(int index): Cambia el elemento seleccionado a través del índice.
+    - currentText(): Devuelve el texto del elemento seleccionado actualmente.
 
-***
-
-## Señales Importantes
-1. ### changed()
-    Esta señal se emite cuando el contenido del portapapeles cambia.
-    ```cpp
-    void changed(QClipboard::Mode mode);
-    ```
-    - mode: Indica qué portapapeles ha cambiado (clipboard, selection, etc.).
     Ejemplo:
     ```cpp
-    connect(QGuiApplication::clipboard(), &QClipboard::changed, [](QClipboard::Mode mode) {
-        qDebug() << "El portapapeles ha cambiado.";
+    int index = comboBox->currentIndex();  // Obtener índice actual
+    QString text = comboBox->currentText();  // Obtener texto del elemento actual
+    ```
+4. ### Conectar señales
+    QComboBox emite varias señales que permiten reaccionar a la interacción del usuario.
+    - currentIndexChanged(int index): Emitida cuando el índice cambia.
+    - currentIndexChanged(const QString &text): Emitida cuando el texto del elemento seleccionado cambia.
+    - activated(int index): Emitida cuando el usuario elige una opción del cuadro desplegable.
+
+    Ejemplo:
+    ```cpp
+    connect(comboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [&](int index) {
+        qDebug() << "Índice seleccionado:" << index;
     });
     ```
+5. ### Habilitar edición
+    QComboBox puede ser editable, permitiendo al usuario escribir en lugar de solo seleccionar elementos predefinidos.
+    - setEditable(bool editable): Habilita o deshabilita la edición directa por parte del usuario.
+    - isEditable(): Devuelve true si el cuadro combinado es editable.
+
+    Ejemplo:
+    ```cpp
+    QComboBox *comboBox = new QComboBox(this);
+    comboBox->setEditable(true);  // Habilitar edición
+    ```
+6. ### Eliminar elementos
+    Puedes eliminar elementos individuales o limpiar todo el contenido de un QComboBox.
+    - removeItem(int index): Elimina el elemento en la posición especificada.
+    - clear(): Elimina todos los elementos del QComboBox.
+
+    Ejemplo:
+    ```cpp
+    comboBox->removeItem(2);  // Elimina el tercer elemento
+    comboBox->clear();  // Elimina todos los elementos
+    ```
+7. ### Manipular los datos de los elementos
+    Cada elemento de un QComboBox puede tener datos adicionales asociados a él, además del texto que se muestra.
+    - setItemData(int index, const QVariant &value): Asocia datos adicionales al elemento en la posición indicada.
+    - itemData(int index): Obtiene los datos asociados a un elemento.
+
+    Ejemplo:
+    ```cpp
+    comboBox->addItem("Opción 1", QVariant(100));  // Asocia el valor 100 a "Opción 1"
+    QVariant data = comboBox->itemData(0);  // Obtiene los datos del primer elemento
+    ```
 
 ***
 
-## Ejemplo Completo de Uso de QClipboard
-El siguiente código muestra cómo copiar y pegar texto utilizando QClipboard:
+## Ejemplos prácticos
+1. ### Crear un QComboBox básico
 ```cpp
 #include <QApplication>
-#include <QClipboard>
-#include <QDebug>
-#include <QPushButton>
+#include <QComboBox>
 #include <QVBoxLayout>
 #include <QWidget>
 
@@ -129,43 +94,92 @@ int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
 
     QWidget window;
-    QVBoxLayout layout(&window);
+    QVBoxLayout layout;
 
-    QPushButton copyButton("Copiar Texto al Portapapeles");
-    QPushButton pasteButton("Pegar Texto del Portapapeles");
+    QComboBox *comboBox = new QComboBox();
+    comboBox->addItem("Opción 1");
+    comboBox->addItems({"Opción 2", "Opción 3", "Opción 4"});
 
-    layout.addWidget(&copyButton);
-    layout.addWidget(&pasteButton);
-
-    QObject::connect(&copyButton, &QPushButton::clicked, []() {
-        QGuiApplication::clipboard()->setText("Texto de ejemplo copiado.");
-        qDebug() << "Texto copiado al portapapeles.";
-    });
-
-    QObject::connect(&pasteButton, &QPushButton::clicked, []() {
-        QString clipboardText = QGuiApplication::clipboard()->text();
-        qDebug() << "Texto pegado desde el portapapeles:" << clipboardText;
-    });
+    layout.addWidget(comboBox);
+    window.setLayout(&layout);
 
     window.show();
     return app.exec();
 }
 ```
-Este ejemplo copia un texto fijo al portapapeles cuando se presiona un botón y lo pega cuando se presiona otro.
+2. ### Manejar cambios en el índice seleccionado
+```cpp
+#include <QApplication>
+#include <QComboBox>
+#include <QVBoxLayout>
+#include <QWidget>
+#include <QDebug>
+
+int main(int argc, char *argv[]) {
+    QApplication app(argc, argv);
+
+    QWidget window;
+    QVBoxLayout layout;
+
+    QComboBox *comboBox = new QComboBox();
+    comboBox->addItems({"Opción A", "Opción B", "Opción C"});
+
+    QObject::connect(comboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), [&](int index) {
+        qDebug() << "Nuevo índice seleccionado:" << index;
+    });
+
+    layout.addWidget(comboBox);
+    window.setLayout(&layout);
+
+    window.show();
+    return app.exec();
+}
+```
+3. ### Habilitar edición en un QComboBox
+```cpp
+#include <QApplication>
+#include <QComboBox>
+#include <QVBoxLayout>
+#include <QWidget>
+#include <QDebug>
+
+int main(int argc, char *argv[]) {
+    QApplication app(argc, argv);
+
+    QWidget window;
+    QVBoxLayout layout;
+
+    QComboBox *comboBox = new QComboBox();
+    comboBox->setEditable(true);  // Habilitar edición
+    comboBox->addItems({"Elemento 1", "Elemento 2", "Elemento 3"});
+
+    QObject::connect(comboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), [&](int index) {
+        qDebug() << "Índice seleccionado:" << index;
+    });
+
+    layout.addWidget(comboBox);
+    window.setLayout(&layout);
+
+    window.show();
+    return app.exec();
+}
+```
 
 ***
 
 ## Ejercicios de Consolidación
-1.	### Copiar y Pegar Texto
-- Crea una aplicación que permita al usuario escribir texto en un QLineEdit, copiarlo al portapapeles y pegarlo en otro QLineEdit.
-2.	### Manejo de Imágenes
-- Escribe una aplicación que permita copiar y pegar imágenes desde el portapapeles utilizando botones. Muestra las imágenes pegadas en un QLabel.
-3.	### Notificación de Cambios
-- Implementa un programa que muestre una notificación cada vez que el contenido del portapapeles cambie, ya sea texto o imagen. Usa la señal changed() para detectar los cambios.
-4.	### Limpiar Portapapeles
-- Agrega una funcionalidad a tu aplicación para limpiar el contenido del portapapeles con un botón y muestra un mensaje en la consola cuando el portapapeles ha sido limpiado.
+1.	Selector de país:
+- Crea una aplicación que use un QComboBox para que el usuario seleccione un país de una lista. Muestra el país seleccionado en un QLabel cuando el usuario elige una opción.
+2.	Formulario de preferencias:
+- Diseña una interfaz donde el usuario pueda seleccionar varias configuraciones como "Idioma", "Formato de fecha" y "Zona horaria", cada una usando un QComboBox. Muestra las preferencias seleccionadas en una ventana de resumen.
+3.	QComboBox editable:
+- Crea un QComboBox editable que permita a los usuarios elegir o escribir su color favorito. Si el color escrito no está en la lista, agréguelo dinámicamente cuando el usuario presione Enter.
+4.	Gestión de índices:
+- Implementa una aplicación que contenga un QComboBox con varias opciones y un botón que elimine la opción seleccionada cuando se presiona. Usa removeItem() para gestionar la eliminación.
+5.	Asociar datos a los elementos:
+- Crea un QComboBox con una lista de productos. A cada producto asocia un precio como dato adicional. Al seleccionar un producto, muestra el precio en un QLabel.
 
 ***
 
-QClipboard es una herramienta poderosa para integrar las operaciones de copiar y pegar en tu aplicación, permitiendo compartir datos fácilmente entre diferentes aplicaciones o componentes.
+Esto cubre las funcionalidades esenciales de QComboBox. 
 
