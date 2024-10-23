@@ -2,129 +2,140 @@
 layout: cabeza3
 ---
 
-# Clase QAccelerometer
-
-La clase QAccelerometer es una especialización de QSensor que permite acceder a los datos del acelerómetro del dispositivo. Un acelerómetro mide la aceleración a lo largo de los tres ejes (X, Y, Z), y es útil para detectar movimiento, inclinación o la orientación del dispositivo.
-
+# Clase QDir
+La clase QDir en Qt proporciona métodos para acceder y manipular directorios y su contenido, como archivos y subdirectorios. Esta clase facilita el manejo de rutas de archivos y directorios de manera multiplataforma, y permite realizar operaciones como listar archivos, crear o eliminar directorios, y navegar en el sistema de archivos.
 ***
-
-## Características Principales
-
-- Mide aceleración: Proporciona la aceleración en los ejes X, Y y Z.
-- Datos en tiempo real: Actualiza continuamente los datos de aceleración del dispositivo.
-- Detección de movimientos y orientación: Puede detectar si el dispositivo está inclinado, en reposo o en movimiento.
-
+## Características Principales de QDir
+- Manipulación de directorios: Crear, eliminar, y navegar entre directorios.
+- Filtrado y ordenación: Filtrar archivos y directorios según ciertos criterios (nombre, tipo, fecha, etc.) y ordenarlos.
+- Operaciones en archivos: Copiar, mover, y eliminar archivos dentro de directorios.
 ***
+## Métodos Principales de QDir
+1. ### QDir()
+    Constructor que crea un objeto QDir que apunta al directorio actual del sistema.
 
-## Métodos Principales
-
-1. ### Constructor
-    - QAccelerometer(QObject *parent = nullptr)
-    Crea una nueva instancia del acelerómetro. Si el dispositivo tiene un acelerómetro, este comenzará a leer los datos cuando se inicie.
-
+    Ejemplo:
     ```cpp
-    QAccelerometer *accelerometer = new QAccelerometer();
+    QDir dir;  // Crea un QDir en el directorio actual
     ```
+2. ### QDir(const QString &path)
+    Constructor que crea un objeto QDir apuntando a la ruta especificada por path.
 
-2. ### Iniciar y Detener el Acelerómetro
-    - void start()
-    Inicia el acelerómetro, comenzando la recolección de datos.
+    Ejemplo:
     ```cpp
-    accelerometer->start();
+    QDir dir("/home/usuario/Documentos");
     ```
+3. ### bool exists() const
+    Verifica si el directorio representado por QDir existe.
+    - Retorno: true si el directorio existe, false de lo contrario.
 
-    - void stop()
-    Detiene el acelerómetro, finalizando la recolección de datos.
-
+    Ejemplo:
     ```cpp
-    accelerometer->stop();
+    if (dir.exists()) {
+        // El directorio existe
+    }
     ```
+4. ### bool mkdir(const QString &dirName) const
+    Crea un nuevo subdirectorio en el directorio actual.
+    - Retorno: true si el directorio fue creado exitosamente, false de lo contrario.
 
-3. ### Obtener Lectura Actual
-    - QAccelerometerReading* reading() const
-    Devuelve la lectura actual del acelerómetro. QAccelerometerReading proporciona acceso a los valores de aceleración en los ejes X, Y y Z.
-    
+    Ejemplo:
     ```cpp
-    QAccelerometerReading *reading = accelerometer->reading();
-    qDebug() << "X:" << reading->x();
-    qDebug() << "Y:" << reading->y();
-    qDebug() << "Z:" << reading->z();
+    if (dir.mkdir("nuevo_directorio")) {
+        // El directorio fue creado exitosamente
+    }
     ```
+5. ### bool rmdir(const QString &dirName) const
+    Elimina un subdirectorio vacío dentro del directorio actual.
+    - Retorno: true si el subdirectorio fue eliminado, false de lo contrario.
 
-4. ### Cambiar el Modo de Aceleración
-    - void setAccelerationMode(QAccelerometer::AccelerationMode mode)
-
-    Cambia el modo de aceleración. Hay dos modos disponibles:
-    - QAccelerometer::Gravity: El valor incluye la gravedad terrestre.
-    - QAccelerometer::User: Solo muestra la aceleración causada por el usuario.
-
-
+    Ejemplo:
     ```cpp
-    accelerometer->setAccelerationMode(QAccelerometer::Gravity);
+    if (dir.rmdir("directorio_vacio")) {
+        // El subdirectorio fue eliminado
+    }
     ```
+6. ### QStringList entryList(QDir::Filters filters = QDir::NoFilter, QDir::SortFlags sort = QDir::NoSort) const
+    Devuelve una lista de archivos y directorios en el directorio actual, filtrada y ordenada según los parámetros especificados.
+    Parámetros:
+    - filters: Opciones para filtrar los elementos (por ejemplo, solo archivos o solo directorios).
+    - sort: Opciones para ordenar los elementos (por nombre, fecha, tamaño, etc.).
 
-    - QAccelerometer::AccelerationMode accelerationMode() const
-    Devuelve el modo de aceleración actual.
-
-5. ### Señal de Cambio de Lectura
-    - void readingChanged()
-    Señal emitida cuando hay una nueva lectura del acelerómetro. Puedes conectarte a esta señal para procesar los datos en tiempo real.
-
+    Ejemplo:
     ```cpp
-    connect(accelerometer, &QAccelerometer::readingChanged, [&]() {
-        QAccelerometerReading *reading = accelerometer->reading();
-        qDebug() << "X:" << reading->x();
-        qDebug() << "Y:" << reading->y();
-        qDebug() << "Z:" << reading->z();
-    });
+    QStringList archivos = dir.entryList(QDir::Files, QDir::Name);
+    for (const QString &archivo : archivos) {
+        qDebug() << archivo;
+    }
+    ```
+7. ### bool remove(const QString &fileName) const
+    Elimina un archivo en el directorio actual.
+    - Retorno: true si el archivo fue eliminado con éxito, false de lo contrario.
+
+    Ejemplo:
+    ```cpp
+    if (dir.remove("archivo.txt")) {
+        // El archivo fue eliminado
+    }
+    ```
+8. ### bool rename(const QString &oldName, const QString &newName) const
+    Renombra o mueve un archivo o directorio dentro del directorio actual.
+    - Retorno: true si la operación fue exitosa, false de lo contrario.
+
+    Ejemplo:
+    ```cpp
+    if (dir.rename("archivo_viejo.txt", "archivo_nuevo.txt")) {
+        // El archivo fue renombrado
+    }
+    ```
+9. ### bool cd(const QString &dirName)
+    Cambia el directorio actual al subdirectorio especificado.
+    - Retorno: true si el cambio fue exitoso, false de lo contrario.
+
+    Ejemplo:
+    ```cpp
+    if (dir.cd("subdirectorio")) {
+        // Cambió exitosamente al subdirectorio
+    }
+    ```
+10. ### QString absolutePath() const
+    Devuelve la ruta absoluta del directorio representado por el objeto QDir.
+    - Retorno: La ruta absoluta como un QString.
+
+    Ejemplo:
+    ```cpp
+    qDebug() << dir.absolutePath();
     ```
 ***
-
 ## Ejemplo Completo
-
-Este ejemplo muestra cómo iniciar un acelerómetro, leer sus datos en tiempo real y cambiar entre los modos de aceleración.
-
+El siguiente ejemplo lista todos los archivos en el directorio actual:
 ```cpp
 #include <QCoreApplication>
-#include <QAccelerometer>
+#include <QDir>
 #include <QDebug>
 
 int main(int argc, char *argv[]) {
-    QCoreApplication a(argc, argv);
+    QCoreApplication app(argc, argv);
 
-    // Crear el acelerómetro
-    QAccelerometer *accelerometer = new QAccelerometer();
-    accelerometer->setAccelerationMode(QAccelerometer::User); // Modo 'User'
+    QDir dir(QDir::currentPath());  // Crear QDir en el directorio actual
+    qDebug() << "Directorio actual:" << dir.absolutePath();
 
-    // Iniciar el acelerómetro
-    accelerometer->start();
+    QStringList archivos = dir.entryList(QDir::Files, QDir::Name);  // Listar archivos ordenados por nombre
+    for (const QString &archivo : archivos) {
+        qDebug() << archivo;
+    }
 
-    // Conectar la señal de cambio de lectura
-    QObject::connect(accelerometer, &QAccelerometer::readingChanged, [&]() {
-        QAccelerometerReading *reading = accelerometer->reading();
-        qDebug() << "X:" << reading->x();
-        qDebug() << "Y:" << reading->y();
-        qDebug() << "Z:" << reading->z();
-    });
-
-    return a.exec();
+    return app.exec();
 }
 ```
-
 ***
-
 ## Ejercicios de Consolidación
-
-1.	Detección de Movimiento
-    - Crea una aplicación que emita una alerta cuando el dispositivo se mueve bruscamente (por ejemplo, si la aceleración en cualquier eje supera un cierto umbral).
-
-2.	Monitor de Inclinación
-    - Implementa una aplicación que utilice los datos del acelerómetro para determinar si el dispositivo está inclinado y muestra un mensaje cuando se detecta una inclinación significativa.
-
-3.	Modo Gravedad vs Modo Usuario
-    - Modifica una aplicación para alternar entre los modos QAccelerometer::Gravity y QAccelerometer::User, y muestra cómo varían las lecturas entre estos modos.
-
-***
-
-La clase QAccelerometer es ideal para aplicaciones que necesiten detectar movimiento o cambios de orientación en tiempo real, como aplicaciones de fitness, videojuegos o controladores por gestos.
+1.	### Creación de directorios
+- Crea una aplicación que solicite al usuario un nombre de directorio, y luego crea ese directorio en el directorio actual si no existe.
+2.	### Listar archivos por extensión
+- Implementa un programa que liste todos los archivos de una extensión particular (por ejemplo, .txt) dentro de un directorio especificado.
+3.	### Mover archivos entre directorios
+- Crea una aplicación que permita mover archivos de un directorio a otro, verificando si el archivo ya existe en el destino.
+4.	### Eliminar directorios vacíos
+- Escribe un programa que recorra un directorio y elimine todos los subdirectorios que estén vacíos.
 
