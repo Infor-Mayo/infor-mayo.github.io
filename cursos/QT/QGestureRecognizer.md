@@ -2,129 +2,132 @@
 layout: cabeza3
 ---
 
-# Clase QAccelerometer
+# Clase QGestureRecognizer
+La clase QGestureRecognizer en Qt permite crear y manejar gestos personalizados en aplicaciones gráficas. Los gestos son interacciones que los usuarios realizan con la pantalla táctil, el ratón u otros dispositivos de entrada, y pueden ser simples (como un clic o arrastrar) o más complejos (como pellizcar para hacer zoom o deslizar).
 
-La clase QAccelerometer es una especialización de QSensor que permite acceder a los datos del acelerómetro del dispositivo. Un acelerómetro mide la aceleración a lo largo de los tres ejes (X, Y, Z), y es útil para detectar movimiento, inclinación o la orientación del dispositivo.
-
+Qt ya ofrece algunos gestos predefinidos como los gestos de deslizamiento (QSwipeGesture), el gesto de pellizco (QPinchGesture) y el gesto de rotación (QRotationGesture), pero si se necesita un gesto personalizado, QGestureRecognizer permite definirlo.
 ***
-
-## Características Principales
-
-- Mide aceleración: Proporciona la aceleración en los ejes X, Y y Z.
-- Datos en tiempo real: Actualiza continuamente los datos de aceleración del dispositivo.
-- Detección de movimientos y orientación: Puede detectar si el dispositivo está inclinado, en reposo o en movimiento.
-
+## Características Principales de QGestureRecognizer
+- Reconocimiento de Gestos Personalizados: Permite definir nuevos gestos y su comportamiento.
+- Integración con Eventos de Entrada: QGestureRecognizer maneja eventos de entrada (como toques o clics) para detectar cuando un gesto ha comenzado, está en progreso o ha terminado.
+- Soporte Multidispositivo: Se puede usar con pantallas táctiles, ratones, lápices o cualquier dispositivo de entrada.
 ***
-
-## Métodos Principales
-
-1. ### Constructor
-    - QAccelerometer(QObject *parent = nullptr)
-    Crea una nueva instancia del acelerómetro. Si el dispositivo tiene un acelerómetro, este comenzará a leer los datos cuando se inicie.
-
+## Métodos Principales de QGestureRecognizer
+1. ### create()
+    Este método crea una instancia del gesto que se va a manejar.
     ```cpp
-    QAccelerometer *accelerometer = new QAccelerometer();
+    QGesture *create(QObject *target);
     ```
+    - target: El objeto donde se desea aplicar el gesto.
 
-2. ### Iniciar y Detener el Acelerómetro
-    - void start()
-    Inicia el acelerómetro, comenzando la recolección de datos.
+    Ejemplo:
     ```cpp
-    accelerometer->start();
+    QGesture *gesture = myGestureRecognizer->create(myWidget);
     ```
-
-    - void stop()
-    Detiene el acelerómetro, finalizando la recolección de datos.
-
+2. ### reset()
+    Reinicia el estado del reconocimiento de gestos. Esto se utiliza cuando un gesto se cancela o se completa, para prepararlo para la siguiente interacción.
     ```cpp
-    accelerometer->stop();
+    void reset(QGesture *gesture);
     ```
-
-3. ### Obtener Lectura Actual
-    - QAccelerometerReading* reading() const
-    Devuelve la lectura actual del acelerómetro. QAccelerometerReading proporciona acceso a los valores de aceleración en los ejes X, Y y Z.
-    
+    Ejemplo:
     ```cpp
-    QAccelerometerReading *reading = accelerometer->reading();
-    qDebug() << "X:" << reading->x();
-    qDebug() << "Y:" << reading->y();
-    qDebug() << "Z:" << reading->z();
+    myGestureRecognizer->reset(myGesture);
     ```
-
-4. ### Cambiar el Modo de Aceleración
-    - void setAccelerationMode(QAccelerometer::AccelerationMode mode)
-
-    Cambia el modo de aceleración. Hay dos modos disponibles:
-    - QAccelerometer::Gravity: El valor incluye la gravedad terrestre.
-    - QAccelerometer::User: Solo muestra la aceleración causada por el usuario.
-
-
+3. ### recognize()
+    El método más importante de la clase. Este método es el encargado de reconocer el gesto basado en los eventos de entrada.
     ```cpp
-    accelerometer->setAccelerationMode(QAccelerometer::Gravity);
+    QGestureRecognizer::Result recognize(QGesture *gesture, QObject *watched, QEvent *event);
     ```
+    - gesture: El gesto que se está intentando reconocer.
+    - watched: El objeto sobre el que se está observando el gesto.
+    - event: El evento de entrada (como un toque o movimiento del ratón) que se usa para reconocer el gesto.
 
-    - QAccelerometer::AccelerationMode accelerationMode() const
-    Devuelve el modo de aceleración actual.
+    El valor de retorno indica si el gesto ha sido reconocido, está en progreso o ha terminado.
 
-5. ### Señal de Cambio de Lectura
-    - void readingChanged()
-    Señal emitida cuando hay una nueva lectura del acelerómetro. Puedes conectarte a esta señal para procesar los datos en tiempo real.
-
+    Ejemplo:
     ```cpp
-    connect(accelerometer, &QAccelerometer::readingChanged, [&]() {
-        QAccelerometerReading *reading = accelerometer->reading();
-        qDebug() << "X:" << reading->x();
-        qDebug() << "Y:" << reading->y();
-        qDebug() << "Z:" << reading->z();
-    });
+    QGestureRecognizer::Result result = myGestureRecognizer->recognize(myGesture, myWidget, myEvent);
+    ```
+4. ### registerRecognizer()
+    Registra el reconocimiento de un gesto en el sistema de gestos de Qt. Esto permite que tu aplicación reconozca gestos personalizados.
+    ```cpp
+    Qt::GestureType QGestureRecognizer::registerRecognizer(QGestureRecognizer *recognizer);
+    ```
+    Ejemplo:
+    ```cpp
+    Qt::GestureType customGestureType = QGestureRecognizer::registerRecognizer(myGestureRecognizer);
+    ```
+5. ### unregisterRecognizer()
+    Elimina el reconocimiento de un gesto personalizado del sistema de gestos de Qt.
+    ```cpp
+    void unregisterRecognizer(Qt::GestureType type);
+    ```
+    Ejemplo:
+    ```cpp
+    QGestureRecognizer::unregisterRecognizer(customGestureType);
+    ```
+6. ### cleanup()
+    Este método se utiliza para limpiar los datos del gesto y liberar recursos asociados. Generalmente se llama cuando se elimina el objeto que maneja el gesto.
+    ```cpp
+    void cleanup(QGesture *gesture);
     ```
 ***
+## Crear un Gesto Personalizado
+Para definir un gesto personalizado, necesitas crear una subclase de QGestureRecognizer y sobrecargar los métodos create(), reset(), y recognize().
 
-## Ejemplo Completo
-
-Este ejemplo muestra cómo iniciar un acelerómetro, leer sus datos en tiempo real y cambiar entre los modos de aceleración.
-
+Ejemplo: Gesto Personalizado de "Doble Toque"
+A continuación se muestra un ejemplo de cómo implementar un gesto de "doble toque" personalizado.
 ```cpp
-#include <QCoreApplication>
-#include <QAccelerometer>
+#include <QGestureRecognizer>
+#include <QGesture>
+#include <QMouseEvent>
 #include <QDebug>
 
-int main(int argc, char *argv[]) {
-    QCoreApplication a(argc, argv);
+class DoubleTapGesture : public QGesture {
+public:
+    DoubleTapGesture(QObject *parent = nullptr) : QGesture(parent) {}
+};
 
-    // Crear el acelerómetro
-    QAccelerometer *accelerometer = new QAccelerometer();
-    accelerometer->setAccelerationMode(QAccelerometer::User); // Modo 'User'
+class DoubleTapGestureRecognizer : public QGestureRecognizer {
+public:
+    QGesture *create(QObject *target) override {
+        return new DoubleTapGesture(target);
+    }
 
-    // Iniciar el acelerómetro
-    accelerometer->start();
+    QGestureRecognizer::Result recognize(QGesture *gesture, QObject *watched, QEvent *event) override {
+        if (event->type() == QEvent::MouseButtonDblClick) {
+            qDebug() << "Gesto de doble toque detectado";
+            return QGestureRecognizer::FinishGesture;
+        }
+        return QGestureRecognizer::Ignore;
+    }
 
-    // Conectar la señal de cambio de lectura
-    QObject::connect(accelerometer, &QAccelerometer::readingChanged, [&]() {
-        QAccelerometerReading *reading = accelerometer->reading();
-        qDebug() << "X:" << reading->x();
-        qDebug() << "Y:" << reading->y();
-        qDebug() << "Z:" << reading->z();
-    });
-
-    return a.exec();
-}
+    void reset(QGesture *gesture) override {
+        QGestureRecognizer::reset(gesture);
+    }
+};
 ```
+En este ejemplo:
+- DoubleTapGesture define un nuevo tipo de gesto.
+- DoubleTapGestureRecognizer sobrecarga el método recognize() para manejar un evento de doble clic del ratón como un gesto de "doble toque".
 
+Para registrar y usar este gesto, puedes hacer lo siguiente:
+```cpp
+DoubleTapGestureRecognizer *recognizer = new DoubleTapGestureRecognizer;
+Qt::GestureType doubleTapGestureType = QGestureRecognizer::registerRecognizer(recognizer);
+myWidget->grabGesture(doubleTapGestureType);
+```
 ***
-
 ## Ejercicios de Consolidación
-
-1.	Detección de Movimiento
-    - Crea una aplicación que emita una alerta cuando el dispositivo se mueve bruscamente (por ejemplo, si la aceleración en cualquier eje supera un cierto umbral).
-
-2.	Monitor de Inclinación
-    - Implementa una aplicación que utilice los datos del acelerómetro para determinar si el dispositivo está inclinado y muestra un mensaje cuando se detecta una inclinación significativa.
-
-3.	Modo Gravedad vs Modo Usuario
-    - Modifica una aplicación para alternar entre los modos QAccelerometer::Gravity y QAccelerometer::User, y muestra cómo varían las lecturas entre estos modos.
-
+1.	### Crear un Gesto de Deslizar Personalizado
+- Implementa un gesto personalizado que detecte un deslizamiento horizontal o vertical y dibuje una línea que siga la trayectoria del movimiento.
+2.	### Gesto de Rotación Personalizado
+- Crea un gesto personalizado que detecte cuando el usuario realiza un gesto de rotación con dos dedos, similar al gesto de rotación que ya existe en Qt.
+3.	### Gesto de Toque Prolongado
+- Implementa un gesto personalizado que detecte cuando el usuario mantiene un toque en la pantalla durante un cierto período de tiempo (gesto de "toque prolongado").
+4.	### Aplicación con Múltiples Gestos
+- Desarrolla una aplicación que maneje varios gestos personalizados (por ejemplo, deslizar, rotar y doble toque), y realiza diferentes acciones en la interfaz gráfica dependiendo del gesto detectado.
 ***
+QGestureRecognizer te permite llevar la interacción del usuario a otro nivel, permitiendo que tu aplicación sea más intuitiva al soportar gestos naturales o personalizados. Esto es especialmente útil en dispositivos con pantalla táctil, donde los gestos pueden mejorar enormemente la experiencia del usuario.
 
-La clase QAccelerometer es ideal para aplicaciones que necesiten detectar movimiento o cambios de orientación en tiempo real, como aplicaciones de fitness, videojuegos o controladores por gestos.
 
