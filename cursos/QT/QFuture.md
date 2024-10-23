@@ -4,6 +4,7 @@ layout: cabeza3
 
 # Clase QFuture
 La clase QFuture de Qt proporciona una forma de manejar tareas asíncronas y permite consultar su estado mientras se ejecutan en segundo plano. Es parte del módulo Qt Concurrent y se usa en combinación con funciones como QtConcurrent::run() o QtConcurrent::map().
+
 QFuture es una abstracción de una tarea que está en progreso o se completará en algún momento futuro. Permite consultar si la tarea ha terminado, cancelar la ejecución, o recuperar el resultado una vez completada.
 ***
 ## Características Principales
