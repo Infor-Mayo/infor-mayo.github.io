@@ -1,20 +1,11 @@
 ---
 layout: cabeza
+title: "Artículo en preparación"
+description: "Este artículo del curso de Transfermóvil está en preparación."
 ---
 
-## titulo
+<h1>Artículo en preparación</h1>
 
+<p>Este artículo todavía no está publicado. Puedes volver al curso completo para ver los videos y los demás temas disponibles.</p>
 
-### Decargar
-
-[Transfermóvil](https://www.etecsa.cu/es/aplicaciones/transfermovil)
-
-### Contacto
-
-[Curso completo de transfermóvil en mi canal de YouTube](https://youtube.com/playlist?list=PL9Lgme4PR4XDbaGv87gfR5AupKot9yf5Z).
-[GitHub](https://github.com/Infor-Mayo).
-[Youtube](https://youtube.com/@Infor-Mayo).
-
-#### ¡Gracias por visitar mi página web!
-
-[Atras](./1-curso-completo-transfermovil.md) 
+<p><a class="btn btn-primary" href="./curso-completo-transfermovil.html">Volver al curso</a></p>

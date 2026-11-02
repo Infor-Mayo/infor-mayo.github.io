@@ -28,4 +28,4 @@ En resumen, Transfer Móvil es una excelente opción para pagar la factura de el
 
 #### ¡Gracias por visitar mi página web!
 
-[Atras](./1-curso-completo-transfermovil.md) 
+[Atras](./curso-completo-transfermovil.html) 

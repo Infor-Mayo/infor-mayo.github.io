@@ -1,5 +1,6 @@
 ---
 layout: default
+published: false
 ---
 
 ## Welcome to another page

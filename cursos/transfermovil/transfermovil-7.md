@@ -28,4 +28,4 @@ En resumen, la pantalla de inicio de Transfer Móvil es una herramienta muy úti
 
 #### ¡Gracias por visitar mi página web!
 
-[Atras](./1-curso-completo-transfermovil.md) 
+[Atras](./curso-completo-transfermovil.html) 

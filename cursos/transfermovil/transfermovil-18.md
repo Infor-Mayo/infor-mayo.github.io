@@ -28,4 +28,4 @@ Para obtener más contenido sobre informática, te dejamos un video en el centro
 
 #### ¡Gracias por visitar mi página web!
 
-[Atras](./1-curso-completo-transfermovil.md) 
+[Atras](./curso-completo-transfermovil.html) 

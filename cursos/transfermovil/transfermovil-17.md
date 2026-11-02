@@ -24,4 +24,4 @@ Además, deberás seleccionar el tipo de puente que deseas utilizar y aceptar la
 
 #### ¡Gracias por visitar mi página web!
 
-[Atras](./1-curso-completo-transfermovil.md) 
+[Atras](./curso-completo-transfermovil.html) 

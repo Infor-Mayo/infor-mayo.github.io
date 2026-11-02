@@ -1,3 +1,9 @@
+---
+layout: cabeza3
+title: "Clase QObject"
+description: "Qué es QObject en Qt, sus funciones principales y ejemplos de uso."
+---
+
 # Clase QObject
 
 Vamos a profundizar en la clase QObject, que es una de las clases más importantes en Qt, ya que es la clase base de la mayoría de los objetos dentro del framework.

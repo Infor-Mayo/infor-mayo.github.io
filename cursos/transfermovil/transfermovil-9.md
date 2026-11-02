@@ -26,4 +26,4 @@ En resumen, Transfer Móvil es una herramienta muy útil para aquellos que neces
 
 #### ¡Gracias por visitar mi página web!
 
-[Atras](./1-curso-completo-transfermovil.md) 
+[Atras](./curso-completo-transfermovil.html) 

@@ -1,3 +1,9 @@
+---
+layout: cabeza3
+title: "Clase QTimer"
+description: "Cómo usar QTimer en Qt para ejecutar código en intervalos o con retraso."
+---
+
 # Clase QTimer 
 
 Esta clase es fundamental para manejar temporizadores en Qt, y se utiliza para ejecutar código repetidamente en intervalos específicos o después de un tiempo determinado.

@@ -24,4 +24,4 @@ Pagar tus facturas telefónicas con Transfer Móvil es una forma conveniente de 
 
 #### ¡Gracias por visitar mi página web!
 
-[Atras](./1-curso-completo-transfermovil.md) 
+[Atras](./curso-completo-transfermovil.html) 

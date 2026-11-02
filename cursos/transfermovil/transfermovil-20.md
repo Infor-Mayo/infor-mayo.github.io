@@ -34,4 +34,4 @@ En resumen, la aplicación Transfermóvil nos permite gestionar nuestras cuentas
 
 #### ¡Gracias por visitar mi página web!
 
-[Atras](./1-curso-completo-transfermovil.md) 
+[Atras](./curso-completo-transfermovil.html) 

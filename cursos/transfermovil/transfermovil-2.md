@@ -1,20 +1,13 @@
 ---
 layout: cabeza
+title: "Cómo autenticarse en TransferMóvil"
+description: "Video y explicación sobre el proceso de autenticación en TransferMóvil."
 ---
 
-## titulo
+<h1>Cómo autenticarse en TransferMóvil</h1>
 
+<p>En este video se explica el proceso de autenticación en TransferMóvil. El artículo escrito está en preparación; mientras tanto, puedes ver el paso a paso en YouTube.</p>
 
-### Decargar
+<p><a class="btn btn-primary" href="https://youtu.be/4BoEC5cykZw" target="_blank" rel="noopener">Ver el video</a></p>
 
-[Transfermóvil](https://www.etecsa.cu/es/aplicaciones/transfermovil)
-
-### Contacto
-
-[Curso completo de transfermóvil en mi canal de YouTube](https://youtube.com/playlist?list=PL9Lgme4PR4XDbaGv87gfR5AupKot9yf5Z).
-[GitHub](https://github.com/Infor-Mayo).
-[Youtube](https://youtube.com/@Infor-Mayo).
-
-#### ¡Gracias por visitar mi página web!
-
-[Atras](./1-curso-completo-transfermovil.md) 
+<p><a href="./curso-completo-transfermovil.html">← Volver al curso completo</a></p>

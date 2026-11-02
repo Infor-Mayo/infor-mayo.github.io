@@ -30,4 +30,4 @@ En resumen, Transfer Móvil es una excelente aplicación para transferir dinero 
 
 #### ¡Gracias por visitar mi página web!
 
-[Atras](./1-curso-completo-transfermovil.md) 
+[Atras](./curso-completo-transfermovil.html) 

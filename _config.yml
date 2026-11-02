@@ -1,5 +1,26 @@
 title: Infor Mayo
-description: La tecnología más allá de tus expectativas.
-show_downloads: true
+description: "Tecnología práctica para Cuba: tutoriales de Enzona, Transfermóvil, ETECSA, Nauta, Apklis y apps para tu teléfono."
+lang: es
+url: "https://infor-mayo.github.io"
+baseurl: ""
+author: Mario Artola
+twitter:
+  username: MarioArtola15
+  card: summary_large_image
+logo: /assets/images/image.png
+social:
+  name: Infor Mayo
+  links:
+    - https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q
+    - https://www.instagram.com/infor_mayo
+    - https://www.facebook.com/groups/430222984636303
+    - https://twitter.com/MarioArtola15
+show_downloads: false
 google_analytics:
-theme: jekyll-theme-hacker
+plugins:
+  - jekyll-seo-tag
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/image.png

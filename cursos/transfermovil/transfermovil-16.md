@@ -32,4 +32,4 @@ Si te interesa saber más sobre este tema y otros relacionados con la informáti
 
 #### ¡Gracias por visitar mi página web!
 
-[Atras](./1-curso-completo-transfermovil.md) 
+[Atras](./curso-completo-transfermovil.html) 

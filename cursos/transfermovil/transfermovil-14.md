@@ -28,4 +28,4 @@ Si te interesa aprender más sobre el mundo de la informática y la programació
 
 #### ¡Gracias por visitar mi página web!
 
-[Atras](./1-curso-completo-transfermovil.md) 
+[Atras](./curso-completo-transfermovil.html) 

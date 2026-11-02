@@ -1,63 +1,118 @@
 ---
 layout: cabeza3
+title: "Tecnología práctica para Cuba"
+description: "Tutoriales de Enzona, Transfermóvil, ETECSA, Nauta, Apklis y apps para tu teléfono. Tecnología práctica para Cuba, explicada en español."
+image: /assets/images/image.png
 ---
 
-![Octocat](https://yt3.ggpht.com/k7A3O2CifD373P1Fw-92W_F1xMTbtTjnHzgNj_VsXiz3DL3GQjcggN5Jb4ccV6cBMRSioj6WOA=s88-c-k-c0x00ffffff-no-rj)
+<div class="hero">
+  <div>
+    <p class="eyebrow">Infor Mayo · Tecnología práctica</p>
+    <h1>Tu día digital en Cuba, resuelto en minutos.</h1>
+    <p class="lead">Tutoriales claros de Enzona, Transfermóvil, ETECSA, Nauta y las apps que usas todos los días. Sin vueltas, sin tecnicismos y directo al grano.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q?sub_confirmation=1" target="_blank" rel="noopener">Ver el canal en YouTube</a>
+      <a class="btn btn-ghost" href="{{ '/cursos.html' | relative_url }}">Explorar cursos</a>
+    </div>
+    <div class="stats">
+      <div><strong>4.5K</strong><span>suscriptores</span></div>
+      <div><strong>131</strong><span>videos</span></div>
+      <div><strong>+120K</strong><span>vistas</span></div>
+    </div>
+  </div>
+  <div class="hero-terminal" aria-hidden="true">
+    <div class="terminal-bar"><span></span><span></span><span></span></div>
+    <pre><code>$ infor-mayo --hoy
+&gt; Enzona · Transfermóvil
+&gt; Nauta · ETECSA · Apklis
+&gt; listo para ayudarte_</code></pre>
+  </div>
+</div>
 
-# Bienvenida a Infor Mayo
+<h2>¿Qué puedes resolver aquí?</h2>
+<div class="card-grid">
+  <div class="card">
+    <span class="card-num">01</span>
+    <h3>Dinero y trámites</h3>
+    <p>Enzona, Transfermóvil, Ticket, tarjetas, PIN y 2FA explicados paso a paso.</p>
+    <a href="https://www.youtube.com/@Infor-Mayo/search?query=enzona" target="_blank" rel="noopener">Ver tutoriales →</a>
+  </div>
+  <div class="card">
+    <span class="card-num">02</span>
+    <h3>Conectividad</h3>
+    <p>Nauta, ETECSA, datos móviles y todo lo que necesitas para mantenerte en línea.</p>
+    <a href="https://www.youtube.com/@Infor-Mayo/search?query=nauta" target="_blank" rel="noopener">Ver tutoriales →</a>
+  </div>
+  <div class="card">
+    <span class="card-num">03</span>
+    <h3>Tu teléfono al día</h3>
+    <p>Apklis, Snaptube y las apps que te ayudan a sacarle más provecho al móvil.</p>
+    <a href="https://www.youtube.com/@Infor-Mayo/search?query=apklis" target="_blank" rel="noopener">Ver tutoriales →</a>
+  </div>
+</div>
 
-¡Hola a todos! Soy **Mario Artola**, el creador del canal de YouTube **Infor Mayo**. Estoy emocionado de compartir mi pasión por la tecnología y la programación con ustedes. Mi objetivo es ofrecer contenido que no solo sea educativo, sino también entretenido, ayudando a mis seguidores a desarrollar sus habilidades en informática y a navegar por el fascinante mundo digital.
+<h2 id="videos">Videos que te pueden ayudar</h2>
+<div class="video-grid">
+  <a class="video-card" href="https://www.youtube.com/watch?v=i9Kp9ZqxBA4" target="_blank" rel="noopener">
+    <img src="https://i.ytimg.com/vi/i9Kp9ZqxBA4/mqdefault.jpg" alt="Miniatura: Descargar EnZona 2026 con Apklis" width="320" height="180" loading="lazy">
+    <div class="video-body">
+      <strong>Descargar EnZona 2026 con Apklis</strong>
+      <span>El paso a paso para tener la app lista.</span>
+    </div>
+  </a>
+  <a class="video-card" href="https://www.youtube.com/watch?v=XR_Zx-GGEp4" target="_blank" rel="noopener">
+    <img src="https://i.ytimg.com/vi/XR_Zx-GGEp4/mqdefault.jpg" alt="Miniatura: Recuperar tu cuenta de Enzona" width="320" height="180" loading="lazy">
+    <div class="video-body">
+      <strong>Recuperar tu cuenta de Enzona</strong>
+      <span>Qué hacer si olvidaste la contraseña o el PIN.</span>
+    </div>
+  </a>
+  <a class="video-card" href="https://www.youtube.com/watch?v=LwgK_eBEJKM" target="_blank" rel="noopener">
+    <img src="https://i.ytimg.com/vi/LwgK_eBEJKM/mqdefault.jpg" alt="Miniatura: Ocultar fotos y videos con Snaptube" width="320" height="180" loading="lazy">
+    <div class="video-body">
+      <strong>Ocultar fotos y videos con Snaptube</strong>
+      <span>Usa la bóveda y protege tu contenido.</span>
+    </div>
+  </a>
+</div>
+<p><a href="https://www.youtube.com/@Infor-Mayo/videos" target="_blank" rel="noopener">Ver todos los videos del canal →</a></p>
 
-## Contenido del Canal
+<h2>Cursos gratuitos</h2>
+<div class="card-grid">
+  <div class="card">
+    <span class="badge badge-ok">Disponible</span>
+    <h3>C++ básico</h3>
+    <p>Desde variables y tipos de datos hasta bucles y funciones.</p>
+    <a href="{{ '/cursos/c++_basico/1-curso-basico-c++.html' | relative_url }}">Ver curso →</a>
+  </div>
+  <div class="card">
+    <span class="badge badge-ok">Disponible</span>
+    <h3>Python básico</h3>
+    <p>Tu primer lenguaje: sintaxis clara y ejercicios prácticos.</p>
+    <a href="{{ '/cursos/python_basico/1-curso-basico-python.html' | relative_url }}">Ver curso →</a>
+  </div>
+  <div class="card">
+    <span class="badge badge-ok">Disponible</span>
+    <h3>Transfermóvil</h3>
+    <p>Registro, transferencias, pagos y recargas sin complicaciones.</p>
+    <a href="{{ '/cursos/transfermovil/curso-completo-transfermovil.html' | relative_url }}">Ver curso →</a>
+  </div>
+  <div class="card">
+    <span class="badge badge-progress">En progreso</span>
+    <h3>Qt</h3>
+    <p>Clases y ejemplos para crear aplicaciones de escritorio.</p>
+    <a href="{{ '/cursos/QT/curso-completo-QT.html' | relative_url }}">Ver curso →</a>
+  </div>
+</div>
 
-En **Infor Mayo**, encontrarás una variedad de contenido diseñado para satisfacer tanto a principiantes como a expertos. Aquí tienes un vistazo más detallado a lo que ofrezco:
+<h2>Un canal hecho para ayudarte</h2>
+<p>Soy <strong>Mario Artola</strong>, creador de <strong>Infor Mayo</strong>. Desde 2022 enseño tecnología en español, con ejemplos reales y sin dar por sentado que ya sabes programar. La idea es simple: que cada video te deje algo que puedas usar hoy.</p>
+<p>Si tienes una duda, un trámite atascado o una idea para un próximo tutorial, escríbeme. Este canal existe para resolver problemas concretos.</p>
 
-### Tutoriales Paso a Paso
-
-Mis tutoriales están diseñados para guiarte desde los conceptos más básicos hasta temas avanzados. Cada video incluye explicaciones claras y ejemplos prácticos que te ayudarán a entender mejor cada tema. Algunos de los tutoriales más populares incluyen:
-
-- **Introducción a Python**: Aprende desde cero cómo programar en uno de los lenguajes más demandados.
-- **Desarrollo Web con JavaScript**: Crea tus propias páginas web interactivas.
-- **Programación en C++**: Domina este lenguaje esencial para desarrollo de software y videojuegos.
-
-### Consejos y Trucos
-
-A lo largo de mis videos, comparto consejos y trucos que he aprendido durante mi carrera como programador. Estos consejos te ayudarán a:
-
-- Mejorar tu productividad.
-- Evitar errores comunes.
-- Optimizar tu código para un rendimiento superior.
-
-### Proyectos Prácticos
-
-La mejor manera de aprender es haciendo. Por eso, en mi canal encontrarás proyectos prácticos que puedes seguir paso a paso. Algunos ejemplos incluyen:
-
-- **Creación de un juego simple**: Aprende los fundamentos del desarrollo de videojuegos mientras creas tu propio juego.
-- **Aplicaciones de inteligencia artificial**: Desarrolla proyectos que utilizan machine learning para resolver problemas reales.
-- **Desarrollo de aplicaciones web**: Construye aplicaciones completas utilizando frameworks modernos.
-
-### Soluciones a Problemas Comunes
-
-Entiendo que la programación puede ser desafiante, así que también me enfoco en resolver problemas comunes que enfrentan los programadores. Mis videos abordan temas como:
-
-- **Depuración de código**: Estrategias para encontrar y corregir errores en tu código.
-- **Optimización del flujo de trabajo**: Herramientas y técnicas para hacer tu trabajo más eficiente.
-- **Mejores prácticas en programación**: Consejos sobre cómo escribir código limpio y mantenible.
-
-## Redes Sociales
-
-Además de YouTube, puedes seguirme en mis otras plataformas para estar al tanto de mis actualizaciones y participar en la comunidad:
-
-- [Twitter](https://twitter.com/MarioArtola15): Sígueme para obtener noticias rápidas, consejos breves y reflexiones sobre el mundo de la tecnología.
-- [Instagram](https://www.instagram.com/infor_mayo): Descubre contenido visual, detrás de cámaras sobre mis proyectos y momentos destacados del canal.
-- [Facebook](https://www.facebook.com/groups/430222984636303): Únete a nuestra comunidad para discutir temas relacionados con la programación, compartir tus proyectos y hacer preguntas.
-
-¡Espero que disfrutes del contenido tanto como yo disfruto creándolo! No olvides suscribirte para no perderte ninguno de mis videos.
-
-## Suscríbete a mi canal
-
-No te pierdas ningún video. ¡Suscríbete a mi canal de YouTube hoy mismo y asegúrate de estar al día con mis últimos videos! Puedes encontrar mi canal aquí: [Infor-Mayo](https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q?sub_confirmation=1).
-
-* * *
-
-¡Gracias por visitar mi sitio web! Espero que disfrutes mi contenido tanto como yo disfruto creándolo. ¡Nos vemos pronto!
+<div class="cta-band">
+  <div>
+    <h2>¿Te ayudo con tu próximo trámite?</h2>
+    <p>Suscríbete y activa la campana para no perderte los nuevos tutoriales.</p>
+  </div>
+  <a class="btn btn-primary" href="https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q?sub_confirmation=1" target="_blank" rel="noopener">Suscribirme</a>
+</div>

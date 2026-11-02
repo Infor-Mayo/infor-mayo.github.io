@@ -30,4 +30,4 @@ Esperamos que este video te haya sido útil. Si te gustó, no olvides suscribirt
 
 #### ¡Gracias por visitar mi página web!
 
-[Atras](./1-curso-completo-transfermovil.md) 
+[Atras](./curso-completo-transfermovil.html) 

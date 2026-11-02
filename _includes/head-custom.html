@@ -1,12 +1,8 @@
-<!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+<!-- Favicon y color de la interfaz -->
+<link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
+<link rel="apple-touch-icon" href="{{ '/assets/images/image.png' | relative_url }}">
+<meta name="theme-color" content="#0f1115">
 
-<!-- Setup theme-color -->
-{% include head-custom-theme-colors.html %}
-
-<!-- Setup Google Analytics -->
-{% include head-custom-google-analytics.html %}
-
-<!-- You can set your favicon here -->
-<!-- link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" -->
-
-<!-- end custom head snippets -->
+<!-- Rendimiento: las miniaturas de YouTube se cargan desde i.ytimg.com -->
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="dns-prefetch" href="https://i.ytimg.com">

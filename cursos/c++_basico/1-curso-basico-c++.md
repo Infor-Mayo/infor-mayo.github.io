@@ -1,23 +1,30 @@
 ---
 layout: cabeza1
+title: "C++ básico"
+description: "Curso básico de C++ en español: variables, tipos de datos, bucles, funciones y ejemplos prácticos. Gratis en YouTube."
+image: /assets/images/image.png
 ---
 
-## Curso de C++ Básico en YouTube
+<p class="eyebrow">Curso · Programación</p>
+<h1>Curso de C++ básico</h1>
+<p class="lead">Aprende los fundamentos de C++ desde cero, con ejemplos cortos y ejercicios para practicar.</p>
 
-Bienvenidos a mi curso básico de C++ en mi canal de YouTube. En esta lista de reproducción, aprenderás los fundamentos de la programación en C++, desde variables y tipos de datos hasta bucles y funciones. Aquí está el enlace a la lista de reproducción:
+<p>En esta lista de reproducción verás cómo pasar de los conceptos más básicos a programas completos. El curso está pensado para quien nunca ha programado y también para quien quiere repasar las bases.</p>
 
-[Curso básico de C++ en mi canal de YouTube](https://youtube.com/playlist?list=PL9Lgme4PR4XA6vEINnWImbZq2kXyRPgev).
+<h2>Qué vas a aprender</h2>
+<ul>
+  <li>Variables, tipos de datos y operadores.</li>
+  <li>Condicionales y bucles.</li>
+  <li>Funciones y organización del código.</li>
+  <li>Ejemplos prácticos para aplicar lo aprendido.</li>
+</ul>
 
-### Contacto
+<p>
+  <a class="btn btn-primary" href="https://youtube.com/playlist?list=PL9Lgme4PR4XA6vEINnWImbZq2kXyRPgev" target="_blank" rel="noopener">Ver la lista en YouTube</a>
+  <a class="btn btn-ghost" href="{{ '/cursos.html' | relative_url }}">Volver a cursos</a>
+</p>
 
-[GitHub](https://github.com/MaYbreYpro).
-[Youtube](https://youtube.com/@Infor-Mayo).
+<h2>Contacto</h2>
+<p>Si tienes una duda durante el curso, puedes escribirme por <a href="https://api.whatsapp.com/send?phone=5353510750&text=Hola%2C%20Mario.%20Tengo%20una%20duda%20del%20curso%20de%20C%2B%2B." target="_blank" rel="noopener">WhatsApp</a> o dejar un comentario en el video. También puedes seguir el canal en <a href="https://youtube.com/@Infor-Mayo" target="_blank" rel="noopener">YouTube</a> y ver los proyectos en <a href="https://github.com/Infor-Mayo" target="_blank" rel="noopener">GitHub</a>.</p>
 
-Si estás interesado en aprender C++, asegúrate de seguir la lista de reproducción y suscribirte a mi canal para recibir actualizaciones sobre nuevos videos.
-
-Espero que encuentres mi curso útil y que disfrutes aprendiendo a programar en C++. Si tienes alguna pregunta o sugerencia, no dudes en contactarme a través de mi cuenta de GitHub o en los comentarios de mi canal de YouTube.
-
-#### ¡Gracias por visitar mi página web!
-
-[Atras](./) 
- 
+<p class="small">Consejo: no veas los videos de corrido. Escribe el código, equivócate y vuelve a intentarlo. Ahí es donde se aprende.</p>

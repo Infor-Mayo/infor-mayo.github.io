@@ -1,21 +1,32 @@
-<footer>
-  <div class="container">
-    <p>&copy; {{ site.title }} {{ site.date | date: '%Y' }} - Todos los derechos reservados.</p>
-    <div class="social-media">
-      <a href="https://twitter.com/MarioArtola15" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
-      <a href="https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q?sub_confirmation=1" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-      <a href="https://www.instagram.com/infor_mayo" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-      <a href="https://www.facebook.com/groups/430222984636303" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <img src="{{ '/assets/images/image.png' | relative_url }}" alt="Infor Mayo" width="44" height="44">
+        <span class="brand-text">
+          <strong>Infor Mayo</strong>
+          <small>Tecnología práctica para Cuba</small>
+        </span>
+      </a>
+      <p>Tutoriales de Enzona, Transfermóvil, ETECSA, Nauta y apps para tu día a día.</p>
     </div>
-    <button id="scroll-to-top" onclick="scrollToTop()">Volver al principio</button>
-  </div>
 
-  <script>
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth' // Hace que el scroll sea suave
-      });
-    }
-  </script>
+    <div class="footer-col">
+      <h2 class="footer-heading">Explorar</h2>
+      <a href="{{ '/' | relative_url }}">Inicio</a>
+      <a href="{{ '/productos.html' | relative_url }}">Productos</a>
+      <a href="{{ '/cursos.html' | relative_url }}">Cursos</a>
+      <a href="{{ '/contacto.html' | relative_url }}">Contacto</a>
+    </div>
+
+    <div class="footer-col">
+      <h2 class="footer-heading">Sígueme</h2>
+      <a href="https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q?sub_confirmation=1" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.instagram.com/infor_mayo" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/groups/430222984636303" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://api.whatsapp.com/send?phone=5353510750" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+
+    <p class="footer-copy">© {{ site.time | date: '%Y' }} Infor Mayo. Todos los derechos reservados.</p>
+  </div>
 </footer>

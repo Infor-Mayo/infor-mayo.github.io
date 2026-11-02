@@ -1,3 +1,8 @@
+---
+layout: cabeza3
+title: "Clase QCoreApplication"
+description: "Qué es QCoreApplication en Qt y cómo gestiona el ciclo de vida de una aplicación."
+---
 
 # Clase QCoreApplication 
 
