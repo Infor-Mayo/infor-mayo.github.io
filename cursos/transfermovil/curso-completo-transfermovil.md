@@ -9,6 +9,24 @@ image: /assets/images/image.png
 <h1>Curso completo de Transfermóvil</h1>
 <p class="lead">Aprende a usar Transfermóvil para tus operaciones del día a día: consultas, transferencias, pagos de servicios, recargas y gestión de cuentas.</p>
 
+<div class="course-facts">
+  <div class="fact">
+    <span class="label">Nivel</span>
+    <strong>Desde cero</strong>
+    <p>No necesitas conocer la app para empezar.</p>
+  </div>
+  <div class="fact">
+    <span class="label">Formato</span>
+    <strong>Videos + artículos</strong>
+    <p>Cada operación tiene su video y una página con los pasos.</p>
+  </div>
+  <div class="fact">
+    <span class="label">Necesitas</span>
+    <strong>Teléfono y conexión</strong>
+    <p>La aplicación instalada y acceso a internet para realizar las operaciones.</p>
+  </div>
+</div>
+
 <p>Transfermóvil es una de las aplicaciones más usadas en Cuba para realizar operaciones financieras. En esta lista de reproducción verás cada proceso con calma, desde la descarga hasta los ajustes de seguridad.</p>
 
 <p>
@@ -23,6 +41,16 @@ image: /assets/images/image.png
   <li>Consultar saldo, facturas, operaciones y límites.</li>
   <li>Transferir efectivo, pagar servicios y recargar el móvil.</li>
   <li>Gestionar cuentas bancarias y tarjetas.</li>
+</ul>
+
+<h2>Para quién es</h2>
+<p>Para quien ya tiene Transfermóvil o va a empezar a usarlo y quiere entender cada operación sin miedo a equivocarse. Si solo necesitas un trámite concreto, puedes ir directo al video correspondiente.</p>
+
+<h2>Cómo aprovecharlo</h2>
+<ul>
+  <li>Comprueba que la aplicación esté actualizada: si una pantalla cambió, el video puede no coincidir.</li>
+  <li>Practica primero con consultas de saldo, facturas y operaciones antes de hacer transferencias.</li>
+  <li>Nunca compartas tu contraseña, PIN ni códigos de verificación con nadie.</li>
 </ul>
 
 <h2>Videos del curso</h2>

@@ -9,11 +9,32 @@ image: /assets/images/image.png
 <h1>Qt en español</h1>
 <p class="lead">Aprende Qt desde las clases básicas hasta los widgets y las tareas de red, con explicaciones y ejemplos pensados para quien empieza.</p>
 
+<div class="course-facts">
+  <div class="fact">
+    <span class="label">Nivel</span>
+    <strong>Intermedio</strong>
+    <p>Se aprovecha mejor si ya conoces lo básico de C++.</p>
+  </div>
+  <div class="fact">
+    <span class="label">Formato</span>
+    <strong>Lecciones escritas</strong>
+    <p>Páginas por clase, con ejemplos y enlaces a los temas relacionados.</p>
+  </div>
+  <div class="fact">
+    <span class="label">Necesitas</span>
+    <strong>C++ y Qt</strong>
+    <p>Un entorno con Qt instalado y ganas de probar los ejemplos.</p>
+  </div>
+</div>
+
 <p>Qt es un conjunto de bibliotecas para crear aplicaciones de escritorio y móviles con C++. En este curso voy documentando las clases que uso en mis propios proyectos, con ejemplos que puedes adaptar.</p>
 
 <div class="notice">
   <strong>Curso en progreso.</strong> Las páginas se van ampliando poco a poco. Si echas en falta una clase o un ejemplo, puedes sugerirlo en la página de <a href="{{ '/consultas.html' | relative_url }}">consultas</a>.
 </div>
+
+<h2>Para quién es</h2>
+<p>Para quien ya escribió sus primeros programas en C++ y quiere dar el salto a una aplicación con ventanas, archivos y red. No es el mejor punto de partida si nunca has programado: para eso están los cursos básicos de C++ y Python.</p>
 
 <h2>Clases y temas</h2>
 <div class="card-grid">

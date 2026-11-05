@@ -9,6 +9,24 @@ image: /assets/images/image.png
 <h1>Curso de C++ básico</h1>
 <p class="lead">Aprende los fundamentos de C++ desde cero, con ejemplos cortos y ejercicios para practicar.</p>
 
+<div class="course-facts">
+  <div class="fact">
+    <span class="label">Nivel</span>
+    <strong>Desde cero</strong>
+    <p>No hace falta experiencia previa en programación.</p>
+  </div>
+  <div class="fact">
+    <span class="label">Formato</span>
+    <strong>Lista de videos</strong>
+    <p>Videos ordenados, con ejemplos que puedes repetir en tu equipo.</p>
+  </div>
+  <div class="fact">
+    <span class="label">Necesitas</span>
+    <strong>Un equipo con C++</strong>
+    <p>Un compilador o un editor configurado para escribir y probar el código.</p>
+  </div>
+</div>
+
 <p>En esta lista de reproducción verás cómo pasar de los conceptos más básicos a programas completos. El curso está pensado para quien nunca ha programado y también para quien quiere repasar las bases.</p>
 
 <h2>Qué vas a aprender</h2>
@@ -17,6 +35,16 @@ image: /assets/images/image.png
   <li>Condicionales y bucles.</li>
   <li>Funciones y organización del código.</li>
   <li>Ejemplos prácticos para aplicar lo aprendido.</li>
+</ul>
+
+<h2>Para quién es</h2>
+<p>Para quien nunca ha programado y quiere una base sólida, y también para quien ya vio algo de C++ y necesita repasar. Lo importante es practicar: el curso no está pensado para verlo de corrido.</p>
+
+<h2>Cómo aprovecharlo</h2>
+<ul>
+  <li>Prepara el compilador o el editor antes de empezar.</li>
+  <li>Escribe cada ejemplo en tu equipo y prueba a cambiar una parte.</li>
+  <li>Si algo no compila, lee el error con calma: también se aprende de ahí.</li>
 </ul>
 
 <p>

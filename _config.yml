@@ -1,5 +1,5 @@
 title: Infor Mayo
-description: "Tecnología práctica para Cuba: tutoriales de Enzona, Transfermóvil, ETECSA, Nauta, Apklis y apps para tu teléfono."
+description: "Tecnología práctica para Cuba y para cualquier hispanohablante: tutoriales de celular, computadora, apps, programación y seguridad."
 lang: es
 url: "https://infor-mayo.github.io"
 baseurl: ""
@@ -7,7 +7,7 @@ author: Mario Artola
 twitter:
   username: MarioArtola15
   card: summary_large_image
-logo: /assets/images/image.png
+logo: /assets/images/channel-icon.png
 social:
   name: Infor Mayo
   links:

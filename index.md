@@ -1,15 +1,15 @@
 ---
 layout: cabeza3
 title: "Tecnología práctica para Cuba"
-description: "Tutoriales de Enzona, Transfermóvil, ETECSA, Nauta, Apklis y apps para tu teléfono. Tecnología práctica para Cuba, explicada en español."
+description: "Tutoriales de celular, computadora, apps y programación. Tecnología práctica para Cuba y para cualquier hispanohablante, explicada en español."
 image: /assets/images/image.png
 ---
 
 <div class="hero">
   <div>
     <p class="eyebrow">Infor Mayo · Tecnología práctica</p>
-    <h1>Tu día digital en Cuba, resuelto en minutos.</h1>
-    <p class="lead">Tutoriales claros de Enzona, Transfermóvil, ETECSA, Nauta y las apps que usas todos los días. Sin vueltas, sin tecnicismos y directo al grano.</p>
+    <h1>Tu día digital, resuelto en minutos.</h1>
+    <p class="lead">Tutoriales claros de celular, computadora, apps y programación. Soluciones prácticas para Cuba y para cualquier hispanohablante, sin vueltas y directo al grano.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q?sub_confirmation=1" target="_blank" rel="noopener">Ver el canal en YouTube</a>
       <a class="btn btn-ghost" href="{{ '/cursos.html' | relative_url }}">Explorar cursos</a>
@@ -23,8 +23,8 @@ image: /assets/images/image.png
   <div class="hero-terminal" aria-hidden="true">
     <div class="terminal-bar"><span></span><span></span><span></span></div>
     <pre><code>$ infor-mayo --hoy
-&gt; Enzona · Transfermóvil
-&gt; Nauta · ETECSA · Apklis
+&gt; laptop · celular · almacenamiento
+&gt; IA · seguridad · programación
 &gt; listo para ayudarte_</code></pre>
   </div>
 </div>
@@ -48,6 +48,12 @@ image: /assets/images/image.png
     <h3>Tu teléfono al día</h3>
     <p>Apklis, Snaptube y las apps que te ayudan a sacarle más provecho al móvil.</p>
     <a href="https://www.youtube.com/@Infor-Mayo/search?query=apklis" target="_blank" rel="noopener">Ver tutoriales →</a>
+  </div>
+  <div class="card">
+    <span class="card-num">04</span>
+    <h3>Aprende programación</h3>
+    <p>Cursos de Python, C++ y Qt para empezar desde cero y practicar con ejemplos.</p>
+    <a href="{{ '/cursos.html' | relative_url }}">Ver cursos →</a>
   </div>
 </div>
 
@@ -78,6 +84,11 @@ image: /assets/images/image.png
 <p><a href="https://www.youtube.com/@Infor-Mayo/videos" target="_blank" rel="noopener">Ver todos los videos del canal →</a></p>
 
 <h2>Cursos gratuitos</h2>
+<p class="lead">Aprende a tu ritmo con cursos en video y lecciones escritas. Si no sabes por dónde empezar, mira la guía y la ruta sugerida.</p>
+<div class="section-actions">
+  <a class="btn btn-ghost" href="{{ '/cursos/como-funcionan.html' | relative_url }}">Cómo funcionan</a>
+  <a class="btn btn-ghost" href="{{ '/cursos/posibles-cursos.html' | relative_url }}">Posibles cursos</a>
+</div>
 <div class="card-grid">
   <div class="card">
     <span class="badge badge-ok">Disponible</span>
@@ -104,6 +115,7 @@ image: /assets/images/image.png
     <a href="{{ '/cursos/QT/curso-completo-QT.html' | relative_url }}">Ver curso →</a>
   </div>
 </div>
+<p><a href="{{ '/cursos/posibles-cursos.html' | relative_url }}">Ver posibles cursos y votar por el próximo →</a></p>
 
 <h2>Un canal hecho para ayudarte</h2>
 <p>Soy <strong>Mario Artola</strong>, creador de <strong>Infor Mayo</strong>. Desde 2022 enseño tecnología en español, con ejemplos reales y sin dar por sentado que ya sabes programar. La idea es simple: que cada video te deje algo que puedas usar hoy.</p>
@@ -111,7 +123,7 @@ image: /assets/images/image.png
 
 <div class="cta-band">
   <div>
-    <h2>¿Te ayudo con tu próximo trámite?</h2>
+    <h2>¿Quieres resolver algo hoy?</h2>
     <p>Suscríbete y activa la campana para no perderte los nuevos tutoriales.</p>
   </div>
   <a class="btn btn-primary" href="https://www.youtube.com/channel/UC91YVQo46w3z1ZZJH-5tb5Q?sub_confirmation=1" target="_blank" rel="noopener">Suscribirme</a>
