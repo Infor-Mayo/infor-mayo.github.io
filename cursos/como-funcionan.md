@@ -2,7 +2,7 @@
 layout: cabeza3
 title: "Cómo funcionan los cursos"
 description: "Guía de los cursos gratuitos de Infor Mayo: formato, requisitos, cómo practicar y ruta sugerida para aprender sin prisa."
-image: /assets/images/channel-icon.png
+image: /assets/images/image.png
 ---
 
 <p class="eyebrow">Cursos · Guía</p>

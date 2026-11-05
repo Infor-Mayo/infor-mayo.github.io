@@ -2,7 +2,7 @@
 layout: cabeza3
 title: "Cursos"
 description: "Cursos gratuitos de Infor Mayo: C++ básico, Python básico, Transfermóvil y Qt. Guía, niveles, requisitos y posibles cursos."
-image: /assets/images/channel-icon.png
+image: /assets/images/image.png
 ---
 
 <p class="eyebrow">Cursos</p>

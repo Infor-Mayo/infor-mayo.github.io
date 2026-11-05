@@ -2,7 +2,7 @@
 layout: cabeza3
 title: "Posibles cursos"
 description: "Ideas de próximos cursos de Infor Mayo: computación desde cero, mantenimiento de laptop, seguridad digital, ofimática, HTML y CSS, programación intermedia e IA práctica."
-image: /assets/images/channel-icon.png
+image: /assets/images/image.png
 ---
 
 <p class="eyebrow">Cursos · Ideas</p>
